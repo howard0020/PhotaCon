@@ -8,10 +8,21 @@
         <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
         <div data-role="page">
             <div data-role="header">
-                <h1>My Title</h1>
+                <a href="index.html" data-role="button" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>
+                <h1>My Apps</h1>
             </div><!-- /header -->
             <div data-role="content">
-                <p>Hello world</p>
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li>
+                        <a href="#"><img src="/images/facebook.png" alt="Facebook">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/images/linkedin.png" alt="LinkedIn">LinkedIn</a>
+                    </li>
+                    <li><a href="#"><img src="/images/googleplus.png" alt="Google+">Google+</a></li>
+                    <li><a href="#"><img src="/images/twitter.png" alt="Twitter">Twitter</a></li>
+                    <li><a href="#"><img src="/images/foursquare.png" alt="foursquare">foursquare</a></li>
+                </ul>
             </div><!-- /content -->
         </div><!-- /page -->
     </div>

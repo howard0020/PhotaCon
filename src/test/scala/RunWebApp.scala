@@ -11,11 +11,10 @@ object RunWebApp extends App {
 
   val context = new WebAppContext()
   context.setServer(server)
+  context.setContextPath("/")
   context.setWar("src/main/webapp")
-
-  val context0: ContextHandler = new ContextHandler();
-  context0.setHandler(context)
-  server.setHandler(context0)
+  context.setDefaultsDescriptor("src/main/webapp/WEB-INF/webdefault.xml");
+  server.addHandler(context)
 
   try {
     println(">>> STARTING EMBEDDED JETTY SERVER, PRESS ANY KEY TO STOP")
