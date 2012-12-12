@@ -8,16 +8,21 @@
         <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
         <div data-role="page">
             <div data-role="header">
-                <h1>PhotaCon</h1>
-				<div>
-					<a href="search.html" data-role="button">Search</a>
-					<a href="login.html" data-role="button">Home Page for new user</a>
-				</div>
-            </div><!-- /header -->
-            <div data-role="content">
-            	<a href="facebook.com" data-rel="dialog">Open dialog</a>
-                <input type="search" name="search" id="search-basic" value="" />
-            </div><!-- /content -->
+				<a href="login.html" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext">Back</a>
+				<h1>Facebook</h1>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div class="ui-grid-solo">
+					<div class="ui-block-a center-wrapper"><a href="appLogin.html"><img src="images/facebook.png" alt="Facebook"></a></div>
+					<div class="ui-block-a center-wrapper">
+						<input type="text" placeholder="Username"/>
+						<input type="text" placeholder="password"/>
+					</div>
+					<div class="ui-block-a center-wrapper">
+						<a herf="#" data-role="button" data-theme="b" data-inline="true">Login</a>
+					</div>
+				</div><!-- /grid-b -->
+			</div><!-- /content -->
         </div><!-- /page -->
     </div>
   </body>

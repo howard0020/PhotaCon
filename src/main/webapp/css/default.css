@@ -1,0 +1,44 @@
+/* Put your custom CSS here */
+.li-person-app img{
+	width:20px;
+	height:20px;
+}
+.li-person-app{
+	margin-top: 13px;
+}
+.li-person-profilePic{
+	max-width:60px !important;
+	max-height:60px !important;
+	position: absolute !important;
+	left: 5px !important;
+	top: 5px !important;
+}
+.li-person{
+	padding:0px !important;
+	padding-left: 75px !important;
+	padding-top: 5px !important;
+	min-height: 65px !important;
+}
+.ui-grid-app-check{
+    width: 40px;
+    height: 40px;
+	position:absolute;
+	right:10px;
+	bottom:10px;
+}
+.ui-grid-app{
+	position:relative;
+}
+.li-person-detail{
+	
+}
+.li-person-detail-profilePic{
+	max-width:60px;
+	max-height:60px;
+}
+.center-wrapper{
+	text-align: center;
+}
+.center-wrapper * {
+	margin: 0 auto;
+}
