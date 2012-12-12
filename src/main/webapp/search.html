@@ -1,36 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" /><title>Home</title></head>
-  <body class="lift:content_id=main">
-    <div id="main" class="lift:surround?with=default;at=content">
-        <link class="lift:head" rel="stylesheet" href="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" />
-        <script class="lift:head" src="/JSLib/jquery-1.8.2.js"></script>
-        <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
-        <div data-role="page">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<title>Home</title>
+</head>
+<body class="lift:content_id=main">
+	<div id="main" class="lift:surround?with=default;at=content">
+		<link class="lift:head" rel="stylesheet"
+			href="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" />
+		<script class="lift:head" src="/JSLib/jquery-1.8.2.js"></script>
+		<script class="lift:head"
+			src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
+		<div data-role="page">
             <div data-role="header">
                 <a href="index.html" data-role="button" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>
                 <h1>PhotaCon</h1>
                 <a data-role="button">Login</a>
             </div><!-- /header -->
-            <div data-role="content">
-                <ul data-role="listview" data-inset="true">
-                    <li>
-                        <a href="#"><img src="/images/facebook.png" alt="Facebook">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/images/linkedin.png" alt="LinkedIn">LinkedIn</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/images/googleplus.png" alt="Google+">Google+</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/images/twitter.png" alt="Twitter">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/images/foursquare.png" alt="foursquare">foursquare</a
-                    </li>
-                </ul>
-            </div><!-- /content -->
+            <div data-role="content" data-theme="c">
+				<ul data-role="listview" data-inset="true" data-theme="c" data-filter="true" 
+					data-filter-placeholder="Search for friends">
+					<li>
+						<a href="personDetail.html" class="li-person">
+							<img class="li-person-profilePic" src="/images/ppl/sheng.jpg"/>
+							<span>Sheng Jun Dong</span>
+							<div class="li-person-app">
+								<img src="/images/facebook.png">
+								<img src="/images/linkedin.png">
+								<img src="/images/twitter.png">
+								<img src="/images/foursquare.png">
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="li-person">
+							<img class="li-person-profilePic" src="/images/ppl/william.jpg"/>
+							<span>William Wu</span>
+							<div class="li-person-app">
+								<img src="/images/pinterest.png">
+								<img src="/images/tumblr.png">
+								<img src="/images/myspace.png">
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="li-person">
+							<img class="li-person-profilePic" src="/images/ppl/howard.jpg"/>
+							<span>Howard Lin</span>
+							<div class="li-person-app">
+								<img src="/images/pinterest.png">
+								<img src="/images/linkedin.png">
+								<img src="/images/twitter.png">
+								<img src="/images/foursquare.png">
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="li-person">
+							<img class="li-person-profilePic" src="/images/ppl/bbking.jpg"/>
+							<span>BBKing</span>
+							<div class="li-person-app">
+								<img src="/images/facebook.png">
+								<img src="/images/linkedin.png">
+								<img src="/images/twitter.png">
+								<img src="/images/foursquare.png">
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="li-person">
+							<img class="li-person-profilePic" src="/images/ppl/troy.jpg"/>
+							<span>Legend</span>
+							<div class="li-person-app">
+								<img src="/images/facebook.png">
+								<img src="/images/foursquare.png">
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div><!-- /content -->
         </div><!-- /page -->
     </div>
   </body>
