@@ -53,3 +53,4 @@ lift_proto*
 # Pax Runner (for easy OSGi launching)
 runner
 
+.cache
