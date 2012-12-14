@@ -29,6 +29,8 @@ class Boot {
       Menu.i("Home") / "home",
       Menu.i("PersonDetail") / "personDetail",
       Menu.i("AppLogin") / "appLogin",
+      Menu.i("Friend") / "friend",
+      Menu.i("Setting") / "setting",
       // more complex because this menu allows anything in the
       // /static path to be visible
       Menu(Loc("Static", Link(List("static"), true, "/static/index"), 

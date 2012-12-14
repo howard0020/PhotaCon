@@ -7,7 +7,7 @@
         <script class="lift:head" src="/JSLib/jquery-1.8.2.js"></script>
         <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
         <div data-role="page">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed">
 				<a href="search.html" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext">Back</a>
 				<h1>Sheng Jun Dong</h1>
 				<a data-role="button" data-icon="plus">Add</a>
@@ -21,25 +21,33 @@
 				<div class="ui-grid-b">
 					<div class="ui-block-a">
 						<a href="#" class="ui-grid-app">
-							<img src="images/facebook.png" alt="Facebook">
+							<img class="login-app-img" src="images/facebook.png" alt="Facebook">
 							<img class="ui-grid-app-check" src="images/check64.png">
 						</a>
 					</div>
 					<div class="ui-block-b">
 						<a href="#" class="ui-grid-app">
-							<img src="images/linkedin.png">
+							<img class="login-app-img" src="images/linkedin.png">
 							<img class="ui-grid-app-check" src="images/check64.png">
 						</a>
 					</div>
-					<div class="ui-block-c"><a href="#"><img src="images/googleplus.png" alt="Google+"></a></div>
-					<div class="ui-block-a"><a href="#"><img src="images/twitter.png" alt="Twitter"></a></div>
-					<div class="ui-block-b"><a href="#"><img src="images/foursquare.png" alt="foursquare"></a></div>
-					<div class="ui-block-c"><a href="#"><img src="images/tumblr.png" alt="tumblr"></a></div>
-					<div class="ui-block-a"><a href="#"><img src="images/pinterest.png" alt="Pinterest"></a></div>
-					<div class="ui-block-b"><a href="#"><img src="images/orkut.png" alt="orkut"></a></div>
-					<div class="ui-block-c"><a href="#"><img src="images/myspace.png" alt="myspace"></a></div>
+					<div class="ui-block-c"><a href="#"><img class="login-app-img" src="images/googleplus.png" alt="Google+"></a></div>
+					<div class="ui-block-a"><a href="#"><img class="login-app-img" src="images/twitter.png" alt="Twitter"></a></div>
+					<div class="ui-block-b"><a href="#"><img class="login-app-img" src="images/foursquare.png" alt="foursquare"></a></div>
+					<div class="ui-block-c"><a href="#"><img class="login-app-img" src="images/tumblr.png" alt="tumblr"></a></div>
+					<div class="ui-block-a"><a href="#"><img class="login-app-img" src="images/pinterest.png" alt="Pinterest"></a></div>
+					<div class="ui-block-b"><a href="#"><img class="login-app-img" src="images/orkut.png" alt="orkut"></a></div>
+					<div class="ui-block-c"><a href="#"><img class="login-app-img" src="images/myspace.png" alt="myspace"></a></div>
 				</div><!-- /grid-b -->
 			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed">
+	        	<div data-role="navbar">
+					<ul>
+						<li><a href="friend.html" data-role="button" data-theme="a" data-icon="grid" data-iconpos="notext" data-iconpos="left">Friends</a></li>
+						<li><a href="search.html" data-role="button" data-theme="a" data-icon="search" data-iconpos="notext" data-iconpos="left">Search</a></li>
+					</ul>
+				</div><!-- /navbar -->
+	        </div>
         </div><!-- /page -->
     </div>
   </body>

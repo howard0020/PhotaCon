@@ -12,73 +12,22 @@
 		<script class="lift:head"
 			src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
 		<div data-role="page">
-            <div data-role="header">
-                <a href="index.html" data-role="button" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>
+            <div data-role="header" data-position="fixed">
+                <a href="home.html" data-role="button" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>
                 <h1>PhotaCon</h1>
-                <a data-role="button">Login</a>
             </div><!-- /header -->
             <div data-role="content" data-theme="c">
-				<ul data-role="listview" data-inset="true" data-theme="c" data-filter="true" 
-					data-filter-placeholder="Search for friends">
-					<li>
-						<a href="personDetail.html" class="li-person">
-							<img class="li-person-profilePic" src="/images/ppl/sheng.jpg"/>
-							<span>Sheng Jun Dong</span>
-							<div class="li-person-app">
-								<img src="/images/facebook.png">
-								<img src="/images/linkedin.png">
-								<img src="/images/twitter.png">
-								<img src="/images/foursquare.png">
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="li-person">
-							<img class="li-person-profilePic" src="/images/ppl/william.jpg"/>
-							<span>William Wu</span>
-							<div class="li-person-app">
-								<img src="/images/pinterest.png">
-								<img src="/images/tumblr.png">
-								<img src="/images/myspace.png">
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="li-person">
-							<img class="li-person-profilePic" src="/images/ppl/howard.jpg"/>
-							<span>Howard Lin</span>
-							<div class="li-person-app">
-								<img src="/images/pinterest.png">
-								<img src="/images/linkedin.png">
-								<img src="/images/twitter.png">
-								<img src="/images/foursquare.png">
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="li-person">
-							<img class="li-person-profilePic" src="/images/ppl/bbking.jpg"/>
-							<span>BBKing</span>
-							<div class="li-person-app">
-								<img src="/images/facebook.png">
-								<img src="/images/linkedin.png">
-								<img src="/images/twitter.png">
-								<img src="/images/foursquare.png">
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="li-person">
-							<img class="li-person-profilePic" src="/images/ppl/troy.jpg"/>
-							<span>Legend</span>
-							<div class="li-person-app">
-								<img src="/images/facebook.png">
-								<img src="/images/foursquare.png">
-							</div>
-						</a>
-					</li>
-				</ul>
+				<input type="search" name="search" id="search-basic" value="" />
 			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed">
+	        	<div data-role="navbar">
+					<ul>
+						<li><a href="friend.html" data-role="button" data-theme="a" data-icon="grid" data-iconpos="notext" data-iconpos="left">Friends</a></li>
+						<li><a href="search.html" data-role="button" data-theme="a" data-icon="search" data-iconpos="notext" data-iconpos="left">Search</a></li>
+						<li><a href="setting.html" data-role="button" data-theme="a" data-icon="gear" data-iconpos="notext" data-iconpos="left">Settings</a></li>
+					</ul>
+				</div><!-- /navbar -->
+	        </div>
         </div><!-- /page -->
     </div>
   </body>
