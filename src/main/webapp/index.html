@@ -5,19 +5,23 @@
     <div id="main" class="lift:surround?with=default;at=content">
         <link class="lift:head" rel="stylesheet" href="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" />
         <script class="lift:head" src="/JSLib/jquery-1.8.2.js"></script>
-        <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
-        <div data-role="page">
-            <div data-role="header">
+        <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>    
+        <div data-role="page" id="home">
+            <div data-role="header" data-position="fixed">
                 <h1>PhotaCon</h1>
-				<div>
-					<a href="search.html" data-role="button">Search</a>
-					<a href="login.html" data-role="button">Home Page for new user</a>
-				</div>
+				<a data-role="button" class="ui-btn-right" href="/login">Login</a>
             </div><!-- /header -->
             <div data-role="content">
-            	<a href="facebook.com" data-rel="dialog">Open dialog</a>
-                <input type="search" name="search" id="search-basic" value="" />
+            	<form action="/search" data-transition="slide">
+                	<input type="search" name="search" id="search-basic" data-theme="c" placeholder="name"/>
+                </form>
+                <div style="position: absolute; top: 50%;">
+                	<p><b>If you were thinking about someone while reading this, you're definitely in Love.</b></p>
+                </div>
             </div><!-- /content -->
+            <div data-role="footer" data-position="fixed">
+				<h4>Page Footer</h4>
+			</div><!-- /footer -->
         </div><!-- /page -->
     </div>
   </body>
