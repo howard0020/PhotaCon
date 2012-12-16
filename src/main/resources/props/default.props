@@ -1,0 +1,10 @@
+appkey.facebook=145499585599212
+secret.facebook=95de9d782beee6c8b419fad72568cfdb
+
+appkey.twitter=ei5HmwSTmV97SjemICB9A
+secret.twitter=nIXvPjdgu5qOayt39dgeRNaiNRaAj8hkUD2DuZrJV9s
+
+appkey.linkedin=vq63ukdhsm8s
+secret.linkedin=UPYqaWFqUV0DOpwv
+
+site.domain=http://localhost:8080
