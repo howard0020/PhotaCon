@@ -9,8 +9,8 @@ import sitemap._
 import Loc._
 import net.liftmodules.JQueryModule
 import net.liftweb.http.js.jquery._
-
-
+import code.REST._
+import code.util._
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -18,6 +18,9 @@ import net.liftweb.http.js.jquery._
  */
 class Boot {
   def boot {
+    //init props
+    SiteConsts.init
+    
     // where to search snippet
     LiftRules.addToPackages("code")
 
@@ -59,6 +62,10 @@ class Boot {
     LiftRules.jsArtifacts = JQueryArtifacts
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
     JQueryModule.init()
+    
+    //add REST Web Services
+    LiftRules.dispatch.append(HomeContentService).append(LoginService)
+    
     //initScribe
   }
   def initScribe = {
