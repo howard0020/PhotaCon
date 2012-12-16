@@ -8,6 +8,10 @@ scalaVersion := "2.9.1"
 
 retrieveManaged := true
 
+EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
+
+EclipseKeys.withSource := true
+
 resolvers ++= Seq("snapshots"     at "http://oss.sonatype.org/content/repositories/snapshots",
                 "releases"        at "http://oss.sonatype.org/content/repositories/releases"
                 )
