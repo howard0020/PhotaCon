@@ -1,4 +1,66 @@
 /* Put your custom CSS here */
+/* few reset
+no shadow
+*/
+.ui-overlay-shadow {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.ui-shadow {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.ui-bar-a .ui-shadow,
+.ui-bar-b .ui-shadow ,
+.ui-bar-c .ui-shadow  {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.ui-shadow-inset {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.ui-icon-shadow {
+	-moz-box-shadow: 0px 1px 0 transparent /*{global-icon-shadow}*/;
+	-webkit-box-shadow: 0px 1px 0 transparent /*{global-icon-shadow}*/;
+	box-shadow: 0px 1px 0 transparent /*{global-icon-shadow}*/;
+}
+
+/* Focus state - set here for specificity (note: these classes are added by JavaScript)
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-focus,
+.ui-btn:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.ui-input-text.ui-focus,
+.ui-input-search.ui-focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+/* unset box shadow in browsers that don't do it right
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-mobile-nosupport-boxshadow * {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+/*No border for ui-listview*/
+.ui-listview-inset .ui-li, .ui-listview .ui-li{
+	border:none;
+}
+/*Finish Reset*/
+
 .home-splash{
 	background: url(../images/Splash/sunset2.jpg) no-repeat center center !important;
 	min-height:100% !important;
@@ -69,3 +131,69 @@
 	width: 90px;
 	height: 90px;
 }
+.ui-icon-myapp-addnearme {
+    background-image: url(../images/icon/73-radar.png) !important;
+    width:27px !important;
+	height:27px !important;
+}
+.myapp-home-header-addnearme span {
+    margin:0px !important;
+	padding: 0px !important;
+}
+.myapp-home-header .myapp-home-header-addnearme{
+	background:transparent;
+	border:none !important;
+	width:27px !important;
+	height:27px !important;
+    float:right;
+    padding:0;
+    margin:0;
+	border-radius:0px !important;
+	margin-top:5px;
+}
+.myapp-home-header .ui-btn-inner{
+	width:27px !important;
+	height:27px !important;
+}
+.myapp-home-header .ui-grid-a .ui-block-a { width: 80% }
+.myapp-home-header .ui-grid-a .ui-block-b { width: 20%; }
+
+.myapp-footer .ui-icon-footer-setting,
+.myapp-footer .ui-icon-footer-search,
+.myapp-footer .ui-icon-footer-profile{
+	width:28px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+}
+.ui-icon-footer-search{
+	background-image:url(../images/icon/73-radar.png);
+}
+.ui-icon-footer-setting{
+	background-image:url(../images/icon/06-magnify.png);
+}
+.ui-icon-footer-profile{
+	background-image:url(../images/icon/111-user.png);
+}
+#myapp-home-funfact-bg {
+	position:fixed; 
+	top:-50%; 
+	left:-50%; 
+	width:200%; 
+	height:200%;
+}
+#myapp-home-funfact-bg img {
+	position:absolute; 
+	top:0; 
+	left:0; 
+	right:0; 
+	bottom:0; 
+	margin:auto; 
+	min-width:50%;
+	min-height:50%;
+}
+.myapp-home-search{
+	margin-left:5px;
+}
+

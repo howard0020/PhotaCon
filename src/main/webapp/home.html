@@ -3,31 +3,31 @@
 <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" /><title>Home</title></head>
 <body class="lift:content_id=main">
 <div id="main" class="lift:surround?with=default;at=content">
-    <link class="lift:head" rel="stylesheet" href="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" />
     <script class="lift:head" src="/JSLib/jquery-1.8.2.js"></script>
     <script class="lift:head" src="/JSLib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
     <div data-role="page">
-        <div data-role="header" data-position="fixed">
-            <a href="#" data-role="button" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>
-            <h1>Hi Sheng!</h1>
-        </div><!-- /header -->
+        <div data-role="header" data-position="fixed" data-inline="true" class="myapp-home-header">
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><form action="/friend" data-transition="slide" class="myapp-home-search"><input type="search" /></form></div>
+				<div class="ui-block-b">
+					<a href="#menu_page" class="myapp-home-header-addnearme ui-btn-right" data-role="button" data-icon="myapp-addnearme" 
+						data-iconpos="notext">Search</a>
+				</div>
+			</div> 
+		</div><!-- /header -->
         <div data-role="content">
-        	<form action="/friend" data-transition="slide">
-                	<input type="search" name="search" id="search-basic" data-theme="c" placeholder="name"/>
-            </form>
-        	<!-- <img src="images/funfact2.gif" style="width:324px;"></img> -->
-        	<p>Do you know 50% of New Yorker uses FourSquare? 80% of the total FourSqaure user is of age 18-25.</p>
-        	<p>Check out FourSquare!</p>
-        </div>
-        <div data-role="footer" data-position="fixed">
-        	<div data-role="navbar">
+			<div id="myapp-home-funfact-bg">
+				<img src="images/Splash/water.jpg" alt=""/>
+			</div>
+		</div><!-- /content -->
+		<div data-role="footer" data-position="fixed" data-id="pFooter" class="myapp-footer">
+			<div data-role="navbar">
 				<ul>
-					<li><a href="friend.html" data-role="button" data-theme="a" data-icon="grid" data-iconpos="notext" data-iconpos="left">Friends</a></li>
-					<li><a href="search.html" data-role="button" data-theme="a" data-icon="search" data-iconpos="notext" data-iconpos="left">Search</a></li>
-					<li><a href="setting.html" data-role="button" data-theme="a" data-icon="gear" data-iconpos="notext" data-iconpos="left">Settings</a></li>
-				</ul>
-			</div><!-- /navbar -->
-        </div>
+					<li><a href="#" data-role="button" data-theme="reset" data-icon="footer-setting" class="ios app-theme-none notext ui-btn-active ui-state-persist"></a></li>
+                    <li><a href="setting.html" data-role="button" data-theme="reset" data-icon="footer-profile" class="ios app-theme-none notext ui-btn-active ui-state-persist"></a></li>
+                </ul>
+            </div>
+        </div> 
     </div><!-- /page -->
 </div>
 </body>
