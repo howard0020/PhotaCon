@@ -11,7 +11,10 @@ object LoginService extends RestHelper {
 	serve {
 	  case "api" :: "login" :: "url" :: plugin :: Nil JsonGet _ => {
 		  var loginManager = PluginManager.getLoginManager(plugin)
-		  JString(loginManager.getAuthUrl())
+		  var url = loginManager.getAuthUrl()
+      JString(url);
+		  //Console.println("here");
+		  //S.redirectTo("http://www.linshifu.us")
 	  }
 	  case "api" :: "login" :: "success" :: plugin ::  Nil JsonGet _ => {
 		  var loginManager = PluginManager.getLoginManager(plugin)
