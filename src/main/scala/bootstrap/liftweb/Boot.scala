@@ -35,6 +35,7 @@ class Boot {
       Menu.i("Friend") / "friend",
       Menu.i("Setting") / "setting",
       Menu.i("Facebook") / "facebookLogin",
+      Menu.i("SearchNearMe") / "searchNearMe",
       // more complex because this menu allows anything in the
       // /static path to be visible
       Menu(Loc("Static", Link(List("static"), true, "/static/index"), 

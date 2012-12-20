@@ -29,6 +29,10 @@ no shadow
 	-webkit-box-shadow: 0px 1px 0 transparent /*{global-icon-shadow}*/;
 	box-shadow: 0px 1px 0 transparent /*{global-icon-shadow}*/;
 }
+.ui-input-search{
+	padding: 0px !important;
+	margin: .1em 0 !important;
+}
 
 /* Focus state - set here for specificity (note: these classes are added by JavaScript)
 -----------------------------------------------------------------------------------------------------------*/
@@ -63,8 +67,8 @@ no shadow
 
 .home-splash{
 	background: url(../images/Splash/Splash2.jpg) no-repeat center center !important;
-	min-height:100% !important;
-	background-size:cover !important;
+	min-height: 100% !important;
+	background-size: cover !important;
 	-webkit-background-size: cover !important;
 }
 #home-splash-button{
@@ -149,7 +153,6 @@ no shadow
     padding:0;
     margin:0;
 	border-radius:0px !important;
-	margin-top:5px;
 }
 .myapp-home-header .ui-btn-inner{
 	width:27px !important;
@@ -176,24 +179,25 @@ no shadow
 .ui-icon-footer-profile{
 	background-image:url(../images/icon/111-user.png);
 }
-#myapp-home-funfact-bg {
-	position:fixed; 
-	top:-50%; 
-	left:-50%; 
-	width:200%; 
-	height:200%;
+.image-fullsize-bg {
+	position:fixed !important; 
+	top:-50% !important; 
+	left:-50% !important; 
+	width:200% !important; 
+	height:200% !important;
 }
-#myapp-home-funfact-bg img {
-	position:absolute; 
-	top:0; 
-	left:0; 
-	right:0; 
-	bottom:0; 
-	margin:auto; 
-	min-width:50%;
-	min-height:50%;
+.image-fullsize-bg img {
+	position:absolute !important; 
+	top:0 !important; 
+	left:0 !important; 
+	right:0 !important; 
+	bottom:0 !important; 
+	margin:auto !important; 
+	min-width:50% !important;
+	min-height:50% !important;
+	width: 50% !important;
+	height: 50% !important;
 }
 .myapp-home-search{
 	margin-left:5px;
 }
-
