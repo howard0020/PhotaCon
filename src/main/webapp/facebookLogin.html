@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body class="lift:content_id=main">
+	<div id="main" class="lift:surround?with=default;at=content">
+		<div data-role="page">
+			<div data-role="header" data-position="fixed">
+				<a href="login.html" data-role="button" data-icon="back"
+					data-iconpos="notext">Back</a>
+				<h1>Facebook</h1>
+			</div>
+			<!-- /header -->
+			<div data-role="content">
+				
+				<a href="#" data-role="button" id="loginbtn">Login</a>
+				<script>
+						$('#loginbtn').live('click', function() {
+						  FB.getLoginStatus(function(response) {
+						  console.log(response);
+						  if (response.status === 'connected') {
+						    testAPI();
+						  } else if (response.status === 'not_authorized') {
+						    // not_authorized
+						    login()
+						  } else {
+						    // not_logged_in
+						    login()
+						  }
+						 });
+						  
+						});
+						
+						function login() {
+						    FB.login(function(response) {
+						        if (response.authResponse) {
+						            // connected
+						            testAPI();
+						        } else {
+						            // cancelled
+						        }
+						    });
+						}
+						
+						function testAPI() {
+						    console.log('Welcome!  Fetching your information.... ');
+						    FB.api('/me', function(response) {
+						        console.log('Good to see you, ' + response.name + '.');
+						    });
+						}
+
+					</script>
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /page -->
+	</div>
+</body>
+</html>
