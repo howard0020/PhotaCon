@@ -11,7 +11,7 @@
     <div data-role="page">
         <div data-role="content">
        	    <div id="fb-root"></div>
-				<script>
+ 				<script>
 					  window.fbAsyncInit = function() {
 					    // init the FB JS SDK
 					    FB.init({
@@ -41,18 +41,18 @@
             <!--<h4>Chose one of the following</h4>-->
             <div class="ui-grid-b">
                 <div class="ui-block-a">
-                    <a class="login-link" data-transition="slidedown" href="#">
+                    <a class="login-facebook" data-transition="slidedown" href="#">
                     	<img src="images/appicon/facebook.png" class="login-app-img" alt="Facebook">
                     </a>
                 </div>
                 <div class="ui-block-b">
-                    <a class="login-link" href="#"><img class="login-app-img" src="images/appicon/linkedin.png"></a>
+                    <a class="login-link" href="/home.html"><img class="login-app-img" src="images/appicon/linkedin.png"></a>
                 </div>
                 <div class="ui-block-c">
                     <a href="#"><img class="login-app-img" src="images/appicon/googleplus.png" alt="Google+"></a>
                 </div>
                 <div class="ui-block-a">
-                    <a href="#"><img class="login-app-img" src="images/unavailable-appicon/twitter.png" alt="Twitter"></a>
+                    <a class="login-twitter" href="#"><img class="login-app-img" src="images/unavailable-appicon/twitter.png" alt="Twitter"></a>
                 </div>
                 <div class="ui-block-b">
                     <a href="#"><img class="login-app-img" src="images/unavailable-appicon/foursquare.png" alt="foursquare"></a>
@@ -69,15 +69,29 @@
                 <div class="ui-block-c">
                     <a href="#"><img class="login-app-img" src="images/unavailable-appicon/myspace.png" alt="myspace"></a>
                 </div>
+                <a id="testlink" class="popup" href="http://www.google.com" rel="external" target="_blank">My Popup</a>
             </div>
             <!-- /grid-b -->
         </div>
-        				<script>
-						$('.login-link').live('click', function() {
+         	<script>
+        				$('.login-twitter').live('click', function() {
+        					console.log("twitter");
+        					getTwitterUrl();
+        				});
+        				function getTwitterUrl() {
+        					console.log("twitter url:"+"http://localhost:8080/api/login/url/twitter");
+        					$.get("http://localhost:8080/api/login/url/twitter", function(data){
+        						console.log(data);
+        						$("#testlink").attr("href", data);
+        						window.open($("#testlink").attr("href"),$("#testlink").attr("target"));
+        					});
+        				}
+						$('.login-facebook').live('click', function() {
+							console.log("facebook");
 						  FB.getLoginStatus(function(response) {
 						  console.log(response);
 						  if (response.status === 'connected') {
-						  	 testAPI();
+						  	 $.mobile.changePage("/home.html","slide");
 						     postToken(response.authResponse.accessToken)
 						  } else if (response.status === 'not_authorized') {
 						    // not_authorized
@@ -93,9 +107,9 @@
 						    FB.login(function(response) {
 						        if (response.authResponse) {
 						            // connected
-						            testAPI();
+						            $.mobile.changePage("/home.html","slide");
 						        } else {
-						            // cancelled
+						            $.mobile.changePage("/login.html","slide");
 						        }
 						    }, {scope:'email'});
 						}
@@ -134,7 +148,7 @@
 						    });
 						}
 
-					</script>
+					</script> 
         <!-- /content -->
     </div>
     <!-- /page -->
