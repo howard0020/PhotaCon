@@ -16,6 +16,11 @@
     <link rel="apple-touch-startup-image" href="/images/Splash/Splash2.jpg">
     <script>
     	document.ontouchmove = function(e) {e.preventDefault()};
+    	function updateSite(event) {
+		    window.applicationCache.swapCache();
+		}
+		window.applicationCache.addEventListener('updateready',
+		    updateSite, false);
     </script>
   </head>
   <body>
