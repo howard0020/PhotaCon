@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		541A90D316966C8B0035082E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D216966C8B0035082E /* UIKit.framework */; };
+		541A90D516966C8B0035082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D416966C8B0035082E /* Foundation.framework */; };
+		541A90D716966C8B0035082E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D616966C8B0035082E /* CoreGraphics.framework */; };
+		541A90DD16966C8B0035082E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A90DB16966C8B0035082E /* InfoPlist.strings */; };
+		541A90DF16966C8B0035082E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A90DE16966C8B0035082E /* main.m */; };
+		541A90E316966C8B0035082E /* photaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A90E216966C8B0035082E /* photaAppDelegate.m */; };
+		541A90E516966C8B0035082E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A90E416966C8B0035082E /* Default.png */; };
+		541A90E716966C8B0035082E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A90E616966C8B0035082E /* Default@2x.png */; };
+		541A90E916966C8B0035082E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A90E816966C8B0035082E /* Default-568h@2x.png */; };
+		541A90EC16966C8B0035082E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */; };
+		541A90EF16966C8B0035082E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 541A90ED16966C8B0035082E /* MainStoryboard_iPad.storyboard */; };
+		541A90F216966C8C0035082E /* photaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A90F116966C8C0035082E /* photaViewController.m */; };
+		541A90FA16966C8C0035082E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90F916966C8C0035082E /* SenTestingKit.framework */; };
+		541A90FB16966C8C0035082E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D216966C8B0035082E /* UIKit.framework */; };
+		541A90FC16966C8C0035082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D416966C8B0035082E /* Foundation.framework */; };
+		541A910416966C8C0035082E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A910216966C8C0035082E /* InfoPlist.strings */; };
+		541A910716966C8C0035082E /* PhotaCon_IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A910616966C8C0035082E /* PhotaCon_IOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		541A90FD16966C8C0035082E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 541A90C516966C8B0035082E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 541A90CD16966C8B0035082E;
+			remoteInfo = "PhotaCon-IOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		541A90CE16966C8B0035082E /* PhotaCon-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotaCon-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		541A90D216966C8B0035082E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		541A90D416966C8B0035082E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		541A90D616966C8B0035082E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		541A90DA16966C8B0035082E /* PhotaCon-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotaCon-IOS-Info.plist"; sourceTree = "<group>"; };
+		541A90DC16966C8B0035082E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		541A90DE16966C8B0035082E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		541A90E016966C8B0035082E /* PhotaCon-IOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotaCon-IOS-Prefix.pch"; sourceTree = "<group>"; };
+		541A90E116966C8B0035082E /* photaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = photaAppDelegate.h; sourceTree = "<group>"; };
+		541A90E216966C8B0035082E /* photaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photaAppDelegate.m; sourceTree = "<group>"; };
+		541A90E416966C8B0035082E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		541A90E616966C8B0035082E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		541A90E816966C8B0035082E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		541A90EB16966C8B0035082E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		541A90EE16966C8B0035082E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		541A90F016966C8B0035082E /* photaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = photaViewController.h; sourceTree = "<group>"; };
+		541A90F116966C8C0035082E /* photaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photaViewController.m; sourceTree = "<group>"; };
+		541A90F816966C8C0035082E /* PhotaCon-IOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PhotaCon-IOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		541A90F916966C8C0035082E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		541A910116966C8C0035082E /* PhotaCon-IOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotaCon-IOSTests-Info.plist"; sourceTree = "<group>"; };
+		541A910316966C8C0035082E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		541A910516966C8C0035082E /* PhotaCon_IOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotaCon_IOSTests.h; sourceTree = "<group>"; };
+		541A910616966C8C0035082E /* PhotaCon_IOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotaCon_IOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		541A90CB16966C8B0035082E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A90D316966C8B0035082E /* UIKit.framework in Frameworks */,
+				541A90D516966C8B0035082E /* Foundation.framework in Frameworks */,
+				541A90D716966C8B0035082E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		541A90F416966C8C0035082E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A90FA16966C8C0035082E /* SenTestingKit.framework in Frameworks */,
+				541A90FB16966C8C0035082E /* UIKit.framework in Frameworks */,
+				541A90FC16966C8C0035082E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		541A90C316966C8B0035082E = {
+			isa = PBXGroup;
+			children = (
+				541A90D816966C8B0035082E /* PhotaCon-IOS */,
+				541A90FF16966C8C0035082E /* PhotaCon-IOSTests */,
+				541A90D116966C8B0035082E /* Frameworks */,
+				541A90CF16966C8B0035082E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		541A90CF16966C8B0035082E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				541A90CE16966C8B0035082E /* PhotaCon-IOS.app */,
+				541A90F816966C8C0035082E /* PhotaCon-IOSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		541A90D116966C8B0035082E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				541A90D216966C8B0035082E /* UIKit.framework */,
+				541A90D416966C8B0035082E /* Foundation.framework */,
+				541A90D616966C8B0035082E /* CoreGraphics.framework */,
+				541A90F916966C8C0035082E /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
+			isa = PBXGroup;
+			children = (
+				541A90E116966C8B0035082E /* photaAppDelegate.h */,
+				541A90E216966C8B0035082E /* photaAppDelegate.m */,
+				541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */,
+				541A90ED16966C8B0035082E /* MainStoryboard_iPad.storyboard */,
+				541A90F016966C8B0035082E /* photaViewController.h */,
+				541A90F116966C8C0035082E /* photaViewController.m */,
+				541A90D916966C8B0035082E /* Supporting Files */,
+			);
+			path = "PhotaCon-IOS";
+			sourceTree = "<group>";
+		};
+		541A90D916966C8B0035082E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				541A90DA16966C8B0035082E /* PhotaCon-IOS-Info.plist */,
+				541A90DB16966C8B0035082E /* InfoPlist.strings */,
+				541A90DE16966C8B0035082E /* main.m */,
+				541A90E016966C8B0035082E /* PhotaCon-IOS-Prefix.pch */,
+				541A90E416966C8B0035082E /* Default.png */,
+				541A90E616966C8B0035082E /* Default@2x.png */,
+				541A90E816966C8B0035082E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		541A90FF16966C8C0035082E /* PhotaCon-IOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				541A910516966C8C0035082E /* PhotaCon_IOSTests.h */,
+				541A910616966C8C0035082E /* PhotaCon_IOSTests.m */,
+				541A910016966C8C0035082E /* Supporting Files */,
+			);
+			path = "PhotaCon-IOSTests";
+			sourceTree = "<group>";
+		};
+		541A910016966C8C0035082E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				541A910116966C8C0035082E /* PhotaCon-IOSTests-Info.plist */,
+				541A910216966C8C0035082E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		541A90CD16966C8B0035082E /* PhotaCon-IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 541A910A16966C8C0035082E /* Build configuration list for PBXNativeTarget "PhotaCon-IOS" */;
+			buildPhases = (
+				541A90CA16966C8B0035082E /* Sources */,
+				541A90CB16966C8B0035082E /* Frameworks */,
+				541A90CC16966C8B0035082E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PhotaCon-IOS";
+			productName = "PhotaCon-IOS";
+			productReference = 541A90CE16966C8B0035082E /* PhotaCon-IOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		541A90F716966C8C0035082E /* PhotaCon-IOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 541A910D16966C8C0035082E /* Build configuration list for PBXNativeTarget "PhotaCon-IOSTests" */;
+			buildPhases = (
+				541A90F316966C8C0035082E /* Sources */,
+				541A90F416966C8C0035082E /* Frameworks */,
+				541A90F516966C8C0035082E /* Resources */,
+				541A90F616966C8C0035082E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				541A90FE16966C8C0035082E /* PBXTargetDependency */,
+			);
+			name = "PhotaCon-IOSTests";
+			productName = "PhotaCon-IOSTests";
+			productReference = 541A90F816966C8C0035082E /* PhotaCon-IOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		541A90C516966C8B0035082E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = phota;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = billionaire;
+			};
+			buildConfigurationList = 541A90C816966C8B0035082E /* Build configuration list for PBXProject "PhotaCon-IOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 541A90C316966C8B0035082E;
+			productRefGroup = 541A90CF16966C8B0035082E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				541A90CD16966C8B0035082E /* PhotaCon-IOS */,
+				541A90F716966C8C0035082E /* PhotaCon-IOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		541A90CC16966C8B0035082E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A90DD16966C8B0035082E /* InfoPlist.strings in Resources */,
+				541A90E516966C8B0035082E /* Default.png in Resources */,
+				541A90E716966C8B0035082E /* Default@2x.png in Resources */,
+				541A90E916966C8B0035082E /* Default-568h@2x.png in Resources */,
+				541A90EC16966C8B0035082E /* MainStoryboard_iPhone.storyboard in Resources */,
+				541A90EF16966C8B0035082E /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		541A90F516966C8C0035082E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A910416966C8C0035082E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		541A90F616966C8C0035082E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		541A90CA16966C8B0035082E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A90DF16966C8B0035082E /* main.m in Sources */,
+				541A90E316966C8B0035082E /* photaAppDelegate.m in Sources */,
+				541A90F216966C8C0035082E /* photaViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		541A90F316966C8C0035082E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A910716966C8C0035082E /* PhotaCon_IOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		541A90FE16966C8C0035082E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 541A90CD16966C8B0035082E /* PhotaCon-IOS */;
+			targetProxy = 541A90FD16966C8C0035082E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		541A90DB16966C8B0035082E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				541A90DC16966C8B0035082E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				541A90EB16966C8B0035082E /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		541A90ED16966C8B0035082E /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				541A90EE16966C8B0035082E /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		541A910216966C8C0035082E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				541A910316966C8C0035082E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		541A910816966C8C0035082E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		541A910916966C8C0035082E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		541A910B16966C8C0035082E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotaCon-IOS/PhotaCon-IOS-Prefix.pch";
+				INFOPLIST_FILE = "PhotaCon-IOS/PhotaCon-IOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		541A910C16966C8C0035082E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotaCon-IOS/PhotaCon-IOS-Prefix.pch";
+				INFOPLIST_FILE = "PhotaCon-IOS/PhotaCon-IOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		541A910E16966C8C0035082E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotaCon-IOS.app/PhotaCon-IOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotaCon-IOS/PhotaCon-IOS-Prefix.pch";
+				INFOPLIST_FILE = "PhotaCon-IOSTests/PhotaCon-IOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		541A910F16966C8C0035082E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotaCon-IOS.app/PhotaCon-IOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotaCon-IOS/PhotaCon-IOS-Prefix.pch";
+				INFOPLIST_FILE = "PhotaCon-IOSTests/PhotaCon-IOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		541A90C816966C8B0035082E /* Build configuration list for PBXProject "PhotaCon-IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				541A910816966C8C0035082E /* Debug */,
+				541A910916966C8C0035082E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		541A910A16966C8C0035082E /* Build configuration list for PBXNativeTarget "PhotaCon-IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				541A910B16966C8C0035082E /* Debug */,
+				541A910C16966C8C0035082E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		541A910D16966C8C0035082E /* Build configuration list for PBXNativeTarget "PhotaCon-IOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				541A910E16966C8C0035082E /* Debug */,
+				541A910F16966C8C0035082E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 541A90C516966C8B0035082E /* Project object */;
+}
