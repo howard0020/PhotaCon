@@ -12,4 +12,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UIButton *cellBtn;
+
+- (IBAction)doLoginBtn:(id)sender;
 @end

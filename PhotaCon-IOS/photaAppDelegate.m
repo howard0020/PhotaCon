@@ -7,6 +7,8 @@
 //
 
 #import "photaAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "PhotaLoginViewController.h"
 
 @implementation photaAppDelegate
 
@@ -42,5 +44,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 billionaire. All rights reserved.
 //
 
-#import "photaViewController.h"
+#import "PhotaLoginViewController.h"
 #import "LoginAppCell.h"
-@interface photaViewController ()
+@interface PhotaLoginViewController ()
 
 @end
 
-@implementation photaViewController
+@implementation PhotaLoginViewController
 
 - (void)viewDidLoad
 {
@@ -41,8 +41,14 @@
     if(indexPath.section == 0){
         UIImage * image = [UIImage imageNamed:[appImageNames objectAtIndex:indexPath.item]];
         [myCell.cellBtn setImage:image forState:UIControlStateNormal];
+        [myCell.cellBtn setTag:indexPath.item];
     }
     return myCell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"did select %@",indexPath.description);
 }
 
 - (void)didReceiveMemoryWarning

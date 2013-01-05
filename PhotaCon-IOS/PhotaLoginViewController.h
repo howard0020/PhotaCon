@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface photaViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface PhotaLoginViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 {
     NSArray *appImageNames,*appImageLabel;
 }
