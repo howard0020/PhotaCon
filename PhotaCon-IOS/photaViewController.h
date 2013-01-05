@@ -10,6 +10,6 @@
 
 @interface photaViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 {
-    NSArray *appImageNames, *appImageLabel;
+    NSArray *appImageNames,*appImageLabel;
 }
 @end
