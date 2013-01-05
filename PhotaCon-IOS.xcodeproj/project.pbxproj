@@ -24,6 +24,16 @@
 		541A90FC16966C8C0035082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D416966C8B0035082E /* Foundation.framework */; };
 		541A910416966C8C0035082E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A910216966C8C0035082E /* InfoPlist.strings */; };
 		541A910716966C8C0035082E /* PhotaCon_IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A910616966C8C0035082E /* PhotaCon_IOSTests.m */; };
+		541A912C1697A6DD0035082E /* LoginAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A912B1697A6DD0035082E /* LoginAppCell.m */; };
+		541A91381697AB230035082E /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A912E1697AB230035082E /* facebook.png */; };
+		541A91391697AB230035082E /* foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A912F1697AB230035082E /* foursquare.png */; };
+		541A913A1697AB230035082E /* googleplus.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91301697AB230035082E /* googleplus.png */; };
+		541A913B1697AB230035082E /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91311697AB230035082E /* linkedin.png */; };
+		541A913C1697AB230035082E /* myspace.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91321697AB230035082E /* myspace.png */; };
+		541A913D1697AB230035082E /* orkut.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91331697AB230035082E /* orkut.png */; };
+		541A913E1697AB230035082E /* pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91341697AB230035082E /* pinterest.png */; };
+		541A91401697AB230035082E /* tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91361697AB230035082E /* tumblr.png */; };
+		541A91411697AB230035082E /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91371697AB230035082E /* twitter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +70,17 @@
 		541A910316966C8C0035082E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		541A910516966C8C0035082E /* PhotaCon_IOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotaCon_IOSTests.h; sourceTree = "<group>"; };
 		541A910616966C8C0035082E /* PhotaCon_IOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotaCon_IOSTests.m; sourceTree = "<group>"; };
+		541A912A1697A6DD0035082E /* LoginAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAppCell.h; sourceTree = "<group>"; };
+		541A912B1697A6DD0035082E /* LoginAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAppCell.m; sourceTree = "<group>"; };
+		541A912E1697AB230035082E /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		541A912F1697AB230035082E /* foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foursquare.png; sourceTree = "<group>"; };
+		541A91301697AB230035082E /* googleplus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleplus.png; sourceTree = "<group>"; };
+		541A91311697AB230035082E /* linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin.png; sourceTree = "<group>"; };
+		541A91321697AB230035082E /* myspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myspace.png; sourceTree = "<group>"; };
+		541A91331697AB230035082E /* orkut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orkut.png; sourceTree = "<group>"; };
+		541A91341697AB230035082E /* pinterest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinterest.png; sourceTree = "<group>"; };
+		541A91361697AB230035082E /* tumblr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr.png; sourceTree = "<group>"; };
+		541A91371697AB230035082E /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +140,12 @@
 		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				541A912D1697AB230035082E /* appicon */,
 				541A90E116966C8B0035082E /* photaAppDelegate.h */,
 				541A90E216966C8B0035082E /* photaAppDelegate.m */,
 				541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */,
+				541A912A1697A6DD0035082E /* LoginAppCell.h */,
+				541A912B1697A6DD0035082E /* LoginAppCell.m */,
 				541A90ED16966C8B0035082E /* MainStoryboard_iPad.storyboard */,
 				541A90F016966C8B0035082E /* photaViewController.h */,
 				541A90F116966C8C0035082E /* photaViewController.m */,
@@ -161,6 +185,22 @@
 				541A910216966C8C0035082E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		541A912D1697AB230035082E /* appicon */ = {
+			isa = PBXGroup;
+			children = (
+				541A912E1697AB230035082E /* facebook.png */,
+				541A912F1697AB230035082E /* foursquare.png */,
+				541A91301697AB230035082E /* googleplus.png */,
+				541A91311697AB230035082E /* linkedin.png */,
+				541A91321697AB230035082E /* myspace.png */,
+				541A91331697AB230035082E /* orkut.png */,
+				541A91341697AB230035082E /* pinterest.png */,
+				541A91361697AB230035082E /* tumblr.png */,
+				541A91371697AB230035082E /* twitter.png */,
+			);
+			path = appicon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +281,15 @@
 				541A90E916966C8B0035082E /* Default-568h@2x.png in Resources */,
 				541A90EC16966C8B0035082E /* MainStoryboard_iPhone.storyboard in Resources */,
 				541A90EF16966C8B0035082E /* MainStoryboard_iPad.storyboard in Resources */,
+				541A91381697AB230035082E /* facebook.png in Resources */,
+				541A91391697AB230035082E /* foursquare.png in Resources */,
+				541A913A1697AB230035082E /* googleplus.png in Resources */,
+				541A913B1697AB230035082E /* linkedin.png in Resources */,
+				541A913C1697AB230035082E /* myspace.png in Resources */,
+				541A913D1697AB230035082E /* orkut.png in Resources */,
+				541A913E1697AB230035082E /* pinterest.png in Resources */,
+				541A91401697AB230035082E /* tumblr.png in Resources */,
+				541A91411697AB230035082E /* twitter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +327,7 @@
 				541A90DF16966C8B0035082E /* main.m in Sources */,
 				541A90E316966C8B0035082E /* photaAppDelegate.m in Sources */,
 				541A90F216966C8C0035082E /* photaViewController.m in Sources */,
+				541A912C1697A6DD0035082E /* LoginAppCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +512,7 @@
 				541A910C16966C8C0035082E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		541A910D16966C8C0035082E /* Build configuration list for PBXNativeTarget "PhotaCon-IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +521,7 @@
 				541A910F16966C8C0035082E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

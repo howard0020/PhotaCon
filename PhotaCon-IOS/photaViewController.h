@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface photaViewController : UIViewController
-
+@interface photaViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
+{
+    NSArray *appImageNames, *appImageLabel;
+}
 @end
