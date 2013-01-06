@@ -49,10 +49,6 @@
 {
     NSLog(@"did doLoginBtn");
 }
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"did select %@",indexPath.description);
-}
 
 - (void)didReceiveMemoryWarning
 {

@@ -24,7 +24,6 @@
 		541A90FC16966C8C0035082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D416966C8B0035082E /* Foundation.framework */; };
 		541A910416966C8C0035082E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 541A910216966C8C0035082E /* InfoPlist.strings */; };
 		541A910716966C8C0035082E /* PhotaCon_IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A910616966C8C0035082E /* PhotaCon_IOSTests.m */; };
-		541A912C1697A6DD0035082E /* LoginAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A912B1697A6DD0035082E /* LoginAppCell.m */; };
 		541A91381697AB230035082E /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A912E1697AB230035082E /* facebook.png */; };
 		541A91391697AB230035082E /* foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A912F1697AB230035082E /* foursquare.png */; };
 		541A913A1697AB230035082E /* googleplus.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91301697AB230035082E /* googleplus.png */; };
@@ -247,6 +246,7 @@
 		91B057791699179C00DD542A /* 99-umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B056AF1699179C00DD542A /* 99-umbrella.png */; };
 		91B0577A1699179C00DD542A /* check64.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B056B01699179C00DD542A /* check64.png */; };
 		91B0577B1699179C00DD542A /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B056B11699179C00DD542A /* group.png */; };
+		B7F10479169A116100D6286B /* LoginAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F10478169A116100D6286B /* LoginAppCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,8 +283,6 @@
 		541A910316966C8C0035082E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		541A910516966C8C0035082E /* PhotaCon_IOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotaCon_IOSTests.h; sourceTree = "<group>"; };
 		541A910616966C8C0035082E /* PhotaCon_IOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotaCon_IOSTests.m; sourceTree = "<group>"; };
-		541A912A1697A6DD0035082E /* LoginAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAppCell.h; sourceTree = "<group>"; };
-		541A912B1697A6DD0035082E /* LoginAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAppCell.m; sourceTree = "<group>"; };
 		541A912E1697AB230035082E /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		541A912F1697AB230035082E /* foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foursquare.png; sourceTree = "<group>"; };
 		541A91301697AB230035082E /* googleplus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleplus.png; sourceTree = "<group>"; };
@@ -510,6 +508,8 @@
 		91B056AF1699179C00DD542A /* 99-umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "99-umbrella.png"; sourceTree = "<group>"; };
 		91B056B01699179C00DD542A /* check64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check64.png; sourceTree = "<group>"; };
 		91B056B11699179C00DD542A /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		B7F10477169A116100D6286B /* LoginAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAppCell.h; sourceTree = "<group>"; };
+		B7F10478169A116100D6286B /* LoginAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAppCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,6 +578,8 @@
 		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				B7F10477169A116100D6286B /* LoginAppCell.h */,
+				B7F10478169A116100D6286B /* LoginAppCell.m */,
 				91B055E71699179C00DD542A /* icon */,
 				541A912D1697AB230035082E /* appicon */,
 				91B055E4169912BA00DD542A /* photaHomeViewController.h */,
@@ -589,8 +591,6 @@
 				545FE1601698E69B0027692C /* PhotaNavigationViewController.m */,
 				545FE1661698ED080027692C /* PhotaLoginManager.h */,
 				545FE1671698ED080027692C /* PhotaLoginManager.m */,
-				541A912A1697A6DD0035082E /* LoginAppCell.h */,
-				541A912B1697A6DD0035082E /* LoginAppCell.m */,
 				541A90ED16966C8B0035082E /* MainStoryboard_iPad.storyboard */,
 				541A90F016966C8B0035082E /* PhotaLoginViewController.h */,
 				541A90F116966C8C0035082E /* PhotaLoginViewController.m */,
@@ -1190,10 +1190,10 @@
 				541A90DF16966C8B0035082E /* main.m in Sources */,
 				541A90E316966C8B0035082E /* photaAppDelegate.m in Sources */,
 				541A90F216966C8C0035082E /* PhotaLoginViewController.m in Sources */,
-				541A912C1697A6DD0035082E /* LoginAppCell.m in Sources */,
 				545FE1611698E69B0027692C /* PhotaNavigationViewController.m in Sources */,
 				545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */,
 				91B055E6169912BA00DD542A /* photaHomeViewController.m in Sources */,
+				B7F10479169A116100D6286B /* LoginAppCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
