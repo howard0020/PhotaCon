@@ -36,8 +36,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="doLoginBtn:" destination="MsB-eR-O1K" eventType="touchUpInside" id="Y3y-0A-LjJ"/>
-                                                <segue destination="wOE-lw-hea" kind="push" id="BoO-hI-A8S"/>
+                                                <segue destination="wOE-lw-hea" kind="modal" id="BoO-hI-A8S"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -64,6 +63,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4A-sG-yde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="641" y="-74"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bgd-uI-ixV">
+            <objects>
+                <viewController id="zga-bJ-4cZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wXf-iJ-pfb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-dr-8z5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="Gze-Rc-eHZ"/>
+                                    <constraint firstAttribute="width" constant="70" id="nn6-jJ-oVE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R5w-dr-8z5" firstAttribute="leading" secondItem="wXf-iJ-pfb" secondAttribute="leading" constant="120" id="gQh-iE-JhX"/>
+                            <constraint firstItem="R5w-dr-8z5" firstAttribute="top" secondItem="wXf-iJ-pfb" secondAttribute="top" constant="152" id="qkW-y1-nd9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ech-G0-7kI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKq-wR-Tw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="620"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dN0-mX-Gre">
@@ -102,8 +131,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="evf-pA-WiQ" kind="modal" id="jVx-gH-1EK"/>
+                        <segue destination="evf-pA-WiQ" kind="modal" identifier="LoginView" id="jVx-gH-1EK"/>
                         <segue destination="sGd-TP-OMA" kind="relationship" relationship="rootViewController" id="hS6-md-mrt"/>
+                        <segue destination="zga-bJ-4cZ" kind="push" identifier="HomeView" id="cS3-Y9-foJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qt2-Ii-Dp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,7 +175,6 @@
         <class className="LoginAppCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginAppCell.h"/>
             <relationships>
-                <relationship kind="action" name="doLoginBtn:"/>
                 <relationship kind="outlet" name="cellBtn" candidateClass="UIButton"/>
             </relationships>
         </class>

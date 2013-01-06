@@ -21,7 +21,6 @@
     
     appImageLabel = [[NSArray alloc] initWithObjects:@"facebook",@"twitter",@"foursquare",@"googleplus",@"linkedin",@"myspace",@"orkut",@"tumblr", nil];
     
-    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -42,10 +41,14 @@
         UIImage * image = [UIImage imageNamed:[appImageNames objectAtIndex:indexPath.item]];
         [myCell.cellBtn setImage:image forState:UIControlStateNormal];
         [myCell.cellBtn setTag:indexPath.item];
+        [myCell.cellBtn addTarget:self action:@selector(doLoginBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     return myCell;
 }
-
+-(void)doLoginBtnPressed:(id)sender
+{
+    NSLog(@"did doLoginBtn");
+}
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"did select %@",indexPath.description);

@@ -7,7 +7,7 @@
 //
 
 #import "PhotaNavigationViewController.h"
-
+#import "PhotaLoginManager.h"
 @interface PhotaNavigationViewController ()
 
 @end
@@ -23,10 +23,20 @@
     return self;
 }
 
+-(void)initLogin
+{
+    if ([PhotaLoginManager getManager].isLogin) {
+        [self performSegueWithIdentifier:@"HomeView" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"LoginView" sender:self];
+    }
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [self initLogin];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

@@ -42,6 +42,7 @@
 		545FE1611698E69B0027692C /* PhotaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FE1601698E69B0027692C /* PhotaNavigationViewController.m */; };
 		545FE1631698EA800027692C /* Splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1621698EA800027692C /* Splash.jpg */; };
 		545FE1651698EA880027692C /* Splash2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1641698EA880027692C /* Splash2.jpg */; };
+		545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FE1671698ED080027692C /* PhotaLoginManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		545FE1601698E69B0027692C /* PhotaNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaNavigationViewController.m; sourceTree = "<group>"; };
 		545FE1621698EA800027692C /* Splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Splash.jpg; sourceTree = "<group>"; };
 		545FE1641698EA880027692C /* Splash2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Splash2.jpg; sourceTree = "<group>"; };
+		545FE1661698ED080027692C /* PhotaLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaLoginManager.h; sourceTree = "<group>"; };
+		545FE1671698ED080027692C /* PhotaLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaLoginManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */,
 				545FE15F1698E69B0027692C /* PhotaNavigationViewController.h */,
 				545FE1601698E69B0027692C /* PhotaNavigationViewController.m */,
+				545FE1661698ED080027692C /* PhotaLoginManager.h */,
+				545FE1671698ED080027692C /* PhotaLoginManager.m */,
 				541A912A1697A6DD0035082E /* LoginAppCell.h */,
 				541A912B1697A6DD0035082E /* LoginAppCell.m */,
 				541A90ED16966C8B0035082E /* MainStoryboard_iPad.storyboard */,
@@ -362,6 +367,7 @@
 				541A90F216966C8C0035082E /* PhotaLoginViewController.m in Sources */,
 				541A912C1697A6DD0035082E /* LoginAppCell.m in Sources */,
 				545FE1611698E69B0027692C /* PhotaNavigationViewController.m in Sources */,
+				545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
