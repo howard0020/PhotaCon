@@ -25,6 +25,8 @@
 
 -(void)initLogin
 {
+    [NSThread sleepForTimeInterval:2.0];
+
     if ([PhotaLoginManager getManager].isLogin) {
         [self performSegueWithIdentifier:@"HomeView" sender:self];
     }else{
