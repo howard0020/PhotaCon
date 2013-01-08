@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540A0831169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */; };
 		541A90D316966C8B0035082E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D216966C8B0035082E /* UIKit.framework */; };
 		541A90D516966C8B0035082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D416966C8B0035082E /* Foundation.framework */; };
 		541A90D716966C8B0035082E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D616966C8B0035082E /* CoreGraphics.framework */; };
@@ -33,8 +34,6 @@
 		541A913E1697AB230035082E /* pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91341697AB230035082E /* pinterest.png */; };
 		541A91401697AB230035082E /* tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91361697AB230035082E /* tumblr.png */; };
 		541A91411697AB230035082E /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 541A91371697AB230035082E /* twitter.png */; };
-		545FE1551698BEC10027692C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE1541698BEC10027692C /* FacebookSDK.framework */; };
-		545FE1581698BEDD0027692C /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1571698BEDD0027692C /* FacebookSDKResources.bundle */; };
 		545FE15C1698BF8A0027692C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE1591698BF8A0027692C /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		545FE15D1698BF8A0027692C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE15A1698BF8A0027692C /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		545FE15E1698BF8A0027692C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE15B1698BF8A0027692C /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -42,6 +41,7 @@
 		545FE1631698EA800027692C /* Splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1621698EA800027692C /* Splash.jpg */; };
 		545FE1651698EA880027692C /* Splash2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1641698EA880027692C /* Splash2.jpg */; };
 		545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FE1671698ED080027692C /* PhotaLoginManager.m */; };
+		64D1019F88D04DEBA37F8735 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D5BD70E7CE461EA884E9CF /* libPods.a */; };
 		91B055E216990EC900DD542A /* photacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E116990EC900DD542A /* photacon.png */; };
 		91B055E6169912BA00DD542A /* photaHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B055E5169912BA00DD542A /* photaHomeViewController.m */; };
 		91B056B21699179C00DD542A /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E81699179C00DD542A /* 01-refresh.png */; };
@@ -260,6 +260,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53D5BD70E7CE461EA884E9CF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		540A082F169BD67800A9AD29 /* PhotaLoginPhotaConViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaLoginPhotaConViewController.h; sourceTree = "<group>"; };
+		540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaLoginPhotaConViewController.m; sourceTree = "<group>"; };
 		541A90CE16966C8B0035082E /* PhotaCon-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotaCon-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		541A90D216966C8B0035082E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		541A90D416966C8B0035082E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -292,8 +295,6 @@
 		541A91341697AB230035082E /* pinterest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinterest.png; sourceTree = "<group>"; };
 		541A91361697AB230035082E /* tumblr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr.png; sourceTree = "<group>"; };
 		541A91371697AB230035082E /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		545FE1541698BEC10027692C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		545FE1571698BEDD0027692C /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		545FE1591698BF8A0027692C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		545FE15A1698BF8A0027692C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		545FE15B1698BF8A0027692C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -303,6 +304,7 @@
 		545FE1641698EA880027692C /* Splash2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Splash2.jpg; sourceTree = "<group>"; };
 		545FE1661698ED080027692C /* PhotaLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaLoginManager.h; sourceTree = "<group>"; };
 		545FE1671698ED080027692C /* PhotaLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaLoginManager.m; sourceTree = "<group>"; };
+		6D393D137C3F4B7E9FA5DF8B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		91B055E116990EC900DD542A /* photacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photacon.png; sourceTree = "<group>"; };
 		91B055E4169912BA00DD542A /* photaHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photaHomeViewController.h; sourceTree = "<group>"; };
 		91B055E5169912BA00DD542A /* photaHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photaHomeViewController.m; sourceTree = "<group>"; };
@@ -523,7 +525,7 @@
 				541A90D316966C8B0035082E /* UIKit.framework in Frameworks */,
 				541A90D516966C8B0035082E /* Foundation.framework in Frameworks */,
 				541A90D716966C8B0035082E /* CoreGraphics.framework in Frameworks */,
-				545FE1551698BEC10027692C /* FacebookSDK.framework in Frameworks */,
+				64D1019F88D04DEBA37F8735 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +549,7 @@
 				541A90FF16966C8C0035082E /* PhotaCon-IOSTests */,
 				541A90D116966C8B0035082E /* Frameworks */,
 				541A90CF16966C8B0035082E /* Products */,
+				6D393D137C3F4B7E9FA5DF8B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -565,12 +568,11 @@
 				545FE1591698BF8A0027692C /* Accounts.framework */,
 				545FE15A1698BF8A0027692C /* AdSupport.framework */,
 				545FE15B1698BF8A0027692C /* Social.framework */,
-				545FE1571698BEDD0027692C /* FacebookSDKResources.bundle */,
-				545FE1541698BEC10027692C /* FacebookSDK.framework */,
 				541A90D216966C8B0035082E /* UIKit.framework */,
 				541A90D416966C8B0035082E /* Foundation.framework */,
 				541A90D616966C8B0035082E /* CoreGraphics.framework */,
 				541A90F916966C8C0035082E /* SenTestingKit.framework */,
+				53D5BD70E7CE461EA884E9CF /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -587,6 +589,8 @@
 				541A90E116966C8B0035082E /* photaAppDelegate.h */,
 				541A90E216966C8B0035082E /* photaAppDelegate.m */,
 				541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */,
+				540A082F169BD67800A9AD29 /* PhotaLoginPhotaConViewController.h */,
+				540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */,
 				545FE15F1698E69B0027692C /* PhotaNavigationViewController.h */,
 				545FE1601698E69B0027692C /* PhotaNavigationViewController.m */,
 				545FE1661698ED080027692C /* PhotaLoginManager.h */,
@@ -870,6 +874,7 @@
 				541A90CA16966C8B0035082E /* Sources */,
 				541A90CB16966C8B0035082E /* Frameworks */,
 				541A90CC16966C8B0035082E /* Resources */,
+				5C82D396944A4FC3B5D93292 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -905,7 +910,7 @@
 		541A90C516966C8B0035082E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = phota;
+				CLASSPREFIX = Phota;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = billionaire;
 			};
@@ -947,7 +952,6 @@
 				541A913E1697AB230035082E /* pinterest.png in Resources */,
 				541A91401697AB230035082E /* tumblr.png in Resources */,
 				541A91411697AB230035082E /* twitter.png in Resources */,
-				545FE1581698BEDD0027692C /* FacebookSDKResources.bundle in Resources */,
 				545FE1631698EA800027692C /* Splash.jpg in Resources */,
 				545FE1651698EA880027692C /* Splash2.jpg in Resources */,
 				91B055E216990EC900DD542A /* photacon.png in Resources */,
@@ -1180,6 +1184,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		5C82D396944A4FC3B5D93292 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1194,6 +1212,7 @@
 				545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */,
 				91B055E6169912BA00DD542A /* photaHomeViewController.m in Sources */,
 				B7F10479169A116100D6286B /* LoginAppCell.m in Sources */,
+				540A0831169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1307,6 +1326,7 @@
 		};
 		541A910B16966C8C0035082E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D393D137C3F4B7E9FA5DF8B /* Pods.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1322,6 +1342,7 @@
 		};
 		541A910C16966C8C0035082E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D393D137C3F4B7E9FA5DF8B /* Pods.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

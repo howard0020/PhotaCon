@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vyl-Qq-crS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vyl-Qq-crS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -76,7 +76,7 @@
                                 <color key="tintColor" red="0.9425885853000544" green="0.99580519641925902" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="fPP-42-Ptd">
-                                        <barButtonItem key="rightBarButtonItem" image="73-radar.png" width="10" style="plain" id="zNM-zo-TBb">
+                                        <barButtonItem key="rightBarButtonItem" image="73-radar.png" width="10" id="zNM-zo-TBb">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                     </navigationItem>
@@ -141,7 +141,7 @@
                     <connections>
                         <segue destination="evf-pA-WiQ" kind="modal" identifier="LoginView" id="jVx-gH-1EK"/>
                         <segue destination="sGd-TP-OMA" kind="relationship" relationship="rootViewController" id="hS6-md-mrt"/>
-                        <segue destination="wOE-lw-hea" kind="modal" id="VSI-or-FzL"/>
+                        <segue destination="wOE-lw-hea" kind="modal" identifier="showHome" id="VSI-or-FzL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qt2-Ii-Dp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,24 +175,24 @@
             </objects>
             <point key="canvasLocation" x="645" y="-756"/>
         </scene>
-        <!--View Controller-->
+        <!--Phota Login Phota Con View Controller-->
         <scene sceneID="bAN-os-Mbn">
             <objects>
-                <viewController id="Rif-Uj-5eD" sceneMemberID="viewController">
+                <viewController id="Rif-Uj-5eD" customClass="PhotaLoginPhotaConViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qu9-BG-HCa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-lz-CQH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-lz-CQH">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="XE4-TU-QSP"/>
+                                    <constraint firstAttribute="width" constant="225" id="NZB-xZ-aZu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wtA-Gd-RHs">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wtA-Gd-RHs">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photacon.png" translatesAutoresizingMaskIntoConstraints="NO" id="YjT-eg-Iyp">
                                 <constraints>
@@ -200,54 +200,38 @@
                                     <constraint firstAttribute="width" constant="90" id="4fT-lw-H26"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2m-1G-rjb">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="bl8-Rq-FdE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRg-Se-uDl">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="84" id="fPv-jC-txh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4b-JF-njY">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="L2U-PU-Fqy"/>
                                     <constraint firstAttribute="height" constant="29" id="zAk-0p-6pV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Go">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="doLogin:" destination="Rif-Uj-5eD" eventType="touchUpInside" id="owg-j5-qtT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="P4b-JF-njY" firstAttribute="leading" secondItem="wtA-Gd-RHs" secondAttribute="leading" type="default" id="44F-3x-ELX"/>
-                            <constraint firstItem="YjT-eg-Iyp" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="21" id="BgG-7Y-bvK"/>
-                            <constraint firstItem="l2m-1G-rjb" firstAttribute="leading" secondItem="qu9-BG-HCa" secondAttribute="leading" constant="50" id="C3I-z3-QIH"/>
-                            <constraint firstItem="YjT-eg-Iyp" firstAttribute="centerX" secondItem="qu9-BG-HCa" secondAttribute="centerX" type="default" id="DE9-gD-SQx"/>
-                            <constraint firstItem="nnA-lz-CQH" firstAttribute="trailing" secondItem="wtA-Gd-RHs" secondAttribute="trailing" type="default" id="E2w-OW-ozO"/>
+                            <constraint firstItem="YjT-eg-Iyp" firstAttribute="centerX" secondItem="nnA-lz-CQH" secondAttribute="centerX" type="default" id="5s6-yh-Coa"/>
+                            <constraint firstItem="YjT-eg-Iyp" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="20" symbolic="YES" type="default" id="74x-fm-UvP"/>
+                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="160" id="8dS-if-v5Y"/>
+                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="leading" secondItem="nnA-lz-CQH" secondAttribute="leading" type="default" id="CYH-4F-vLa"/>
                             <constraint firstItem="nnA-lz-CQH" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="130" id="H6d-vK-cTo"/>
-                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="top" secondItem="nnA-lz-CQH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="R2U-bj-Rwu"/>
-                            <constraint firstItem="P4b-JF-njY" firstAttribute="top" secondItem="wtA-Gd-RHs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ut9-Co-XpZ"/>
-                            <constraint firstItem="RRg-Se-uDl" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="172" id="VFm-Vs-t0j"/>
-                            <constraint firstItem="l2m-1G-rjb" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="134" id="ZbE-vU-c3w"/>
-                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="leading" secondItem="nnA-lz-CQH" secondAttribute="leading" type="default" id="ZiT-tT-sQm"/>
-                            <constraint firstItem="RRg-Se-uDl" firstAttribute="leading" secondItem="qu9-BG-HCa" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="g5c-VC-ylH"/>
-                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="leading" secondItem="RRg-Se-uDl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xku-E2-giH"/>
+                            <constraint firstItem="P4b-JF-njY" firstAttribute="centerX" secondItem="wtA-Gd-RHs" secondAttribute="centerX" type="default" id="Nrd-V1-6RA"/>
+                            <constraint firstItem="P4b-JF-njY" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="206" id="Ypr-9b-Xwb"/>
+                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="centerX" secondItem="qu9-BG-HCa" secondAttribute="centerX" type="default" id="dYJ-u0-WCX"/>
+                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="trailing" secondItem="nnA-lz-CQH" secondAttribute="trailing" type="default" id="ybX-Z3-qVG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="nnA-lz-CQH" id="J3r-Wr-qVr"/>
+                        <outlet property="passwordTextField" destination="wtA-Gd-RHs" id="rUM-3o-Fz0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vM3-aP-vcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,6 +254,14 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotaLoginPhotaConViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginPhotaConViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doLogin:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="PhotaLoginViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginViewController.h"/>
