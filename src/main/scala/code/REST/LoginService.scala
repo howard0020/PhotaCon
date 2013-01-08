@@ -32,6 +32,9 @@ object LoginService extends RestHelper {
   	    Console.println("===>channel")
 		  JString("<script src=\"//connect.facebook.net/en_US/all.js\"></script>")	      
 	  }
+    case "testJson" :: Nil JsonGet _ => {
+      JObject(List(JField("foo",JInt(4))))
+    }
 	})
 	
 	def signinUser(){
