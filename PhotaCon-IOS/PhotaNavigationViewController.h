@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotaNavigationViewController : UINavigationController
+@interface PhotaNavigationViewController : UIViewController
 @end

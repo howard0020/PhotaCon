@@ -8,6 +8,7 @@
 
 #import "PhotaLoginPhotaConViewController.h"
 #import "AFJSONRequestOperation.h"
+#import "PhotaLoginManager.h"
 
 @interface PhotaLoginPhotaConViewController ()
 
@@ -38,6 +39,9 @@
 }
 
 - (IBAction)doLogin:(UIButton *)sender {
+    [PhotaLoginManager getManager].isLogin = YES;
+    [self.navigationController popViewControllerAnimated:YES];
+    
     NSLog(@"Login with PhotaCon...username:%@ - password:%@",nameTextField.text,passwordTextField.text);
     NSURL *url = [NSURL URLWithString:@"http://localhost:8080/api/login/testJson"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -49,5 +53,6 @@
     }];
     
     [operation start];
+   
 }
 @end

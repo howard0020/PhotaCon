@@ -8,13 +8,21 @@
 
 #import "PhotaLoginViewController.h"
 #import "LoginAppCell.h"
-
+#import "PhotaLoginManager.h"
 
 @interface PhotaLoginViewController ()
 
 @end
 
 @implementation PhotaLoginViewController
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if ([PhotaLoginManager getManager].isLogin) {
+        [self performSegueWithIdentifier:@"HomeView" sender:self];
+        NSLog(@"In Home View");
+    }
+}
 
 - (void)viewDidLoad
 {
