@@ -25,7 +25,11 @@
     }
     return self;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,20 +43,10 @@
 }
 
 - (IBAction)doLogin:(UIButton *)sender {
-    [PhotaLoginManager getManager].isLogin = YES;
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    NSLog(@"Login with PhotaCon...username:%@ - password:%@",nameTextField.text,passwordTextField.text);
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/api/login/testJson"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"IP Address: %@", [JSON valueForKeyPath:@"foo"]);
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"faile");
-    }];
-    
-    [operation start];
-   
+    //TODO start activity indicator
+    if(![PhotaLoginManager sharedInstance].isLogin)
+    {
+        [[PhotaLoginManager sharedInstance] loginUser:@"howard" with:@"52012345"];
+    }
 }
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "PhotaLoginManager.h"
+#import "PhotaServerProxy.h"
 @interface PhotaLoginManager()
 @end
 
@@ -14,8 +15,10 @@ static PhotaLoginManager *sharedLoginManager = nil;
 
 @implementation PhotaLoginManager
 @synthesize isLogin = _isLogin;
-
-+(PhotaLoginManager *)getManager
+-(void)loginUser:(NSString *)userName with:(NSString *)password{
+    [[PhotaServerProxy sharedInstance] loginUser:userName with:password];
+}
++(PhotaLoginManager *)sharedInstance
 {
     @synchronized(self) {
         if(sharedLoginManager == nil)

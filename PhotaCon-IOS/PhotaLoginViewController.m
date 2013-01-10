@@ -18,9 +18,9 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    if ([PhotaLoginManager getManager].isLogin) {
+    if ([PhotaLoginManager sharedInstance].isLogin) {
         [self performSegueWithIdentifier:@"HomeView" sender:self];
-        NSLog(@"In Home View");
+        NSLog(@"logined in!");
     }
 }
 

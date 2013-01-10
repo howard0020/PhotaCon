@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface PhotaLoginManager : NSObject
-@property BOOL isLogin;
-+ (PhotaLoginManager * )getManager;
 
+@property BOOL isLogin;
++ (PhotaLoginManager * )sharedInstance;
+-(void)loginUser:(NSString *)userName with:(NSString *)password;
 @end
