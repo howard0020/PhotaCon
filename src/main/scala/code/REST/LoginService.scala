@@ -7,16 +7,23 @@ import json._
 import code.plugin.PluginManager
 import common._
 import JsonDSL._
-
+import code.model.UserModel
 
 object LoginService extends RestHelper {
-	serve("api" / "login" prefix {
+	serve("api" / "user" / "login" prefix {
+	  //login a user PhotaCon's credentials
     case "user" :: Nil Get _ => {
       for {
         email <- S.param("email") ?~ "Missing email" ~> 400
         password <- S.param("password") ?~ "Missing password" ~> 400
-      }yield ("email" -> "howard0020@yahoo.com") ~ ("id" -> "1")
+        user <- UserModel.findUserByEmail(email) ?~ "user not found"
+        if user.password.match_?(password)
+      }yield{
+        UserModel.logUserIn(user)
+        RestFormatters.toJSON(user)
+      } 
     }
+    
 	  case "url" :: plugin :: Nil JsonGet _ => {
 		  var loginManager = PluginManager.getLoginManager(plugin)
 		  var url = loginManager.getAuthUrl()
@@ -32,13 +39,18 @@ object LoginService extends RestHelper {
 		    case Failure(msg,_,_) => JString(msg)
 		  }  
 	  }
-	  case "channel" :: plugin ::  Nil JsonGet _ => {
-		  Console.println("===>channel")
-		  JString("<script src=\"//connect.facebook.net/en_US/all.js\"></script>")	      
-	  }
-  	  case "channel" :: plugin ::  Nil JsonPost _ => {
-  	    Console.println("===>channel")
-		  JString("<script src=\"//connect.facebook.net/en_US/all.js\"></script>")	      
+	})
+	serve("api" / "user" prefix {
+	  case "register" :: Nil Get _ => {
+	     for {
+	        email <- S.param("email") ?~ "Missing email" ~> 400
+	        password <- S.param("password") ?~ "Missing password" ~> 400
+	        user <- UserModel.createByEmail(email) ~> 401
+	      }yield{
+	        user.email.set(email)
+	        user.password.set(password)
+	        RestFormatters.toJSON(user.saveMe)  
+	      } 
 	  }
 	})
 }
