@@ -66,7 +66,7 @@ class Boot {
     JQueryModule.init()
     
     //add REST Web Services
-    LiftRules.dispatch.append(HomeContentService).append(LoginService)
+    LiftRules.dispatch.append(HomeContentService).append(LoginService).append(TestService)
     
     //initScribe
   }
