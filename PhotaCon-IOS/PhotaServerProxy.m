@@ -16,14 +16,16 @@ static PhotaServerProxy *sharedProxy = nil;
 @implementation PhotaServerProxy
 -(BOOL)loginUser:(NSString *)userName with:(NSString *)password
 {
-    NSMutableURLRequest * request = [self requestWithMethod:@"GET" path:@"login/testJson" parameters:nil];
-    AFHTTPRequestOperation * operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
-    {
+    NSMutableDictionary * dic = [[NSMutableDictionary alloc] init];
+    [dic setObject:@"howard0020" forKey:@"email"];
+    [dic setObject:@"52012345" forKey:@"password"];
+    
+    NSMutableURLRequest * request = [self requestWithMethod:@"GET" path:@"login/user" parameters:dic];
+    AFHTTPRequestOperation * operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"success %@",JSON);
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"error %@ Json %@",error,JSON);
+        NSLog(@"success %@",error);
     }];
-    
     [operation start];
     return true;
 }
@@ -36,6 +38,7 @@ static PhotaServerProxy *sharedProxy = nil;
     {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
+        [self setParameterEncoding:AFJSONParameterEncoding];
     }
     return self;
 }

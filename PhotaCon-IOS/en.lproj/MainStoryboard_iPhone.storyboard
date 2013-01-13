@@ -195,7 +195,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="aEo-xi-5KY" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yVS-eb-ei2"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lAC-E1-jat">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
