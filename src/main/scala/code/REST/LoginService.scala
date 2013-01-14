@@ -49,8 +49,8 @@ object LoginService extends RestHelper {
 	     }yield{
 	        user.email.set(email)
 	        user.password.set(password)
-	        RestFormatters.toJSON(user.saveMe)
           UserModel.logUserIn(user);
+	        RestFormatters.toJSON(user.saveMe)
 	     }
 	  }
 	})

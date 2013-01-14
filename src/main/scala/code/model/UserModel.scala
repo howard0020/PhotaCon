@@ -14,6 +14,10 @@ import net.liftweb.common._
 import net.liftweb.common.Empty
 
 
+class UserModel extends MegaProtoUser[UserModel] with OneToMany[Long,UserModel]{
+  def getSingleton = UserModel
+  object accounts extends MappedOneToMany(AccountModel,AccountModel.user,OrderBy(AccountModel.id,Ascending))
+}
 object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
   override def dbTableName = "users"
   // comment this line out to require email validations
@@ -27,8 +31,4 @@ object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
     }else Failure("User Exist")
   }
 }
-class UserModel extends MegaProtoUser[UserModel]{
-  def getSingleton = UserModel
-  
-  
-}
+
