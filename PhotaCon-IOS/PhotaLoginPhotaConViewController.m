@@ -11,6 +11,8 @@
 #import "PhotaLoginManager.h"
 #import "photaHomeViewController.h"
 #import "PhotaStringUtil.h"
+#import "MBProgressHUD.h"
+
 @interface PhotaLoginPhotaConViewController ()
 
 @end
@@ -63,9 +65,11 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[PhotaLoginManager sharedInstance] loginUser:nameTextField.text
                                          withPassword:passwordTextField.text
                                              callback:^(BOOL status) {
+                                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                                                  if (status) {
                                                      NSLog(@"Logged into photacon!");
                                                      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
