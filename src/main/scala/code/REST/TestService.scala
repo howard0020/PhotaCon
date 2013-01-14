@@ -7,6 +7,8 @@ import json._
 import code.plugin.PluginManager
 import common._
 import JsonDSL._
+import code.model._
+import net.liftweb.http.S
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,8 +19,13 @@ import JsonDSL._
  */
 object TestService extends RestHelper{
     serve("api" / "test" prefix {
-      case Req("login" :: "failure" :: Nil,_,GetRequest) => {
+      case "login" :: "failure" :: Nil Get _ => {
         JsonResponse(("fail to login"),Nil,Nil,401)
+      }
+      case "inspect" :: "session" :: Nil Get _ => {
+        for {
+          session <- S.session ?~ "sesson not found"
+        }yield JString(session.uniqueId)
       }
     })
 }

@@ -46,11 +46,12 @@ object LoginService extends RestHelper {
 	        email <- S.param("email") ?~ "Missing email" ~> 400
 	        password <- S.param("password") ?~ "Missing password" ~> 400
 	        user <- UserModel.createByEmail(email) ~> 401
-	      }yield{
+	     }yield{
 	        user.email.set(email)
 	        user.password.set(password)
-	        RestFormatters.toJSON(user.saveMe)  
-	      } 
+	        RestFormatters.toJSON(user.saveMe)
+          UserModel.logUserIn(user);
+	     }
 	  }
 	})
 }
