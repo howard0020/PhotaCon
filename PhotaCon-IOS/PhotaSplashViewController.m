@@ -1,19 +1,21 @@
 //
-//  photaHomeViewController.m
+//  PhotaSplashViewController.m
 //  PhotaCon-IOS
 //
-//  Created by Doug on 1/5/13.
+//  Created by chenghao lin on 1/13/13.
 //  Copyright (c) 2013 billionaire. All rights reserved.
 //
 
-#import "photaHomeViewController.h"
-#import "PhotaLoginManager.h"
-@interface photaHomeViewController ()
+#import "PhotaSplashViewController.h"
+
+@interface PhotaSplashViewController ()
 
 @end
 
-@implementation photaHomeViewController
+@implementation PhotaSplashViewController
 
+-(void)viewDidAppear:(BOOL)animated {
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,10 +29,7 @@
 {
     [super viewDidLoad];
 }
--(void)logout{
-    [[PhotaLoginManager sharedInstance] logout];
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

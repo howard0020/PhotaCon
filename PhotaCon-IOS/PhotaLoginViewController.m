@@ -9,12 +9,14 @@
 #import "PhotaLoginViewController.h"
 #import "LoginAppCell.h"
 #import "PhotaLoginManager.h"
-
 @interface PhotaLoginViewController ()
 
 @end
 
-@implementation PhotaLoginViewController
+@implementation PhotaLoginViewController{
+@private BOOL firstTime;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -27,10 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    firstTime = YES;
 	appImageNames = [[NSArray alloc] initWithObjects:@"photacon.png",@"facebook.png",@"twitter.png",@"foursquare.png",@"googleplus.png",@"linkedin.png",@"myspace.png",@"orkut.png",@"tumblr.png",nil];
     
     appImageLabel = [[NSArray alloc] initWithObjects:@"photacon",@"facebook",@"twitter",@"foursquare",@"googleplus",@"linkedin",@"myspace",@"orkut",@"tumblr", nil];
-    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

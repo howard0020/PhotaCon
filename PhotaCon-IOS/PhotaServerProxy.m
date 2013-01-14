@@ -14,23 +14,41 @@
 static PhotaServerProxy *sharedProxy = nil;
 #define proxyHost @"http://localhost:8080/api/"
 @implementation PhotaServerProxy
--(BOOL)loginUser:(NSString *)userName with:(NSString *)password
-{
+
+-(void)loginUser:(NSString *)userName
+    withPassword:(NSString *)password
+        callback:(void (^)(BOOL, id, NSError *))callback{
     NSMutableDictionary * dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:@"howard0020" forKey:@"email"];
-    [dic setObject:@"52012345" forKey:@"password"];
+    [dic setObject:userName forKey:@"email"];
+    [dic setObject:password forKey:@"password"];
     
-    NSMutableURLRequest * request = [self requestWithMethod:@"GET" path:@"login/user" parameters:dic];
-    AFHTTPRequestOperation * operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:@"user/login/user" parameters:dic];
+    AFHTTPRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"success %@",JSON);
+        callback(YES,JSON,nil);
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"success %@",error);
+        NSLog(@"error %@",error);
+        callback(NO,JSON,error);
     }];
     [operation start];
-    return true;
 }
-
-
+-(void)registerUser:(NSString *)userName
+       withPassword:(NSString *)password
+           callback:(void (^)(BOOL, id, NSError *))callback{
+    NSMutableDictionary * dic = [[NSMutableDictionary alloc]init];
+    [dic setObject:userName forKey:@"email"];
+    [dic setObject:password forKey:@"password"];
+    
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:@"user/register" parameters:dic];
+    AFHTTPRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"register user success:%@",JSON);
+        callback(YES,JSON,nil);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"register user error:%@",error);
+        callback(NO,JSON,error);
+    }];
+    [operation start];
+}
 -(id)init
 {
     self = [super init];

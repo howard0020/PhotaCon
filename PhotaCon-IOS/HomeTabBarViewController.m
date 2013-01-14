@@ -1,18 +1,18 @@
 //
-//  photaHomeViewController.m
+//  HomeTabBarViewController.m
 //  PhotaCon-IOS
 //
-//  Created by Doug on 1/5/13.
+//  Created by chenghao lin on 1/13/13.
 //  Copyright (c) 2013 billionaire. All rights reserved.
 //
 
-#import "photaHomeViewController.h"
-#import "PhotaLoginManager.h"
-@interface photaHomeViewController ()
+#import "HomeTabBarViewController.h"
+
+@interface HomeTabBarViewController ()
 
 @end
 
-@implementation photaHomeViewController
+@implementation HomeTabBarViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,11 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
 }
--(void)logout{
-    [[PhotaLoginManager sharedInstance] logout];
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

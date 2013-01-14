@@ -10,5 +10,10 @@
 #import "AFHTTPClient.h"
 @interface PhotaServerProxy : AFHTTPClient
 +(PhotaServerProxy *) sharedInstance;
--(BOOL)loginUser:(NSString *)userName with:(NSString *)password;
+-(void)loginUser:(NSString *)userName
+    withPassword:(NSString *)password
+        callback:(void (^)(BOOL status,id Result,NSError *error))callback;
+-(void)registerUser:(NSString *)userName
+       withPassword:(NSString *)password
+           callback:(void (^)(BOOL status,id Result,NSError *error))callback;
 @end

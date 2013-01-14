@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5408D17B16A26B7F007A664F /* RegisterPhotaConViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408D17A16A26B7F007A664F /* RegisterPhotaConViewController.m */; };
+		5408D17F16A3693C007A664F /* PhotaSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408D17E16A3693B007A664F /* PhotaSplashViewController.m */; };
+		5408D18216A372C7007A664F /* HomeTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408D18116A372C5007A664F /* HomeTabBarViewController.m */; };
+		5408D18616A37993007A664F /* PhotaStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5408D18516A37993007A664F /* PhotaStringUtil.m */; };
 		540A0831169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */; };
 		541A90D316966C8B0035082E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D216966C8B0035082E /* UIKit.framework */; };
 		541A90D516966C8B0035082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541A90D416966C8B0035082E /* Foundation.framework */; };
@@ -37,7 +41,6 @@
 		545FE15C1698BF8A0027692C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE1591698BF8A0027692C /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		545FE15D1698BF8A0027692C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE15A1698BF8A0027692C /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		545FE15E1698BF8A0027692C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FE15B1698BF8A0027692C /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		545FE1611698E69B0027692C /* PhotaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FE1601698E69B0027692C /* PhotaNavigationViewController.m */; };
 		545FE1631698EA800027692C /* Splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1621698EA800027692C /* Splash.jpg */; };
 		545FE1651698EA880027692C /* Splash2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 545FE1641698EA880027692C /* Splash2.jpg */; };
 		545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FE1671698ED080027692C /* PhotaLoginManager.m */; };
@@ -262,6 +265,14 @@
 
 /* Begin PBXFileReference section */
 		53D5BD70E7CE461EA884E9CF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5408D17916A26B7F007A664F /* RegisterPhotaConViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPhotaConViewController.h; sourceTree = "<group>"; };
+		5408D17A16A26B7F007A664F /* RegisterPhotaConViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPhotaConViewController.m; sourceTree = "<group>"; };
+		5408D17D16A3693A007A664F /* PhotaSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaSplashViewController.h; sourceTree = "<group>"; };
+		5408D17E16A3693B007A664F /* PhotaSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaSplashViewController.m; sourceTree = "<group>"; };
+		5408D18016A372C4007A664F /* HomeTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabBarViewController.h; sourceTree = "<group>"; };
+		5408D18116A372C5007A664F /* HomeTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarViewController.m; sourceTree = "<group>"; };
+		5408D18416A37993007A664F /* PhotaStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaStringUtil.h; sourceTree = "<group>"; };
+		5408D18516A37993007A664F /* PhotaStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaStringUtil.m; sourceTree = "<group>"; };
 		540A082F169BD67800A9AD29 /* PhotaLoginPhotaConViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaLoginPhotaConViewController.h; sourceTree = "<group>"; };
 		540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaLoginPhotaConViewController.m; sourceTree = "<group>"; };
 		541A90CE16966C8B0035082E /* PhotaCon-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotaCon-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,8 +310,6 @@
 		545FE1591698BF8A0027692C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		545FE15A1698BF8A0027692C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		545FE15B1698BF8A0027692C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		545FE15F1698E69B0027692C /* PhotaNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaNavigationViewController.h; sourceTree = "<group>"; };
-		545FE1601698E69B0027692C /* PhotaNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaNavigationViewController.m; sourceTree = "<group>"; };
 		545FE1621698EA800027692C /* Splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Splash.jpg; sourceTree = "<group>"; };
 		545FE1641698EA880027692C /* Splash2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Splash2.jpg; sourceTree = "<group>"; };
 		545FE1661698ED080027692C /* PhotaLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaLoginManager.h; sourceTree = "<group>"; };
@@ -545,6 +554,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5408D18316A37977007A664F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5408D18416A37993007A664F /* PhotaStringUtil.h */,
+				5408D18516A37993007A664F /* PhotaStringUtil.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		541A90C316966C8B0035082E = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +601,7 @@
 		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				5408D18316A37977007A664F /* Util */,
 				54B7E6EF169E51860040C6D2 /* sharedManagers */,
 				54B7E6ED169E510D0040C6D2 /* controllers */,
 				91B055E71699179C00DD542A /* icon */,
@@ -651,16 +670,20 @@
 		54B7E6ED169E510D0040C6D2 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5408D18016A372C4007A664F /* HomeTabBarViewController.h */,
+				5408D18116A372C5007A664F /* HomeTabBarViewController.m */,
 				B7F10477169A116100D6286B /* LoginAppCell.h */,
 				B7F10478169A116100D6286B /* LoginAppCell.m */,
 				541A90F016966C8B0035082E /* PhotaLoginViewController.h */,
 				541A90F116966C8C0035082E /* PhotaLoginViewController.m */,
 				540A082F169BD67800A9AD29 /* PhotaLoginPhotaConViewController.h */,
 				540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */,
-				545FE15F1698E69B0027692C /* PhotaNavigationViewController.h */,
-				545FE1601698E69B0027692C /* PhotaNavigationViewController.m */,
+				5408D17D16A3693A007A664F /* PhotaSplashViewController.h */,
+				5408D17E16A3693B007A664F /* PhotaSplashViewController.m */,
 				91B055E4169912BA00DD542A /* photaHomeViewController.h */,
 				91B055E5169912BA00DD542A /* photaHomeViewController.m */,
+				5408D17916A26B7F007A664F /* RegisterPhotaConViewController.h */,
+				5408D17A16A26B7F007A664F /* RegisterPhotaConViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -1229,12 +1252,15 @@
 				541A90DF16966C8B0035082E /* main.m in Sources */,
 				541A90E316966C8B0035082E /* photaAppDelegate.m in Sources */,
 				541A90F216966C8C0035082E /* PhotaLoginViewController.m in Sources */,
-				545FE1611698E69B0027692C /* PhotaNavigationViewController.m in Sources */,
 				545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */,
 				91B055E6169912BA00DD542A /* photaHomeViewController.m in Sources */,
 				B7F10479169A116100D6286B /* LoginAppCell.m in Sources */,
 				540A0831169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m in Sources */,
 				54B7E6EB169E504A0040C6D2 /* PhotaServerProxy.m in Sources */,
+				5408D17B16A26B7F007A664F /* RegisterPhotaConViewController.m in Sources */,
+				5408D17F16A3693C007A664F /* PhotaSplashViewController.m in Sources */,
+				5408D18216A372C7007A664F /* HomeTabBarViewController.m in Sources */,
+				5408D18616A37993007A664F /* PhotaStringUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

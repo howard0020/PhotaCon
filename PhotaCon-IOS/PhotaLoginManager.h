@@ -12,5 +12,11 @@
 
 @property BOOL isLogin;
 + (PhotaLoginManager * )sharedInstance;
--(void)loginUser:(NSString *)userName with:(NSString *)password;
+-(void)loginUser:(NSString *)userName
+            withPassword:(NSString *)password
+        callback:(void (^)(BOOL status))callback;
+-(void)registerUser:(NSString *)userName
+       withPassword:(NSString *)password
+           callback:(void (^)(BOOL status))callback;
+-(void)logout;
 @end

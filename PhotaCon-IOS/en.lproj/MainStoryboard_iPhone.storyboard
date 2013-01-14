@@ -36,7 +36,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="Rif-Uj-5eD" kind="push" id="8pA-7N-0Md"/>
+                                                <segue destination="0ut-cz-g2r" kind="push" identifier="PhotaConLogin" id="Axi-LY-gYW"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -61,6 +61,7 @@
                     <navigationItem key="navigationItem" id="06w-0B-aEt"/>
                     <connections>
                         <segue destination="aEo-xi-5KY" kind="push" identifier="HomeView" id="IV5-cg-CtP"/>
+                        <segue destination="sGd-TP-OMA" kind="modal" identifier="showSplash" id="k6Y-te-Ado"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4A-sG-yde" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,24 +73,25 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="Vyl-Qq-crS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="JgY-io-1pT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GXA-CY-Rss">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="GXA-CY-Rss">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sGd-TP-OMA" kind="relationship" relationship="rootViewController" id="hS6-md-mrt"/>
+                        <segue destination="evf-pA-WiQ" kind="relationship" relationship="rootViewController" id="ibA-pT-vrt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qt2-Ii-Dp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-526" y="-100"/>
+            <point key="canvasLocation" x="2" y="-100"/>
         </scene>
-        <!--Phota Navigation View Controller-->
+        <!--Phota Splash View Controller-->
         <scene sceneID="Svv-LL-R9J">
             <objects>
-                <viewController id="sGd-TP-OMA" customClass="PhotaNavigationViewController" sceneMemberID="viewController">
+                <viewController id="sGd-TP-OMA" customClass="PhotaSplashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ha5-l6-0a8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Splash2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wfk-B8-M7i"/>
@@ -103,20 +105,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V01-QK-Oqb"/>
-                    <connections>
-                        <segue destination="evf-pA-WiQ" kind="push" identifier="LoginView" id="G0z-6G-Jx1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="So9-kq-Iqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="-100"/>
+            <point key="canvasLocation" x="2" y="588"/>
         </scene>
-        <!--Phota Login Phota Con View Controller-->
+        <!--Phota Login Phota Con View Controller - Login-->
         <scene sceneID="bAN-os-Mbn">
             <objects>
                 <viewController id="Rif-Uj-5eD" customClass="PhotaLoginPhotaConViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qu9-BG-HCa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-lz-CQH">
@@ -153,17 +152,18 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YjT-eg-Iyp" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="3" id="13N-Hc-Q7M"/>
                             <constraint firstItem="YjT-eg-Iyp" firstAttribute="centerX" secondItem="nnA-lz-CQH" secondAttribute="centerX" type="default" id="5s6-yh-Coa"/>
-                            <constraint firstItem="P4b-JF-njY" firstAttribute="centerX" secondItem="qu9-BG-HCa" secondAttribute="centerX" type="default" id="9kK-cU-8ee"/>
+                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="134" id="8sz-BR-ilQ"/>
                             <constraint firstItem="wtA-Gd-RHs" firstAttribute="leading" secondItem="nnA-lz-CQH" secondAttribute="leading" type="default" id="CYH-4F-vLa"/>
                             <constraint firstItem="P4b-JF-njY" firstAttribute="centerX" secondItem="wtA-Gd-RHs" secondAttribute="centerX" type="default" id="Nrd-V1-6RA"/>
-                            <constraint firstItem="YjT-eg-Iyp" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="19" id="XUp-S7-9Vw"/>
-                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="158" id="Zf4-yf-1Ba"/>
-                            <constraint firstItem="nnA-lz-CQH" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="129" id="dut-Yh-Zfz"/>
-                            <constraint firstItem="P4b-JF-njY" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="207" id="iCZ-Up-R5e"/>
+                            <constraint firstItem="wtA-Gd-RHs" firstAttribute="centerX" secondItem="qu9-BG-HCa" secondAttribute="centerX" type="default" id="TWM-Bt-aSA"/>
+                            <constraint firstItem="P4b-JF-njY" firstAttribute="top" secondItem="wtA-Gd-RHs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iM4-fI-gJJ"/>
+                            <constraint firstItem="nnA-lz-CQH" firstAttribute="top" secondItem="qu9-BG-HCa" secondAttribute="top" constant="105" id="q1R-ku-koZ"/>
                             <constraint firstItem="wtA-Gd-RHs" firstAttribute="trailing" secondItem="nnA-lz-CQH" secondAttribute="trailing" type="default" id="ybX-Z3-qVG"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Login" id="Siw-Qu-eWQ"/>
                     <navigationItem key="navigationItem" id="mEh-hf-pOz"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
@@ -173,14 +173,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vM3-aP-vcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581" y="612"/>
+            <point key="canvasLocation" x="1175" y="612"/>
         </scene>
         <!--View Controller - Item 2-->
         <scene sceneID="O4S-Ed-5gN">
             <objects>
                 <viewController id="zA3-7E-ngx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLT-bt-qvU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -188,13 +188,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQY-6I-XsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="641"/>
+            <point key="canvasLocation" x="1739" y="633"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar View Controller-->
         <scene sceneID="D8E-sm-0Fb">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="aEo-xi-5KY" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeViewController" definesPresentationContext="YES" id="aEo-xi-5KY" customClass="HomeTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yVS-eb-ei2"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lAC-E1-jat">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -229,6 +230,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fc0-sR-oGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745" y="-87"/>
+        </scene>
+        <!--Register Phota Con View Controller - Register-->
+        <scene sceneID="t9z-Ga-ixw">
+            <objects>
+                <viewController id="MxZ-gL-NGM" customClass="RegisterPhotaConViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ECG-94-dza" customClass="Phota">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-Jg-PZl">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="9kH-qH-6CV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="egf-pj-MLy">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Juf-1c-34L">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photacon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fyv-Jf-W7Z">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Ho6-fP-1tG"/>
+                                    <constraint firstAttribute="height" constant="90" id="ePy-Vm-kXW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekX-40-qBx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Fzt-b1-Hwz"/>
+                                    <constraint firstAttribute="width" constant="67" id="TKe-Wf-F3X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doLogin:" destination="Rif-Uj-5eD" eventType="touchUpInside" id="7E4-DA-4ch"/>
+                                    <action selector="doRegister" destination="MxZ-gL-NGM" eventType="touchUpInside" id="AiY-2v-Mdq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YIb-Jg-PZl" firstAttribute="top" secondItem="ECG-94-dza" secondAttribute="top" constant="93" id="8dG-mJ-WhX"/>
+                            <constraint firstItem="Juf-1c-34L" firstAttribute="top" secondItem="ECG-94-dza" secondAttribute="top" constant="151" id="CNi-qg-co4"/>
+                            <constraint firstItem="Juf-1c-34L" firstAttribute="leading" secondItem="egf-pj-MLy" secondAttribute="leading" type="default" id="EWS-pz-hwS"/>
+                            <constraint firstItem="Fyv-Jf-W7Z" firstAttribute="top" secondItem="ECG-94-dza" secondAttribute="top" constant="1" id="NMn-dM-dh5"/>
+                            <constraint firstItem="egf-pj-MLy" firstAttribute="top" secondItem="ECG-94-dza" secondAttribute="top" constant="122" id="P8z-wM-N5Y"/>
+                            <constraint firstItem="ekX-40-qBx" firstAttribute="centerX" secondItem="ECG-94-dza" secondAttribute="centerX" type="default" id="RIf-sT-uUL"/>
+                            <constraint firstItem="ekX-40-qBx" firstAttribute="centerX" secondItem="Juf-1c-34L" secondAttribute="centerX" type="default" id="TzC-y0-Wuw"/>
+                            <constraint firstItem="ekX-40-qBx" firstAttribute="top" secondItem="ECG-94-dza" secondAttribute="top" constant="183" id="Zpj-gP-5WV"/>
+                            <constraint firstItem="egf-pj-MLy" firstAttribute="leading" secondItem="YIb-Jg-PZl" secondAttribute="leading" type="default" id="a6Y-xj-LCR"/>
+                            <constraint firstItem="Fyv-Jf-W7Z" firstAttribute="centerX" secondItem="YIb-Jg-PZl" secondAttribute="centerX" type="default" id="pKD-Bj-6ET"/>
+                            <constraint firstItem="Juf-1c-34L" firstAttribute="trailing" secondItem="egf-pj-MLy" secondAttribute="trailing" type="default" id="pU5-zD-PCu"/>
+                            <constraint firstItem="egf-pj-MLy" firstAttribute="trailing" secondItem="YIb-Jg-PZl" secondAttribute="trailing" type="default" id="uSW-KK-pQR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Register" id="YLD-7Q-Yli"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <connections>
+                        <outlet property="email" destination="YIb-Jg-PZl" id="VfM-1R-uEt"/>
+                        <outlet property="password" destination="egf-pj-MLy" id="Yaz-wn-68I"/>
+                        <outlet property="repeatPassword" destination="Juf-1c-34L" id="Lge-3U-I0c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEo-pi-4La" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1175" y="1292"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Nwr-fj-g84">
@@ -292,6 +366,27 @@
             </objects>
             <point key="canvasLocation" x="2200" y="-87"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3Xp-OT-g9N">
+            <objects>
+                <tabBarController id="0ut-cz-g2r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vkV-Af-hpC"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nv4-kO-iId">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Rif-Uj-5eD" kind="relationship" relationship="viewControllers" id="qQp-X2-nMG"/>
+                        <segue destination="MxZ-gL-NGM" kind="relationship" relationship="viewControllers" id="9NQ-bR-sJE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXu-r5-21k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="612"/>
+        </scene>
     </scenes>
     <resources>
         <image name="73-radar.png" width="27" height="27"/>
@@ -299,6 +394,9 @@
         <image name="photacon.png" width="180" height="180"/>
     </resources>
     <classes>
+        <class className="HomeTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabBarViewController.h"/>
+        </class>
         <class className="LoginAppCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginAppCell.h"/>
             <relationships>
@@ -319,8 +417,17 @@
         <class className="PhotaLoginViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginViewController.h"/>
         </class>
-        <class className="PhotaNavigationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaNavigationViewController.h"/>
+        <class className="PhotaSplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaSplashViewController.h"/>
+        </class>
+        <class className="RegisterPhotaConViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterPhotaConViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doRegister"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="repeatPassword" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
