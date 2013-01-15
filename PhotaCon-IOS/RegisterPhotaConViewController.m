@@ -55,26 +55,29 @@
         [alert show];
     }else {
         NSLog(@"do register");
-        [[PhotaLoginManager sharedInstance] registerUser:email.text
-                                            withPassword:password.text
-                                                callback:^(BOOL status) {
-                                                    if (!status) {
-                                                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                                                                            message:@"Unable to register"
-                                                                                                           delegate:self
-                                                                                                  cancelButtonTitle:@"OK"
-                                                                                                  otherButtonTitles:nil];
-                                                        [alertView show];
-                                                    }else{
-                                                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
-                                                                                                            message:@"Enjoy!"
-                                                                                                           delegate:self
-                                                                                                  cancelButtonTitle:@"OK"
-                                                                                                  otherButtonTitles:nil];
-                                                        [alertView show];
-                                                        [self.navigationController popToRootViewControllerAnimated:YES];
-                                                    }
-                                                }];
+        PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+        model.loginName = email.text;
+        model.password = password.text;
+        __weak RegisterPhotaConViewController *weakSelf = self;
+        model.loginCallBack =^(BOOL status) {
+            if (!status) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                                    message:@"Unable to register"
+                                                                   delegate:weakSelf
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }else{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
+                                                                    message:@"Enjoy!"
+                                                                   delegate:weakSelf
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+            }
+        };
+        [[PhotaLoginManager sharedInstance] registerUser:model];
     }
 }
 @end

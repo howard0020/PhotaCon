@@ -13,8 +13,10 @@
 
 static PhotaLoginManager *sharedLoginManager = nil;
 
+
 @implementation PhotaLoginManager
 @synthesize isLogin = _isLogin;
+/*
 -(void)loginUser:(NSString *)userName
     withPassword:(NSString *)password
         callback:(void (^)(BOOL))callback{
@@ -28,6 +30,7 @@ static PhotaLoginManager *sharedLoginManager = nil;
         callback(self.isLogin);
     }];
 }
+ 
 -(void)registerUser:(NSString *)userName
        withPassword:(NSString *)password
            callback:(void (^)(BOOL))callback{
@@ -41,6 +44,31 @@ static PhotaLoginManager *sharedLoginManager = nil;
         callback(self.isLogin);
     }];
 }
+ */
+-(void)loginUser:(PhotaLoginModel *) loginModel{
+    [[PhotaServerProxy sharedInstance] loginUser:loginModel.loginName withPassword:loginModel.password callback:^(BOOL status, id Result, NSError *error) {
+        if (status) {
+            NSLog(@"LoginManager user logged in:%@",Result);
+            self.isLogin = YES;
+        }else{
+            NSLog(@"LoginManager user NOT logged in - Result:%@ Error:%@",Result,error);
+        }
+        loginModel.loginCallBack(self.isLogin);
+    }];
+}
+
+-(void)registerUser:(PhotaLoginModel *) loginModel{
+    [[PhotaServerProxy sharedInstance] registerUser:loginModel.loginName withPassword:loginModel.password callback:^(BOOL status, id Result, NSError *error) {
+        if (status) {
+            NSLog(@"LoginManager user registered and logged in.");
+            self.isLogin =YES;
+        }else {
+            NSLog(@"LoginManager fail to register user");
+        }
+        loginModel.loginCallBack(self.isLogin);
+    }];
+}
+
 -(void)logout{
     self.isLogin = NO;
     //TODO clean session and other stuff

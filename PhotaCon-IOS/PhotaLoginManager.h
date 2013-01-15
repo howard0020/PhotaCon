@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PhotaLoginModel.h"
 
 @interface PhotaLoginManager : NSObject
 
 @property BOOL isLogin;
 + (PhotaLoginManager * )sharedInstance;
+/*
 -(void)loginUser:(NSString *)userName
             withPassword:(NSString *)password
         callback:(void (^)(BOOL status))callback;
 -(void)registerUser:(NSString *)userName
        withPassword:(NSString *)password
            callback:(void (^)(BOOL status))callback;
+ */
+-(void)loginUser:(PhotaLoginModel *) loginModel;
+-(void)registerUser:(PhotaLoginModel *) loginModel;
 -(void)logout;
 @end

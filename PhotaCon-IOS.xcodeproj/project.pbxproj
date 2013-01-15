@@ -250,6 +250,9 @@
 		91B057791699179C00DD542A /* 99-umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B056AF1699179C00DD542A /* 99-umbrella.png */; };
 		91B0577A1699179C00DD542A /* check64.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B056B01699179C00DD542A /* check64.png */; };
 		91B0577B1699179C00DD542A /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B056B11699179C00DD542A /* group.png */; };
+		91F5011616A4E83600AEFF34 /* PhotaFacebookApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5011516A4E83600AEFF34 /* PhotaFacebookApp.m */; };
+		91F5011A16A4EFDF00AEFF34 /* PhotaApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5011916A4EFDF00AEFF34 /* PhotaApp.m */; };
+		91F5011D16A4F17600AEFF34 /* PhotaLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F5011C16A4F17600AEFF34 /* PhotaLoginModel.m */; };
 		B7F10479169A116100D6286B /* LoginAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F10478169A116100D6286B /* LoginAppCell.m */; };
 /* End PBXBuildFile section */
 
@@ -522,6 +525,12 @@
 		91B056AF1699179C00DD542A /* 99-umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "99-umbrella.png"; sourceTree = "<group>"; };
 		91B056B01699179C00DD542A /* check64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check64.png; sourceTree = "<group>"; };
 		91B056B11699179C00DD542A /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		91F5011416A4E83600AEFF34 /* PhotaFacebookApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaFacebookApp.h; sourceTree = "<group>"; };
+		91F5011516A4E83600AEFF34 /* PhotaFacebookApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaFacebookApp.m; sourceTree = "<group>"; };
+		91F5011816A4EFDF00AEFF34 /* PhotaApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaApp.h; sourceTree = "<group>"; };
+		91F5011916A4EFDF00AEFF34 /* PhotaApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaApp.m; sourceTree = "<group>"; };
+		91F5011B16A4F17600AEFF34 /* PhotaLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaLoginModel.h; sourceTree = "<group>"; };
+		91F5011C16A4F17600AEFF34 /* PhotaLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaLoginModel.m; sourceTree = "<group>"; };
 		B7F10477169A116100D6286B /* LoginAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAppCell.h; sourceTree = "<group>"; };
 		B7F10478169A116100D6286B /* LoginAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAppCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -695,6 +704,12 @@
 				545FE1671698ED080027692C /* PhotaLoginManager.m */,
 				54B7E6E9169E50490040C6D2 /* PhotaServerProxy.h */,
 				54B7E6EA169E50490040C6D2 /* PhotaServerProxy.m */,
+				91F5011416A4E83600AEFF34 /* PhotaFacebookApp.h */,
+				91F5011516A4E83600AEFF34 /* PhotaFacebookApp.m */,
+				91F5011816A4EFDF00AEFF34 /* PhotaApp.h */,
+				91F5011916A4EFDF00AEFF34 /* PhotaApp.m */,
+				91F5011B16A4F17600AEFF34 /* PhotaLoginModel.h */,
+				91F5011C16A4F17600AEFF34 /* PhotaLoginModel.m */,
 			);
 			name = sharedManagers;
 			sourceTree = "<group>";
@@ -1261,6 +1276,9 @@
 				5408D17F16A3693C007A664F /* PhotaSplashViewController.m in Sources */,
 				5408D18216A372C7007A664F /* HomeTabBarViewController.m in Sources */,
 				5408D18616A37993007A664F /* PhotaStringUtil.m in Sources */,
+				91F5011616A4E83600AEFF34 /* PhotaFacebookApp.m in Sources */,
+				91F5011A16A4EFDF00AEFF34 /* PhotaApp.m in Sources */,
+				91F5011D16A4F17600AEFF34 /* PhotaLoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

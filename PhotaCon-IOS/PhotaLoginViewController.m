@@ -54,12 +54,17 @@
         [myCell.cellBtn setImage:image forState:UIControlStateNormal];
         [myCell.cellBtn setTag:indexPath.item];
         [myCell.cellBtn addTarget:self action:@selector(doLoginBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [myCell.cellBtn  setTitle:[appImageLabel objectAtIndex:indexPath.item] forState:UIControlStateNormal];
     }
     return myCell;
 }
 -(void)doLoginBtnPressed:(id)sender
 {
-    NSLog(@"did doLoginBtn");
+    UIButton *button = (UIButton *)sender;
+    NSLog([button titleLabel].text);
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

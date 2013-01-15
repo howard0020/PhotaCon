@@ -66,29 +66,34 @@
         [alertView show];
     }else {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [[PhotaLoginManager sharedInstance] loginUser:nameTextField.text
-                                         withPassword:passwordTextField.text
-                                             callback:^(BOOL status) {
-                                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                                 if (status) {
-                                                     NSLog(@"Logged into photacon!");
-                                                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
-                                                                                                         message:@"Emjoy!"
-                                                                                                        delegate:self
-                                                                                               cancelButtonTitle:@"OK"
-                                                                                               otherButtonTitles:nil];
-                                                     [alertView show];
-                                                     [self.navigationController popToRootViewControllerAnimated:YES];
-                                                 }else{
-                                                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                                                                         message:@"Unable to login!"
-                                                                                                        delegate:self
-                                                                                               cancelButtonTitle:@"OK"
-                                                                                               otherButtonTitles:nil];
-                                                     [alertView show];
-                                                 }
-                               
-        }];
+        
+        PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+        model.loginName = nameTextField.text;
+        model.password = passwordTextField.text;
+        __weak PhotaLoginPhotaConViewController *weakSelf = self;
+        model.loginCallBack = ^(BOOL status) {
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            if (status) {
+                NSLog(@"Logged into photacon!");
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
+                                                                    message:@"Emjoy!"
+                                                                   delegate:weakSelf
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+            }else{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                                    message:@"Unable to login!"
+                                                                   delegate:weakSelf
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
+            
+        };
+        
+        [[PhotaLoginManager sharedInstance] loginUser:model];
     }
 }
 @end
