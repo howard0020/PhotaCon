@@ -23,5 +23,6 @@
  */
 -(void)loginUser:(PhotaLoginModel *) loginModel;
 -(void)registerUser:(PhotaLoginModel *) loginModel;
+-(void)loginInWithFacebook: (PhotaLoginModel *) loginModel;
 -(void)logout;
 @end

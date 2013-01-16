@@ -11,5 +11,6 @@
 @interface PhotaLoginViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 {
     NSArray *appImageNames,*appImageLabel;
+    NSString *appSelected;
 }
 @end

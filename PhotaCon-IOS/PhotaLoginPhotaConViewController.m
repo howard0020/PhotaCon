@@ -19,6 +19,7 @@
 
 @implementation PhotaLoginPhotaConViewController
 @synthesize nameTextField,passwordTextField;
+@synthesize appName = _appName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +33,7 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
+    NSLog(@"PhotaLoginPhotaView's ViewWillAppear: %@", self.appName);
 }
 - (void)viewDidLoad
 {

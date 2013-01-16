@@ -8,6 +8,8 @@
 
 #import "PhotaLoginManager.h"
 #import "PhotaServerProxy.h"
+#import "PhotaFacebookApp.h"
+
 @interface PhotaLoginManager()
 @end
 
@@ -68,7 +70,17 @@ static PhotaLoginManager *sharedLoginManager = nil;
         loginModel.loginCallBack(self.isLogin);
     }];
 }
-
+-(void)loginInWithFacebook: (PhotaLoginModel *) loginModel{
+    
+    PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+    __weak PhotaLoginManager *weakSelf = self;
+    model.loginCallBack = ^(BOOL status) {
+        if (status)
+            weakSelf.isLogin = YES;
+        loginModel.loginCallBack(status);
+    };
+    [[PhotaFacebookApp sharedInstance] logMeIn:model.loginCallBack];
+}
 -(void)logout{
     self.isLogin = NO;
     //TODO clean session and other stuff

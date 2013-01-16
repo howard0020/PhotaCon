@@ -9,6 +9,8 @@
 #import "PhotaLoginViewController.h"
 #import "LoginAppCell.h"
 #import "PhotaLoginManager.h"
+#import "PhotaLoginPhotaConViewController.h"
+
 @interface PhotaLoginViewController ()
 
 @end
@@ -20,6 +22,9 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self checkLogin];
+}
+-(void)checkLogin{
     if ([PhotaLoginManager sharedInstance].isLogin) {
         [self performSegueWithIdentifier:@"HomeView" sender:self];
         NSLog(@"logined in!");
@@ -29,10 +34,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkLogin) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
     firstTime = YES;
 	appImageNames = [[NSArray alloc] initWithObjects:@"photacon.png",@"facebook.png",@"twitter.png",@"foursquare.png",@"googleplus.png",@"linkedin.png",@"myspace.png",@"orkut.png",@"tumblr.png",nil];
     
     appImageLabel = [[NSArray alloc] initWithObjects:@"photacon",@"facebook",@"twitter",@"foursquare",@"googleplus",@"linkedin",@"myspace",@"orkut",@"tumblr", nil];
+}
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -61,10 +72,36 @@
 -(void)doLoginBtnPressed:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    NSLog([button titleLabel].text);
     
+    NSString * appSelected = [button titleLabel].text;
     
-    
+    if([appSelected isEqualToString: @"facebook"]){
+        
+        PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+        __weak PhotaLoginViewController *weakSelf = self;
+        model.loginCallBack = ^(BOOL status) {
+            if (status) {
+                NSLog(@"Logged into Facebook!");
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
+                                                                    message:@"Emjoy!"
+                                                                   delegate:weakSelf
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }else{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                                    message:@"Unable to login!"
+                                                                   delegate:weakSelf
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
+            
+        };
+        [[PhotaLoginManager sharedInstance] loginInWithFacebook:model];
+    }else{
+        [self performSegueWithIdentifier:@"LoginIn" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,4 +111,6 @@
 }
 
 
+- (IBAction)appButtonClicked:(id)sender {
+}
 @end

@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 - (IBAction)doLogin:(UIButton *)sender;
+@property (nonatomic, strong) NSString *appName;
 @end
