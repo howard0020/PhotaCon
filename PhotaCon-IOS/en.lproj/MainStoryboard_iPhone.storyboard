@@ -329,27 +329,57 @@
             </objects>
             <point key="canvasLocation" x="1175" y="1292"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Nwr-fj-g84">
             <objects>
-                <viewController id="9DI-N6-pv7" sceneMemberID="viewController">
+                <viewController id="9DI-N6-pv7" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpd-ZV-VtA">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-WC-MQN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-WC-MQN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="gqN-Im-5GH">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="70" id="gqN-Im-5GH" customClass="HomeUserCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXj-f9-4GA">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="Y2l-M6-s7h"/>
+                                                        <constraint firstAttribute="width" constant="60" id="zq6-YW-WO0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAJ-L1-bIG">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="199" id="khG-1k-8cx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="gAJ-L1-bIG" firstAttribute="leading" secondItem="gqN-Im-5GH" secondAttribute="leading" constant="83" id="Od2-Tp-I4u"/>
+                                            <constraint firstItem="gAJ-L1-bIG" firstAttribute="top" secondItem="gqN-Im-5GH" secondAttribute="top" constant="9" id="PtP-Rw-apV"/>
+                                            <constraint firstItem="zXj-f9-4GA" firstAttribute="top" secondItem="gqN-Im-5GH" secondAttribute="top" constant="5" id="RSm-jD-FHW"/>
+                                            <constraint firstItem="zXj-f9-4GA" firstAttribute="leading" secondItem="gqN-Im-5GH" secondAttribute="leading" constant="5" id="hDI-Xq-gmw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="thumbnailImageView" destination="zXj-f9-4GA" id="8st-Je-d55"/>
+                                            <outlet property="userNameLabel" destination="gAJ-L1-bIG" id="aol-MG-GIu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9DI-N6-pv7" id="cMv-ss-U6M"/>
+                                    <outlet property="delegate" destination="9DI-N6-pv7" id="fe4-Iv-WEi"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="U3w-8r-WNa">
                                 <constraints>
@@ -389,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnk-Md-407" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="-87"/>
+            <point key="canvasLocation" x="2208" y="-87"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3Xp-OT-g9N">
@@ -420,61 +450,6 @@
         <image name="Splash2.jpg" width="640" height="1136"/>
         <image name="photacon.png" width="180" height="180"/>
     </resources>
-    <classes>
-        <class className="HomeTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabBarViewController.h"/>
-        </class>
-        <class className="LoginAppCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginAppCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PhotaLoginPhotaConViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginPhotaConViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doLogin:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PhotaLoginViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginViewController.h"/>
-        </class>
-        <class className="PhotaSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaSplashViewController.h"/>
-        </class>
-        <class className="RegisterPhotaConViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterPhotaConViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doRegister"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="repeatPassword" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doLogout"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

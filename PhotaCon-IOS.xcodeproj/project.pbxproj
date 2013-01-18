@@ -48,8 +48,15 @@
 		64D1019F88D04DEBA37F8735 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D5BD70E7CE461EA884E9CF /* libPods.a */; };
 		912702E516A780C900779CCA /* GenericApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702E416A780C900779CCA /* GenericApp.m */; };
 		912702F216A79CE000779CCA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702F116A79CDF00779CCA /* SettingsViewController.m */; };
+		912702F816A8D5C900779CCA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702F716A8D5C800779CCA /* HomeViewController.m */; };
+		912702FB16A8DEEF00779CCA /* HomeUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702FA16A8DEEE00779CCA /* HomeUserCell.m */; };
+		9127030316A8E27300779CCA /* ab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 912702FD16A8E27300779CCA /* ab.jpg */; };
+		9127030416A8E27300779CCA /* bbking.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 912702FE16A8E27300779CCA /* bbking.jpg */; };
+		9127030516A8E27300779CCA /* howard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 912702FF16A8E27300779CCA /* howard.jpg */; };
+		9127030616A8E27300779CCA /* sheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030016A8E27300779CCA /* sheng.jpg */; };
+		9127030716A8E27300779CCA /* troy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030116A8E27300779CCA /* troy.jpg */; };
+		9127030816A8E27300779CCA /* william.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030216A8E27300779CCA /* william.jpg */; };
 		91B055E216990EC900DD542A /* photacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E116990EC900DD542A /* photacon.png */; };
-		91B055E6169912BA00DD542A /* photaHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B055E5169912BA00DD542A /* photaHomeViewController.m */; };
 		91B056B21699179C00DD542A /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E81699179C00DD542A /* 01-refresh.png */; };
 		91B056B31699179C00DD542A /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E91699179C00DD542A /* 02-redo.png */; };
 		91B056B41699179C00DD542A /* 03-loopback.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055EA1699179C00DD542A /* 03-loopback.png */; };
@@ -326,9 +333,17 @@
 		912702E416A780C900779CCA /* GenericApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericApp.m; path = ../GenericApp.m; sourceTree = "<group>"; };
 		912702F016A79CDF00779CCA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		912702F116A79CDF00779CCA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		912702F616A8D5C800779CCA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		912702F716A8D5C800779CCA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		912702F916A8DEED00779CCA /* HomeUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeUserCell.h; sourceTree = "<group>"; };
+		912702FA16A8DEEE00779CCA /* HomeUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeUserCell.m; sourceTree = "<group>"; };
+		912702FD16A8E27300779CCA /* ab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ab.jpg; sourceTree = "<group>"; };
+		912702FE16A8E27300779CCA /* bbking.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bbking.jpg; sourceTree = "<group>"; };
+		912702FF16A8E27300779CCA /* howard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = howard.jpg; sourceTree = "<group>"; };
+		9127030016A8E27300779CCA /* sheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sheng.jpg; sourceTree = "<group>"; };
+		9127030116A8E27300779CCA /* troy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = troy.jpg; sourceTree = "<group>"; };
+		9127030216A8E27300779CCA /* william.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = william.jpg; sourceTree = "<group>"; };
 		91B055E116990EC900DD542A /* photacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photacon.png; sourceTree = "<group>"; };
-		91B055E4169912BA00DD542A /* photaHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photaHomeViewController.h; sourceTree = "<group>"; };
-		91B055E5169912BA00DD542A /* photaHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photaHomeViewController.m; sourceTree = "<group>"; };
 		91B055E81699179C00DD542A /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		91B055E91699179C00DD542A /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
 		91B055EA1699179C00DD542A /* 03-loopback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-loopback.png"; sourceTree = "<group>"; };
@@ -616,6 +631,7 @@
 		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				912702FC16A8E27100779CCA /* ppl */,
 				912702E716A780DE00779CCA /* AppController */,
 				5408D18316A37977007A664F /* Util */,
 				54B7E6EF169E51860040C6D2 /* sharedManagers */,
@@ -698,10 +714,12 @@
 				540A0830169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m */,
 				5408D17D16A3693A007A664F /* PhotaSplashViewController.h */,
 				5408D17E16A3693B007A664F /* PhotaSplashViewController.m */,
-				91B055E4169912BA00DD542A /* photaHomeViewController.h */,
-				91B055E5169912BA00DD542A /* photaHomeViewController.m */,
 				5408D17916A26B7F007A664F /* RegisterPhotaConViewController.h */,
 				5408D17A16A26B7F007A664F /* RegisterPhotaConViewController.m */,
+				912702F616A8D5C800779CCA /* HomeViewController.h */,
+				912702F716A8D5C800779CCA /* HomeViewController.m */,
+				912702F916A8DEED00779CCA /* HomeUserCell.h */,
+				912702FA16A8DEEE00779CCA /* HomeUserCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -730,6 +748,19 @@
 				912702E416A780C900779CCA /* GenericApp.m */,
 			);
 			name = AppController;
+			sourceTree = "<group>";
+		};
+		912702FC16A8E27100779CCA /* ppl */ = {
+			isa = PBXGroup;
+			children = (
+				912702FD16A8E27300779CCA /* ab.jpg */,
+				912702FE16A8E27300779CCA /* bbking.jpg */,
+				912702FF16A8E27300779CCA /* howard.jpg */,
+				9127030016A8E27300779CCA /* sheng.jpg */,
+				9127030116A8E27300779CCA /* troy.jpg */,
+				9127030216A8E27300779CCA /* william.jpg */,
+			);
+			path = ppl;
 			sourceTree = "<group>";
 		};
 		91B055E71699179C00DD542A /* icon */ = {
@@ -1234,6 +1265,12 @@
 				91B057791699179C00DD542A /* 99-umbrella.png in Resources */,
 				91B0577A1699179C00DD542A /* check64.png in Resources */,
 				91B0577B1699179C00DD542A /* group.png in Resources */,
+				9127030316A8E27300779CCA /* ab.jpg in Resources */,
+				9127030416A8E27300779CCA /* bbking.jpg in Resources */,
+				9127030516A8E27300779CCA /* howard.jpg in Resources */,
+				9127030616A8E27300779CCA /* sheng.jpg in Resources */,
+				9127030716A8E27300779CCA /* troy.jpg in Resources */,
+				9127030816A8E27300779CCA /* william.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1286,7 +1323,6 @@
 				541A90E316966C8B0035082E /* photaAppDelegate.m in Sources */,
 				541A90F216966C8C0035082E /* PhotaLoginViewController.m in Sources */,
 				545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */,
-				91B055E6169912BA00DD542A /* photaHomeViewController.m in Sources */,
 				B7F10479169A116100D6286B /* LoginAppCell.m in Sources */,
 				540A0831169BD67800A9AD29 /* PhotaLoginPhotaConViewController.m in Sources */,
 				54B7E6EB169E504A0040C6D2 /* PhotaServerProxy.m in Sources */,
@@ -1299,6 +1335,8 @@
 				91F5011D16A4F17600AEFF34 /* LoginModel.m in Sources */,
 				912702E516A780C900779CCA /* GenericApp.m in Sources */,
 				912702F216A79CE000779CCA /* SettingsViewController.m in Sources */,
+				912702F816A8D5C900779CCA /* HomeViewController.m in Sources */,
+				912702FB16A8DEEF00779CCA /* HomeUserCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

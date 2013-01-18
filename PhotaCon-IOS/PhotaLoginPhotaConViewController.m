@@ -9,7 +9,6 @@
 #import "PhotaLoginPhotaConViewController.h"
 #import "AFJSONRequestOperation.h"
 #import "PhotaLoginManager.h"
-#import "photaHomeViewController.h"
 #import "PhotaStringUtil.h"
 #import "MBProgressHUD.h"
 
