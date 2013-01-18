@@ -14,7 +14,9 @@
 static PhotaServerProxy *sharedProxy = nil;
 #define proxyHost @"http://localhost:8080/api/"
 @implementation PhotaServerProxy
-
+-(void)postAccessToken:(NSString *)token forApp:(NSString *)app{
+    NSLog(@"Posting %@ token to server:%@",app,token);
+}
 -(void)loginUser:(NSString *)userName
     withPassword:(NSString *)password
         callback:(void (^)(BOOL, id, NSError *))callback{

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 billionaire. All rights reserved.
 //
 
-#import "PhotaLoginModel.h"
+#import "LoginModel.h"
 
-@implementation PhotaLoginModel
+@implementation LoginModel
 
 @synthesize loginName = _loginName;
 @synthesize password =_password;;

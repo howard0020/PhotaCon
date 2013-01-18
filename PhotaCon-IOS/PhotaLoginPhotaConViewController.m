@@ -69,7 +69,7 @@
     }else {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
-        PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+        LoginModel * model = [[LoginModel alloc] init];
         model.loginName = nameTextField.text;
         model.password = passwordTextField.text;
         __weak PhotaLoginPhotaConViewController *weakSelf = self;

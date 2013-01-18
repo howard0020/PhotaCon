@@ -55,7 +55,7 @@
         [alert show];
     }else {
         NSLog(@"do register");
-        PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+        LoginModel * model = [[LoginModel alloc] init];
         model.loginName = email.text;
         model.password = password.text;
         __weak RegisterPhotaConViewController *weakSelf = self;

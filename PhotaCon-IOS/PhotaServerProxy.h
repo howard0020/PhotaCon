@@ -16,4 +16,5 @@
 -(void)registerUser:(NSString *)userName
        withPassword:(NSString *)password
            callback:(void (^)(BOOL status,id Result,NSError *error))callback;
+-(void)postAccessToken:(NSString *)token forApp:(NSString *)app;
 @end

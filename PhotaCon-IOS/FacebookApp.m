@@ -6,32 +6,24 @@
 //  Copyright (c) 2013 billionaire. All rights reserved.
 //
 
-#import "PhotaFacebookApp.h"
+#import "FacebookApp.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-
-static PhotaFacebookApp *sharedInstance = nil;
-
-@implementation PhotaFacebookApp
-
-@synthesize isLogin = _isLogin;
-
-+(PhotaFacebookApp *)sharedInstance
-{
-    @synchronized(self) {
-        if(sharedInstance == nil)
-            sharedInstance = [[super alloc] init];
+@implementation FacebookApp
+-(id)init{
+    self = [super init];
+    if (self) {
+        self.appName = @"facebook";
     }
-    return sharedInstance;
+    return self;
 }
-
--(void)logMeIn:(LoginCallbackBlock) callbackBlock
+-(void)loginWithCallback:(appLoginCallback) callbackBlock
 {
     NSLog(@"Facebook: trying to log in");
     [self openSession:callbackBlock];
 }
 
--(void)logMeOut{
+-(void)logout{
     NSLog(@"Facebook: logging out");
     [FBSession.activeSession closeAndClearTokenInformation];
 }
@@ -39,13 +31,12 @@ static PhotaFacebookApp *sharedInstance = nil;
 -(void)sessionStateChanged:(FBSession *)session
                      state:(FBSessionState) state
                      error:(NSError *)error
-                  callback:(LoginCallbackBlock) callbackBlock
+                  callback:(appLoginCallback) callbackBlock
 {
     switch (state) {
         case FBSessionStateOpen: {
             NSLog(@"Facebook: session StateChanged. FBState: FBSessionStateOpen");
-            self.isLogin = YES;
-            callbackBlock(YES);
+            callbackBlock(YES,session.accessToken,self.appName);
             break;
         case FBSessionStateClosed:
             NSLog(@"Facebook: session StateChanged. FBState: FBSessionStateClosed");
@@ -55,15 +46,13 @@ static PhotaFacebookApp *sharedInstance = nil;
             // be looking at the root view.
             //[self.navController popToRootViewControllerAnimated:NO];
             NSLog(@"Facebook: session StateChanged. FBState: FBSessionStateClosedLoginFailed");
-            self.isLogin = NO;
             [FBSession.activeSession closeAndClearTokenInformation];
-            callbackBlock(NO);
+            callbackBlock(NO,nil,self.appName);
             //[self showLoginView];
             break;
         default:
             NSLog(@"Facebook: session StateChanged. FBState: default");
-            self.isLogin = YES;
-            callbackBlock(NO);
+            callbackBlock(NO,nil,self.appName);
             break;
         }
     }
@@ -79,7 +68,7 @@ static PhotaFacebookApp *sharedInstance = nil;
     
 }
 
--(BOOL)openSession:(LoginCallbackBlock) callbackBlock
+-(BOOL)openSession:(appLoginCallback) callbackBlock
 {
     NSLog(@"Facebook: openSession.");
     return [FBSession openActiveSessionWithReadPermissions:nil allowLoginUI:YES
@@ -89,17 +78,11 @@ static PhotaFacebookApp *sharedInstance = nil;
     }
     ];
 }
-- (BOOL)myApplication:(UIApplication *)myApplication
+
+-(BOOL)myApplication:(UIApplication *)myApplication
               openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     NSLog(@"Facebook: application handOpenUrl");
     return [FBSession.activeSession handleOpenURL:url];
 }
-- (void)handleApplicationDidBecomeActive
-{
-    NSLog(@"Facebook: handleApplicationDidBecomeActive");
-    [FBSession.activeSession handleDidBecomeActive];
-}
-
-
 @end

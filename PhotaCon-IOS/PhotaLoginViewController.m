@@ -30,11 +30,16 @@
         NSLog(@"logined in!");
     }
 }
+-(void)handleApplicationDidBecomeActive{
+    NSLog(@"back to photacon! calling login Manager...");
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkLogin) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleApplicationDidBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     firstTime = YES;
 	appImageNames = [[NSArray alloc] initWithObjects:@"photacon.png",@"facebook.png",@"twitter.png",@"foursquare.png",@"googleplus.png",@"linkedin.png",@"myspace.png",@"orkut.png",@"tumblr.png",nil];
@@ -75,19 +80,21 @@
     
     NSString * appSelected = [button titleLabel].text;
     
-    if([appSelected isEqualToString: @"facebook"]){
+    if(![appSelected isEqualToString: @"photacon"]){
         
-        PhotaLoginModel * model = [[PhotaLoginModel alloc] init];
+        LoginModel * model = [[LoginModel alloc] init];
+        model.loginAppAs = appSelected;
         __weak PhotaLoginViewController *weakSelf = self;
         model.loginCallBack = ^(BOOL status) {
             if (status) {
                 NSLog(@"Logged into Facebook!");
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
-                                                                    message:@"Emjoy!"
+                                                                    message:@"Enjoy!"
                                                                    delegate:weakSelf
                                                           cancelButtonTitle:@"OK"
                                                           otherButtonTitles:nil];
                 [alertView show];
+                [self performSegueWithIdentifier:@"HomeView" sender:self];
             }else{
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
                                                                     message:@"Unable to login!"
@@ -98,9 +105,9 @@
             }
             
         };
-        [[PhotaLoginManager sharedInstance] loginInWithFacebook:model];
+        [[PhotaLoginManager sharedInstance] loginInWithApp:model];
     }else{
-        [self performSegueWithIdentifier:@"LoginIn" sender:self];
+        [self performSegueWithIdentifier:@"LoginView" sender:self];
     }
 }
 
