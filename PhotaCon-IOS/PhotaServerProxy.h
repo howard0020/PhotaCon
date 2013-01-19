@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPClient.h"
+#import "AFNetworking.h"
 @interface PhotaServerProxy : AFHTTPClient
 +(PhotaServerProxy *) sharedInstance;
 -(void)loginUser:(NSString *)userName
@@ -16,5 +16,7 @@
 -(void)registerUser:(NSString *)userName
        withPassword:(NSString *)password
            callback:(void (^)(BOOL status,id Result,NSError *error))callback;
+-(void)searchForUser:(NSString *)text
+        withCallback:(void (^)(BOOL status,id Result,NSError *error))callback;
 -(void)postAccessToken:(NSString *)token forApp:(NSString *)app;
 @end

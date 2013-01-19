@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "HomeUserCell.h"
-
+#import "PhotaServerProxy.h"
 @interface HomeViewController ()
 
 @end
@@ -16,6 +16,12 @@
 @implementation HomeViewController
 {
     NSArray *tableData, *appImageNames;
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    NSLog(@"search bar click");
+    [[PhotaServerProxy sharedInstance] searchForUser:@"howard" withCallback:^(BOOL status, id Result, NSError *error) {
+        NSLog(@"got result:%@",Result);
+    }];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

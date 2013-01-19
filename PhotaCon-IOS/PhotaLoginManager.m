@@ -21,35 +21,6 @@ static PhotaLoginManager *sharedLoginManager = nil;
 @synthesize isLogin = _isLogin;
 @synthesize currentApp = _currentApp;
 
-/*
--(void)loginUser:(NSString *)userName
-    withPassword:(NSString *)password
-        callback:(void (^)(BOOL))callback{
-    [[PhotaServerProxy sharedInstance] loginUser:userName withPassword:password callback:^(BOOL status, id Result, NSError *error) {
-        if (status) {
-            NSLog(@"LoginManager user logged in:%@",Result);
-            self.isLogin = YES;
-        }else{
-            NSLog(@"LoginManager user NOT logged in - Result:%@ Error:%@",Result,error);
-        }
-        callback(self.isLogin);
-    }];
-}
- 
--(void)registerUser:(NSString *)userName
-       withPassword:(NSString *)password
-           callback:(void (^)(BOOL))callback{
-    [[PhotaServerProxy sharedInstance] registerUser:userName withPassword:password callback:^(BOOL status, id Result, NSError *error) {
-        if (status) {
-            NSLog(@"LoginManager user registered and logged in.");
-            self.isLogin =YES;
-        }else {
-            NSLog(@"LoginManager fail to register user");
-        }
-        callback(self.isLogin);
-    }];
-}
- */
 -(void)loginUser:(LoginModel *) loginModel{
     [[PhotaServerProxy sharedInstance] loginUser:loginModel.loginName withPassword:loginModel.password callback:^(BOOL status, id Result, NSError *error) {
         if (status) {

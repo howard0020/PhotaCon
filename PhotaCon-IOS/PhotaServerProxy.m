@@ -7,7 +7,7 @@
 //
 
 #import "PhotaServerProxy.h"
-#import "AFJSONRequestOperation.h"
+
 @interface PhotaServerProxy()
 @end
 
@@ -47,6 +47,22 @@ static PhotaServerProxy *sharedProxy = nil;
         callback(YES,JSON,nil);
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"register user error:%@",error);
+        callback(NO,JSON,error);
+    }];
+    [operation start];
+}
+-(void)searchForUser:(NSString *)text
+        withCallback:(void (^)(BOOL status,id Result,NSError *error))callback{
+    NSMutableDictionary * dic = [[NSMutableDictionary alloc]init];
+    [dic setObject:text forKey:@"name"];
+    
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:@"search/users" parameters:dic];
+    
+    AFHTTPRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"search success:%@",JSON);
+        callback(YES,JSON,nil);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"search error:%@",error);
         callback(NO,JSON,error);
     }];
     [operation start];
