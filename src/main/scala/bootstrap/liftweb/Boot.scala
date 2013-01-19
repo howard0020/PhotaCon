@@ -51,7 +51,7 @@ class Boot {
     initStdConfig
     
     //add REST Web Services
-    LiftRules.dispatch.append(HomeContentService).append(LoginService).append(TestService)
+    LiftRules.dispatch.append(HomeContentService).append(LoginService).append(TestService).append(SearchService)
     
     //initScribe
   }

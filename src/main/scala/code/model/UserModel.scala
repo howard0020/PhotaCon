@@ -23,12 +23,17 @@ object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
   // comment this line out to require email validations
   override def skipEmailValidation = true
   
-  def findUserByEmail(email: String) = UserModel.find(By(UserModel.email, email))
+  def findUserByEmail(email: String) = find(By(UserModel.email, email))
   
   def createByEmail(email: String):Box[UserModel] = {
     if (findUserByEmail(email).isEmpty){
       Full(create)
     }else Failure("User Exist")
+  }
+  def findUserByName(name: String):List[UserModel] = {
+    var sqlQuery = "select * from users order by least(fn_levenshtein('%s',concat_ws(' ',firstName,lastName)),fn_levenshtein('%s',concat_ws(' ',lastName,firstName)))"
+    sqlQuery = sqlQuery format(name,name)
+    findAllByInsecureSql(sqlQuery,IHaveValidatedThisSQL("howard","2013-01-19"))
   }
 }
 

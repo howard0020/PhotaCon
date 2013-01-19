@@ -9,11 +9,20 @@ import common._
 import JsonDSL._
 import code.model._
 import net.liftweb.http.S
+import RestFormatters._
 
 object SearchService extends RestHelper{
 	serve("api" / "search" prefix{
 	  case "users" :: Nil Get _ => {
-	    JsonResponse(("fail to login"),Nil,Nil,401)
+      for{
+        name <- S.param("name") ?~ "Missing name" ~> 400
+      }yield{
+        val users = UserModel.findUserByName(name)
+        toJSONList(users)
+      }
 	  }
 	})
+  def toJSONList(users: List[UserModel]): JValue = {
+    users.map(user => toJSON(user))
+  }
 }

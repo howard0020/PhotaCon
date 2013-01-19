@@ -17,8 +17,13 @@ object RestFormatters {
 
   def toJSON(user: UserModel): JValue = {
     ("user" ->
-		("id" -> restId(user)) ~
-		("email" -> user.email.is)
+		  ("id" -> restId(user)) ~
+		  ("email" -> user.email.is) ~
+      ("firstName" -> user.firstName.is) ~
+      ("lastName" -> user.lastName.is)
     )
+  }
+  def toJSONList(): JValue = {
+    UserModel.findAll().map(user => toJSON(user))
   }
 }
