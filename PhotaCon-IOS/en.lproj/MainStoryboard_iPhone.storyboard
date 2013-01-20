@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Phota Login View Controller-->
+        <!--Phota Login View Controller - Login-->
         <scene sceneID="EwT-Nw-YMH">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="evf-pA-WiQ" customClass="PhotaLoginViewController" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                             <outlet property="delegate" destination="evf-pA-WiQ" id="PSX-Do-D2h"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="06w-0B-aEt"/>
+                    <navigationItem key="navigationItem" title="Login" id="06w-0B-aEt"/>
                     <connections>
                         <segue destination="aEo-xi-5KY" kind="push" identifier="HomeView" id="IV5-cg-CtP"/>
                         <segue destination="sGd-TP-OMA" kind="modal" identifier="showSplash" id="k6Y-te-Ado"/>
@@ -74,11 +74,14 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="Vyl-Qq-crS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="JgY-io-1pT"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="GXA-CY-Rss">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="F26-rc-6Tm">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="evf-pA-WiQ" kind="relationship" relationship="rootViewController" id="ibA-pT-vrt"/>
                     </connections>
@@ -109,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="So9-kq-Iqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="588"/>
+            <point key="canvasLocation" x="-258" y="748"/>
         </scene>
         <!--Phota Login Phota Con View Controller - Login-->
         <scene sceneID="bAN-os-Mbn">
@@ -209,18 +212,17 @@
                             <constraint firstItem="OiX-nY-IjO" firstAttribute="centerX" secondItem="cLT-bt-qvU" secondAttribute="centerX" type="default" id="lkh-KP-X5Y"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="20-gear2.png" id="EZA-kz-gWx"/>
+                    <navigationItem key="navigationItem" title="Settings" id="oaN-GB-M99"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQY-6I-XsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="633"/>
+            <point key="canvasLocation" x="2271" y="633"/>
         </scene>
         <!--Home Tab Bar View Controller-->
         <scene sceneID="D8E-sm-0Fb">
             <objects>
                 <tabBarController storyboardIdentifier="HomeViewController" definesPresentationContext="YES" id="aEo-xi-5KY" customClass="HomeTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yVS-eb-ei2"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lAC-E1-jat">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -229,7 +231,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Y1w-fe-Ngn" kind="relationship" relationship="viewControllers" id="aZZ-Kk-meY"/>
-                        <segue destination="zA3-7E-ngx" kind="relationship" relationship="viewControllers" id="pnh-Na-yWa"/>
+                        <segue destination="zci-4m-oxg" kind="relationship" relationship="viewControllers" id="pnh-Na-yWa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTt-dX-D7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +331,7 @@
             </objects>
             <point key="canvasLocation" x="1175" y="1292"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home View Controller - Home-->
         <scene sceneID="Nwr-fj-g84">
             <objects>
                 <viewController id="9DI-N6-pv7" customClass="HomeViewController" sceneMemberID="viewController">
@@ -337,81 +339,42 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-WC-MQN">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" id="h1v-1f-4do">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="9DI-N6-pv7" id="djL-Wm-jpZ"/>
-                                    </connections>
-                                </searchBar>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="70" id="gqN-Im-5GH" customClass="HomeUserCell">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXj-f9-4GA">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="Y2l-M6-s7h"/>
-                                                        <constraint firstAttribute="width" constant="60" id="zq6-YW-WO0"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAJ-L1-bIG">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="199" id="khG-1k-8cx"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="gAJ-L1-bIG" firstAttribute="leading" secondItem="gqN-Im-5GH" secondAttribute="leading" constant="83" id="Od2-Tp-I4u"/>
-                                            <constraint firstItem="gAJ-L1-bIG" firstAttribute="top" secondItem="gqN-Im-5GH" secondAttribute="top" constant="9" id="PtP-Rw-apV"/>
-                                            <constraint firstItem="zXj-f9-4GA" firstAttribute="top" secondItem="gqN-Im-5GH" secondAttribute="top" constant="5" id="RSm-jD-FHW"/>
-                                            <constraint firstItem="zXj-f9-4GA" firstAttribute="leading" secondItem="gqN-Im-5GH" secondAttribute="leading" constant="5" id="hDI-Xq-gmw"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="thumbnailImageView" destination="zXj-f9-4GA" id="8st-Je-d55"/>
-                                            <outlet property="userNameLabel" destination="gAJ-L1-bIG" id="aol-MG-GIu"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                            <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-nc-aOA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6tN-3G-Itn"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="9DI-N6-pv7" id="cMv-ss-U6M"/>
-                                    <outlet property="delegate" destination="9DI-N6-pv7" id="fe4-Iv-WEi"/>
+                                    <outlet property="delegate" destination="9DI-N6-pv7" id="Yw0-ib-UzI"/>
                                 </connections>
-                            </tableView>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Splash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="H4S-4O-68t"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vyA-WC-MQN" firstAttribute="top" secondItem="hpd-ZV-VtA" secondAttribute="top" type="default" id="JhJ-4s-aTW"/>
-                            <constraint firstItem="vyA-WC-MQN" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="YND-0R-EDX"/>
-                            <constraint firstItem="vyA-WC-MQN" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="qHk-BQ-0Va"/>
-                            <constraint firstItem="vyA-WC-MQN" firstAttribute="bottom" secondItem="hpd-ZV-VtA" secondAttribute="bottom" type="default" id="qSe-Mf-BeB"/>
+                            <constraint firstItem="H4S-4O-68t" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="7KG-Gx-NM1"/>
+                            <constraint firstItem="IcX-nc-aOA" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="MMh-ke-ayD"/>
+                            <constraint firstItem="H4S-4O-68t" firstAttribute="bottom" secondItem="hpd-ZV-VtA" secondAttribute="bottom" type="default" id="Uff-at-qxK"/>
+                            <constraint firstItem="IcX-nc-aOA" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="Xxu-g9-9GP"/>
+                            <constraint firstItem="IcX-nc-aOA" firstAttribute="top" secondItem="hpd-ZV-VtA" secondAttribute="top" type="default" id="dlc-tm-Y9V"/>
+                            <constraint firstItem="H4S-4O-68t" firstAttribute="top" secondItem="IcX-nc-aOA" secondAttribute="bottom" type="default" id="oNm-ez-McJ"/>
+                            <constraint firstItem="H4S-4O-68t" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="rjY-a4-IPE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RJP-zb-zN7"/>
+                    <navigationItem key="navigationItem" title="Home" id="RJP-zb-zN7"/>
                     <connections>
-                        <outlet property="searchBar" destination="h1v-1f-4do" id="C6W-Vj-7Xl"/>
-                        <outlet property="searchDisplayController" destination="mWB-xl-IRY" id="uzV-cs-vAY"/>
+                        <outlet property="mySearchBar" destination="IcX-nc-aOA" id="E6y-2l-Q7n"/>
+                        <outlet property="searchDisplayController" destination="GRD-AY-VNa" id="mg5-bZ-Z2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnk-Md-407" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="mWB-xl-IRY">
+                <searchDisplayController id="GRD-AY-VNa">
                     <connections>
-                        <outlet property="delegate" destination="9DI-N6-pv7" id="m3u-lU-3rg"/>
-                        <outlet property="searchBar" destination="h1v-1f-4do" id="VrR-Y2-Y3c"/>
-                        <outlet property="searchContentsController" destination="9DI-N6-pv7" id="VxO-vf-5NU"/>
-                        <outlet property="searchResultsDataSource" destination="9DI-N6-pv7" id="r1a-CX-Y8e"/>
-                        <outlet property="searchResultsDelegate" destination="9DI-N6-pv7" id="hcS-3h-qq8"/>
+                        <outlet property="delegate" destination="9DI-N6-pv7" id="YOB-A8-I3g"/>
+                        <outlet property="searchBar" destination="IcX-nc-aOA" id="6Zb-PU-xiI"/>
+                        <outlet property="searchContentsController" destination="9DI-N6-pv7" id="zS9-PY-mbo"/>
+                        <outlet property="searchResultsDataSource" destination="9DI-N6-pv7" id="XSM-EL-DOp"/>
+                        <outlet property="searchResultsDelegate" destination="9DI-N6-pv7" id="up4-uS-pEI"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -438,10 +401,35 @@
             </objects>
             <point key="canvasLocation" x="527" y="718"/>
         </scene>
+        <!--Navigation Controller - Settings-->
+        <scene sceneID="Yud-GL-2Wk">
+            <objects>
+                <navigationController id="zci-4m-oxg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="20-gear2.png" id="EZA-kz-gWx"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="cna-4s-PI7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ALY-ss-xEL">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="zA3-7E-ngx" kind="relationship" relationship="rootViewController" id="MCm-IW-2Sc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sbr-Gv-4TC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="633"/>
+        </scene>
     </scenes>
     <resources>
         <image name="112-group.png" width="32" height="21"/>
         <image name="20-gear2.png" width="26" height="28"/>
+        <image name="Splash.jpg" width="640" height="1136"/>
         <image name="Splash2.jpg" width="640" height="1136"/>
         <image name="photacon.png" width="180" height="180"/>
     </resources>

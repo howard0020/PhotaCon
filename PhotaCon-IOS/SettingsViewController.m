@@ -37,6 +37,6 @@
 
 - (IBAction)doLogout {
     [[PhotaLoginManager sharedInstance]logout];
-    [[self navigationController] popToRootViewControllerAnimated:YES];
+    [[[self navigationController] navigationController] popToRootViewControllerAnimated:YES];
 }
 @end

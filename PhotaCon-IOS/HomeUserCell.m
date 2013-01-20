@@ -19,11 +19,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"HomeUserCell" owner:self options:nil];
+        self = [array objectAtIndex:0];
     }
     return self;
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

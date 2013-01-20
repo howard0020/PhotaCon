@@ -46,6 +46,7 @@
 		545FE1681698ED080027692C /* PhotaLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FE1671698ED080027692C /* PhotaLoginManager.m */; };
 		54B7E6EB169E504A0040C6D2 /* PhotaServerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B7E6EA169E50490040C6D2 /* PhotaServerProxy.m */; };
 		64D1019F88D04DEBA37F8735 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D5BD70E7CE461EA884E9CF /* libPods.a */; };
+		9114305016AB7C31003EDB1F /* HomeUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9114304F16AB7C31003EDB1F /* HomeUserCell.xib */; };
 		912702E516A780C900779CCA /* GenericApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702E416A780C900779CCA /* GenericApp.m */; };
 		912702F216A79CE000779CCA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702F116A79CDF00779CCA /* SettingsViewController.m */; };
 		912702F816A8D5C900779CCA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912702F716A8D5C800779CCA /* HomeViewController.m */; };
@@ -56,6 +57,7 @@
 		9127030616A8E27300779CCA /* sheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030016A8E27300779CCA /* sheng.jpg */; };
 		9127030716A8E27300779CCA /* troy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030116A8E27300779CCA /* troy.jpg */; };
 		9127030816A8E27300779CCA /* william.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030216A8E27300779CCA /* william.jpg */; };
+		9127031016AB467A00779CCA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127030F16AB467A00779CCA /* User.m */; };
 		91B055E216990EC900DD542A /* photacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E116990EC900DD542A /* photacon.png */; };
 		91B056B21699179C00DD542A /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E81699179C00DD542A /* 01-refresh.png */; };
 		91B056B31699179C00DD542A /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E91699179C00DD542A /* 02-redo.png */; };
@@ -329,6 +331,7 @@
 		54B7E6E9169E50490040C6D2 /* PhotaServerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotaServerProxy.h; sourceTree = "<group>"; };
 		54B7E6EA169E50490040C6D2 /* PhotaServerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotaServerProxy.m; sourceTree = "<group>"; };
 		6D393D137C3F4B7E9FA5DF8B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		9114304F16AB7C31003EDB1F /* HomeUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeUserCell.xib; sourceTree = "<group>"; };
 		912702E316A780C800779CCA /* GenericApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericApp.h; path = ../GenericApp.h; sourceTree = "<group>"; };
 		912702E416A780C900779CCA /* GenericApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericApp.m; path = ../GenericApp.m; sourceTree = "<group>"; };
 		912702F016A79CDF00779CCA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 		9127030016A8E27300779CCA /* sheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sheng.jpg; sourceTree = "<group>"; };
 		9127030116A8E27300779CCA /* troy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = troy.jpg; sourceTree = "<group>"; };
 		9127030216A8E27300779CCA /* william.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = william.jpg; sourceTree = "<group>"; };
+		9127030E16AB467A00779CCA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9127030F16AB467A00779CCA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		91B055E116990EC900DD542A /* photacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photacon.png; sourceTree = "<group>"; };
 		91B055E81699179C00DD542A /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		91B055E91699179C00DD542A /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
@@ -631,6 +636,7 @@
 		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				9127030D16AB465400779CCA /* Model */,
 				912702FC16A8E27100779CCA /* ppl */,
 				912702E716A780DE00779CCA /* AppController */,
 				5408D18316A37977007A664F /* Util */,
@@ -720,6 +726,7 @@
 				912702F716A8D5C800779CCA /* HomeViewController.m */,
 				912702F916A8DEED00779CCA /* HomeUserCell.h */,
 				912702FA16A8DEEE00779CCA /* HomeUserCell.m */,
+				9114304F16AB7C31003EDB1F /* HomeUserCell.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -761,6 +768,15 @@
 				9127030216A8E27300779CCA /* william.jpg */,
 			);
 			path = ppl;
+			sourceTree = "<group>";
+		};
+		9127030D16AB465400779CCA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9127030E16AB467A00779CCA /* User.h */,
+				9127030F16AB467A00779CCA /* User.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		91B055E71699179C00DD542A /* icon */ = {
@@ -1271,6 +1287,7 @@
 				9127030616A8E27300779CCA /* sheng.jpg in Resources */,
 				9127030716A8E27300779CCA /* troy.jpg in Resources */,
 				9127030816A8E27300779CCA /* william.jpg in Resources */,
+				9114305016AB7C31003EDB1F /* HomeUserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1337,6 +1354,7 @@
 				912702F216A79CE000779CCA /* SettingsViewController.m in Sources */,
 				912702F816A8D5C900779CCA /* HomeViewController.m in Sources */,
 				912702FB16A8DEEF00779CCA /* HomeUserCell.m in Sources */,
+				9127031016AB467A00779CCA /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
