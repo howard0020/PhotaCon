@@ -28,32 +28,11 @@ object LoginService extends RestHelper {
     case "post" :: "accessToken" :: plugin :: Nil Get _ => {
       for {
         pluginValue <- Plugins.values.find(_.toString() == plugin) ?~ "App not supported" ~> 400
-        email		<- S.param("email") ?~ "Missing email" ~> 400
+        email <- S.param("email") ?~ "Missing email" ~> 400
         accessToken <- S.param("token") ?~ "Missing token" ~> 400
-      }yield {
+      } yield {
         //TODO check if token are real
-        var account = AccountModel.findAccountByEmailPlugin(email,pluginValue)
-        account match {
-          case Full(act) => {
-            RestFormatters.toJSON(act.user.obj.openOrThrowException("Found account without user"))
-          }
-          case Empty => {
-        	var user = UserModel.create.email(email)
-        	var account = AccountModel.create.user(user).accessToken(accessToken).email(email)
-        	account.save
-        	user.accounts += account
-        	RestFormatters.toJSON(user.saveMe)
-          }
-          case Failure(msg,_,_) => JsonResponse(("fail to create new account"),Nil,Nil,401)
-        }
-      }
-      S.param("token") match {
-        case Full(token) => {
-          Console.println(token)
-          JString("success")
-        }
-        case Empty => JString("Error - empty token")
-        case Failure(msg, _, _) => JString(msg)
+        postToken(email, pluginValue, accessToken)
       }
     }
     case "url" :: plugin :: Nil JsonGet _ => {
@@ -76,4 +55,23 @@ object LoginService extends RestHelper {
       }
     }
   })
+  def postToken(email: String, pluginValue: Plugins.Value, accessToken: String): LiftResponse = {
+    var account = AccountModel.findAccountByEmailPlugin(email, pluginValue)
+    Console.println("here!!!!")
+    account match {
+      case Full(act) => {
+        act.accessToken(accessToken)
+        act.save
+        RestFormatters.toJSON(act.user.obj.openOrThrowException("Found account without user"))
+      }
+      case Empty => {
+        var user = UserModel.create.email(email)
+        var account = AccountModel.create.user(user).accessToken(accessToken).email(email).plugin(pluginValue)
+        account.save
+        user.accounts += account
+        RestFormatters.toJSON(user.saveMe)
+      }
+      case Failure(msg, _, _) => JsonResponse(("fail to create new account"), Nil, Nil, 401)
+    }
+  }
 }
