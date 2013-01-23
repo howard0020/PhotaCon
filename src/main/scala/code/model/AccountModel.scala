@@ -1,6 +1,7 @@
 package code.model
 
 import net.liftweb.mapper._
+import code.plugin.Plugins
 /**
  * Created with IntelliJ IDEA.
  * User: chenghaolin
@@ -14,11 +15,12 @@ class AccountModel extends LongKeyedMapper[AccountModel]{
   def primaryKeyField = id
   object id extends MappedLongIndex(this)
 
-  object plugin extends MappedString(this,64)
+  object plugin extends MappedEnum(this,Plugins)
+  object email extends MappedString(this,64)
   object accessToken extends MappedText(this)
   object user extends MappedLongForeignKey(this,UserModel)
 
 }
 object AccountModel extends AccountModel with LongKeyedMetaMapper[AccountModel]{
-
+	def findAccountByEmailPlugin(email: String, plugin: Plugins.Value) = find(By(AccountModel.email, email),By(AccountModel.plugin,plugin))
 }

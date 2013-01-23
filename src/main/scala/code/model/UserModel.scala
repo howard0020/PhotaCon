@@ -30,6 +30,7 @@ object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
       Full(create)
     }else Failure("User Exist")
   }
+  
   def findUserByName(name: String):List[UserModel] = {
     var sqlQuery = "select * from users order by least(fn_levenshtein('%s',concat_ws(' ',firstName,lastName)),fn_levenshtein('%s',concat_ws(' ',lastName,firstName)))"
     sqlQuery = sqlQuery format(name,name)
