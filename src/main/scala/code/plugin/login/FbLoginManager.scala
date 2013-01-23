@@ -5,12 +5,12 @@ import org.scribe._
 import oauth._
 import builder._
 import api.FacebookApi
-import model.Verifier
-import org.scribe.model.Token
+import model._
 import code.plugin.Plugins
 import code.util.SiteConsts
 import net.liftweb.common.Full
 import net.liftweb.http.S
+import net.liftweb.common.Full
 
 
 class FbLoginManager extends LoginManager {
@@ -44,4 +44,14 @@ class FbLoginManager extends LoginManager {
 	    }
 	  }
 	}
+  def testToken(accessToken: Token) = {
+    var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
+    service.signRequest(accessToken, request);
+    var response = request.send();
+    Console.println(response.getCode)
+    Console.println(response.getBody)
+  }
+  implicit def str2Token(str: String):Token = {
+    return new Token(str,secret)
+  }
 }

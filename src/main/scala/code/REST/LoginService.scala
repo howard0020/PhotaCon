@@ -27,7 +27,7 @@ object LoginService extends RestHelper {
     }
     case "post" :: "accessToken" :: plugin :: Nil Get _ => {
       for {
-        pluginValue <- Plugins.values.find(_.toString() == plugin) ?~ "App not supported" ~> 400
+        pluginValue <- Plugins.values.find(_.toString == plugin) ?~ "App not supported" ~> 400
         email <- S.param("email") ?~ "Missing email" ~> 400
         accessToken <- S.param("token") ?~ "Missing token" ~> 400
       } yield {
@@ -66,12 +66,13 @@ object LoginService extends RestHelper {
       }
       case Empty => {
         var user = UserModel.create.email(email)
-        var account = AccountModel.create.user(user).accessToken(accessToken).email(email).plugin(pluginValue)
+        var account = AccountModel.create.user(user).accessToken(accessToken)
+          .email(email).plugin(pluginValue)
         account.save
         user.accounts += account
         RestFormatters.toJSON(user.saveMe)
       }
-      case Failure(msg, _, _) => JsonResponse(("fail to create new account"), Nil, Nil, 401)
+      case Failure(msg, _, _) => JsonResponse(("fail to create new account"), 401)
     }
   }
 }

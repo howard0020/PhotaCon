@@ -21,7 +21,7 @@ import RestFormatters._
 object TestService extends RestHelper{
     serve("api" / "test" prefix {
       case "login" :: "failure" :: Nil Get _ => {
-        JsonResponse(("fail to login"),Nil,Nil,401)
+        JsonResponse(("fail to login"),401)
       }
       case "inspect" :: "session" :: Nil Get _ => {
         for {
@@ -44,6 +44,11 @@ object TestService extends RestHelper{
         createUser("howard00130@yahoo.com","52012345","Xiao Qiang","Wu")
         createUser("howard00140@yahoo.com","52012345","Sheng","Jun")
         toJSONList()
+      }
+      case "serve" :: "image" :: Nil Get _ => {
+        var resource = LiftRules.getResource("/images/searchNearMe.jpg")
+        JString(resource.toString())
+        //resource.toStream
       }
     })
   def createUser(email:String, password:String, firstName:String, lastName:String):UserModel = {
