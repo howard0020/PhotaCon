@@ -14,8 +14,21 @@
 static PhotaServerProxy *sharedProxy = nil;
 #define proxyHost @"http://localhost:8080/api/"
 @implementation PhotaServerProxy
--(void)postAccessToken:(NSString *)token forApp:(NSString *)app{
-    NSLog(@"Posting %@ token to server:%@",app,token);
+-(void)postAccessToken:(NSString *)token forUser:(NSString*)user forApp:(NSString *)app callback:(void (^)(BOOL, id, NSError *))callback
+{
+    NSMutableDictionary * dic = [[NSMutableDictionary alloc] init];
+    [dic setObject:token forKey:@"token"];
+    [dic setObject:user forKey:@"email"];
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:[@"user/login/post/accessToken/" stringByAppendingString:app] parameters:dic];
+    AFHTTPRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"success %@",JSON);
+        callback(YES,JSON,nil);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"error %@",error);
+        callback(NO,JSON,error);
+    }];
+    [operation start];
+    //NSLog(@"Posting %@ token to server:%@",app,token);
 }
 -(void)loginUser:(NSString *)userName
     withPassword:(NSString *)password
@@ -24,7 +37,7 @@ static PhotaServerProxy *sharedProxy = nil;
     [dic setObject:userName forKey:@"email"];
     [dic setObject:password forKey:@"password"];
     
-    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:@"user/login/user" parameters:dic];
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:@"user/login/photacon" parameters:dic];
     AFHTTPRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"success %@",JSON);
         callback(YES,JSON,nil);

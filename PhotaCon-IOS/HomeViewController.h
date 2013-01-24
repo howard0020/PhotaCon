@@ -11,7 +11,6 @@
 @interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *mySearchBar;
-@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong,nonatomic) NSMutableArray *userArray;
 @property (strong,nonatomic) NSMutableArray *filteredUserArray;
 @end

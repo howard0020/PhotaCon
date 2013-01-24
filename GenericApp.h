@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LoginModel.h"
-typedef void (^appLoginCallback)(BOOL isLoggedIn,NSString *accessToken,NSString *forApp);
+typedef void (^appLoginCallback)(BOOL isLoggedIn,NSString *accessToken, NSString *userName, NSString *forApp);
 @interface GenericApp : NSObject
 @property (nonatomic) NSString *appName;
 +(GenericApp * )sharedInstance;

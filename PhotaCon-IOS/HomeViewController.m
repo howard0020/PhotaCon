@@ -18,7 +18,6 @@
 @implementation HomeViewController
 @synthesize userArray;
 @synthesize mySearchBar;
-@synthesize myTableView;
 @synthesize filteredUserArray;
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -148,6 +147,14 @@
     //filteredUserArray = [NSMutableArray arrayWithArray:tempArray];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"clicking cell");
+    UITableViewCell *userCell = [tableView cellForRowAtIndexPath:indexPath];
+    if (userCell)
+        [self performSegueWithIdentifier:@"userProfile" sender:userCell];
+}
+
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     // Tells the table data source to reload when text changes
@@ -156,6 +163,13 @@
     
     // Return YES to cause the search result table view to be reloaded.
     return YES;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"userProfile"]) {
+        NSLog(@"preparing for segue");
+    }
 }
 
 @end

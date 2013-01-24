@@ -60,6 +60,8 @@
 		9127030716A8E27300779CCA /* troy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030116A8E27300779CCA /* troy.jpg */; };
 		9127030816A8E27300779CCA /* william.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9127030216A8E27300779CCA /* william.jpg */; };
 		9127031016AB467A00779CCA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127030F16AB467A00779CCA /* User.m */; };
+		912F638116B0CA9E00E32476 /* UserProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F638016B0CA9E00E32476 /* UserProfileTableViewController.m */; };
+		912F638416B0D69500E32476 /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F638316B0D69400E32476 /* FriendRequestViewController.m */; };
 		91B055E216990EC900DD542A /* photacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E116990EC900DD542A /* photacon.png */; };
 		91B056B21699179C00DD542A /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E81699179C00DD542A /* 01-refresh.png */; };
 		91B056B31699179C00DD542A /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E91699179C00DD542A /* 02-redo.png */; };
@@ -352,6 +354,10 @@
 		9127030216A8E27300779CCA /* william.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = william.jpg; sourceTree = "<group>"; };
 		9127030E16AB467A00779CCA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9127030F16AB467A00779CCA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		912F637F16B0CA9E00E32476 /* UserProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileTableViewController.h; sourceTree = "<group>"; };
+		912F638016B0CA9E00E32476 /* UserProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableViewController.m; sourceTree = "<group>"; };
+		912F638216B0D69400E32476 /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
+		912F638316B0D69400E32476 /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
 		91B055E116990EC900DD542A /* photacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photacon.png; sourceTree = "<group>"; };
 		91B055E81699179C00DD542A /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		91B055E91699179C00DD542A /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
@@ -714,6 +720,8 @@
 		54B7E6ED169E510D0040C6D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				912F638216B0D69400E32476 /* FriendRequestViewController.h */,
+				912F638316B0D69400E32476 /* FriendRequestViewController.m */,
 				912702F016A79CDF00779CCA /* SettingsViewController.h */,
 				912702F116A79CDF00779CCA /* SettingsViewController.m */,
 				5408D18016A372C4007A664F /* HomeTabBarViewController.h */,
@@ -733,6 +741,8 @@
 				912702F916A8DEED00779CCA /* HomeUserCell.h */,
 				912702FA16A8DEEE00779CCA /* HomeUserCell.m */,
 				9114304F16AB7C31003EDB1F /* HomeUserCell.xib */,
+				912F637F16B0CA9E00E32476 /* UserProfileTableViewController.h */,
+				912F638016B0CA9E00E32476 /* UserProfileTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1363,6 +1373,8 @@
 				912702F816A8D5C900779CCA /* HomeViewController.m in Sources */,
 				912702FB16A8DEEF00779CCA /* HomeUserCell.m in Sources */,
 				9127031016AB467A00779CCA /* User.m in Sources */,
+				912F638116B0CA9E00E32476 /* UserProfileTableViewController.m in Sources */,
+				912F638416B0D69500E32476 /* FriendRequestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

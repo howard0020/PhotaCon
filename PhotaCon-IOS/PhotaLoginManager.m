@@ -52,10 +52,21 @@ static PhotaLoginManager *sharedLoginManager = nil;
         self.currentApp = [FacebookApp sharedInstance];
     }
     
-    [self.currentApp loginWithCallback:^(BOOL status,NSString *accessToken,NSString *appName) {
+    [self.currentApp loginWithCallback:^(BOOL status,NSString *accessToken, NSString *email, NSString *appName) {
+        self.isLogin = status;
         if (status)
-            self.isLogin = YES;
-        [[PhotaServerProxy sharedInstance] postAccessToken:accessToken forApp:appName];
+        {
+            [[PhotaServerProxy sharedInstance] postAccessToken:accessToken forUser:email forApp:appName callback:^(BOOL status, id Result, NSError *error)
+            {
+                self.isLogin = status;
+                if(status)
+                {
+                    NSLog(@"Posting access token SUCCEED");
+                }else{
+                    NSLog(@"Posting access token FAILED");
+                }
+            }];
+        }
         loginModel.loginCallBack(status);
     }];
 }
@@ -68,7 +79,7 @@ static PhotaLoginManager *sharedLoginManager = nil;
 -(BOOL)myApplication:(UIApplication *)myApplication openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     NSLog(@"GenericApp: handleApplicationDidBecomeActive");
-    [self.currentApp myApplication:myApplication openURL:url sourceApplication:sourceApplication annotation:annotation];
+    return [self.currentApp myApplication:myApplication openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 +(PhotaLoginManager *)sharedInstance

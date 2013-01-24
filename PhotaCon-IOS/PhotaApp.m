@@ -36,6 +36,7 @@ static PhotaApp *sharedInstance = nil;
               openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     NSLog(@"Facebook: application handOpenUrl");
+    return true;
 }
 
 - (void)handleApplicationDidBecomeActive

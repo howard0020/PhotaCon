@@ -27,6 +27,28 @@
     NSLog(@"Facebook: logging out");
     [FBSession.activeSession closeAndClearTokenInformation];
 }
+-(NSString *)getUserInfo:(NSString *)fieldName{
+    __block NSString * result;
+    if (FBSession.activeSession.isOpen) {
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection,
+           NSDictionary<FBGraphUser> *user,
+           NSError *error) {
+             if (!error) {
+                 //NSLog(@"User object: %@",user);
+                 //NSLog(@"User email: %@", [user objectForKey:fieldName]);
+                 result = [user objectForKey:fieldName];
+                 [self emailCallback:[user objectForKey:fieldName]];
+             }
+         }];
+    }
+    return result;
+}
+
+-(void) emailCallback:(NSString *)email
+{
+    NSLog(@"%@", email);
+}
 
 -(void)sessionStateChanged:(FBSession *)session
                      state:(FBSessionState) state
@@ -36,26 +58,42 @@
     switch (state) {
         case FBSessionStateOpen: {
             NSLog(@"Facebook: session StateChanged. FBState: FBSessionStateOpen");
-            callbackBlock(YES,session.accessToken,self.appName);
-            break;
-        case FBSessionStateClosed:
+//            [self getUserInfo:@"email"];
+//            callbackBlock(YES,session.accessToken,self.appName);
+            [[FBRequest requestForMe] startWithCompletionHandler:
+             ^(FBRequestConnection *connection,
+               NSDictionary<FBGraphUser> *user,
+               NSError *error) {
+                 if (!error) {
+                     //NSLog(@"User object: %@",user);
+                     //NSLog(@"User email: %@", [user objectForKey:fieldName]);
+                     NSString *email = [user objectForKey:@"email"];
+                     callbackBlock(YES, session.accessToken, email, self.appName);
+                 }
+             }];
+        }
+        break;
+        case FBSessionStateClosed: {
             NSLog(@"Facebook: session StateChanged. FBState: FBSessionStateClosed");
-            break;
-        case FBSessionStateClosedLoginFailed:
+        }
+        break;
+        case FBSessionStateClosedLoginFailed: {
             // Once the user has logged in, we want them to
             // be looking at the root view.
             //[self.navController popToRootViewControllerAnimated:NO];
             NSLog(@"Facebook: session StateChanged. FBState: FBSessionStateClosedLoginFailed");
             [FBSession.activeSession closeAndClearTokenInformation];
-            callbackBlock(NO,nil,self.appName);
+            callbackBlock(NO,nil,nil,self.appName);
             //[self showLoginView];
-            break;
-        default:
-            NSLog(@"Facebook: session StateChanged. FBState: default");
-            callbackBlock(NO,nil,self.appName);
-            break;
         }
+        break;
+        default: {
+            NSLog(@"Facebook: session StateChanged. FBState: default");
+            callbackBlock(NO,nil,nil,self.appName);
+        }
+        break;
     }
+
     if (error) {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Error"
@@ -71,7 +109,9 @@
 -(BOOL)openSession:(appLoginCallback) callbackBlock
 {
     NSLog(@"Facebook: openSession.");
-    return [FBSession openActiveSessionWithReadPermissions:nil allowLoginUI:YES
+    NSArray *permission = [[NSArray alloc] initWithObjects:
+                           @"email", nil];
+    return [FBSession openActiveSessionWithReadPermissions:permission allowLoginUI:YES
         completionHandler: ^(FBSession *session, FBSessionState state, NSError *error) {
             NSLog(@"Facebook: openSession callback");
             [self sessionStateChanged:session state:state error:error callback:callbackBlock];

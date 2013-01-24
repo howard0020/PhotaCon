@@ -28,6 +28,7 @@ static GenericApp *sharedInstance = nil;
 {
 }
 -(BOOL)myApplication:(UIApplication *)myApplication openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return true;
 }
 -(void)logout
 {

@@ -341,30 +341,31 @@
                         <subviews>
                             <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-nc-aOA">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6tN-3G-Itn"/>
+                                    <constraint firstAttribute="height" constant="44" id="fkb-gd-iyd"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="9DI-N6-pv7" id="Yw0-ib-UzI"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Splash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="H4S-4O-68t"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Splash2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-Wi-geb"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H4S-4O-68t" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="7KG-Gx-NM1"/>
+                            <constraint firstItem="IcX-nc-aOA" firstAttribute="top" secondItem="hpd-ZV-VtA" secondAttribute="top" type="default" id="5Qf-CL-dMK"/>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="bottom" secondItem="hpd-ZV-VtA" secondAttribute="bottom" type="default" id="D3Q-7i-qOJ"/>
                             <constraint firstItem="IcX-nc-aOA" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="MMh-ke-ayD"/>
-                            <constraint firstItem="H4S-4O-68t" firstAttribute="bottom" secondItem="hpd-ZV-VtA" secondAttribute="bottom" type="default" id="Uff-at-qxK"/>
                             <constraint firstItem="IcX-nc-aOA" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="Xxu-g9-9GP"/>
-                            <constraint firstItem="IcX-nc-aOA" firstAttribute="top" secondItem="hpd-ZV-VtA" secondAttribute="top" type="default" id="dlc-tm-Y9V"/>
-                            <constraint firstItem="H4S-4O-68t" firstAttribute="top" secondItem="IcX-nc-aOA" secondAttribute="bottom" type="default" id="oNm-ez-McJ"/>
-                            <constraint firstItem="H4S-4O-68t" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="rjY-a4-IPE"/>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="top" secondItem="IcX-nc-aOA" secondAttribute="bottom" type="default" id="h1n-Ps-JtV"/>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="l1Q-I1-LN2"/>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="mPJ-Sj-h3z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="RJP-zb-zN7"/>
                     <connections>
                         <outlet property="mySearchBar" destination="IcX-nc-aOA" id="E6y-2l-Q7n"/>
                         <outlet property="searchDisplayController" destination="GRD-AY-VNa" id="mg5-bZ-Z2m"/>
+                        <segue destination="hqF-O3-Nhc" kind="push" identifier="userProfile" id="5b5-EJ-Q61"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnk-Md-407" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,7 +379,81 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2208" y="-87"/>
+            <point key="canvasLocation" x="2202" y="-87"/>
+        </scene>
+        <!--User Profile Table View Controller-->
+        <scene sceneID="clz-gQ-f6u">
+            <objects>
+                <tableViewController id="hqF-O3-Nhc" customClass="UserProfileTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D9c-dX-1iN">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userApp" textLabel="9Qu-P0-pON" detailTextLabel="vu0-YI-OWk" style="IBUITableViewCellStyleValue1" id="j5w-BD-Xz2">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qu-P0-pON">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu0-YI-OWk">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="RLN-Hg-hbV" kind="push" identifier="abc" id="fRV-ks-SAE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hqF-O3-Nhc" id="ITY-WR-6io"/>
+                            <outlet property="delegate" destination="hqF-O3-Nhc" id="1Rm-Gt-GZe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="tlk-0q-8wD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5M-4e-o2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648" y="-87"/>
+        </scene>
+        <!--Friend Request View Controller-->
+        <scene sceneID="e1V-gT-Js9">
+            <objects>
+                <viewController id="RLN-Hg-hbV" customClass="FriendRequestViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNG-uo-UWD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJk-PJ-gS6">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cJk-PJ-gS6" firstAttribute="bottom" secondItem="qNG-uo-UWD" secondAttribute="bottom" type="default" id="K3N-AQ-7yU"/>
+                            <constraint firstItem="cJk-PJ-gS6" firstAttribute="trailing" secondItem="qNG-uo-UWD" secondAttribute="trailing" type="default" id="Mg4-XR-BgG"/>
+                            <constraint firstItem="cJk-PJ-gS6" firstAttribute="leading" secondItem="qNG-uo-UWD" secondAttribute="leading" type="default" id="qoY-dc-Scd"/>
+                            <constraint firstItem="cJk-PJ-gS6" firstAttribute="top" secondItem="qNG-uo-UWD" secondAttribute="top" type="default" id="yN2-uV-1cA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DVV-gq-gPj"/>
+                    <connections>
+                        <outlet property="webView" destination="cJk-PJ-gS6" id="6sl-BP-tM6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tA-mp-Nxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3163" y="-95"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3Xp-OT-g9N">
@@ -429,10 +504,79 @@
     <resources>
         <image name="112-group.png" width="32" height="21"/>
         <image name="20-gear2.png" width="26" height="28"/>
-        <image name="Splash.jpg" width="640" height="1136"/>
         <image name="Splash2.jpg" width="640" height="1136"/>
         <image name="photacon.png" width="180" height="180"/>
     </resources>
+    <classes>
+        <class className="FriendRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendRequestViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HomeTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabBarViewController.h"/>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mySearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="LoginAppCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginAppCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotaLoginPhotaConViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginPhotaConViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doLogin:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PhotaLoginViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginViewController.h"/>
+        </class>
+        <class className="PhotaSplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaSplashViewController.h"/>
+        </class>
+        <class className="RegisterPhotaConViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterPhotaConViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doRegister"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="repeatPassword" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doLogout"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UserProfileTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserProfileTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
