@@ -11,7 +11,7 @@
 @interface HomeUserCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *distantLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 
 @end

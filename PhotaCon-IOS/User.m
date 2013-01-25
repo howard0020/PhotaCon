@@ -10,22 +10,30 @@
 
 @implementation User
 
-@synthesize name;
+@synthesize name = _name;
+@synthesize firstName = _firstName;
+@synthesize lastName = _lastName;
+@synthesize email = _email;
+@synthesize applications = _applications;
+@synthesize friendRelation = _friendRelation;
 
+
+/*
 + (id) initWithName:(NSString *)name
 {
     User *user = [[self alloc] init];
     [user setName:name];
     return user;
 }
+ */
 
 +(User *) initWithDict:(NSDictionary *)dict{
     User *user = [[self alloc] init];
     
-    NSString * firstName = [dict objectForKey:@"firstName"];
-    NSString * lastName = [dict objectForKey:@"lastName"];
-    
-    [user setName: [[firstName stringByAppendingString:@" " ] stringByAppendingString: lastName]];
+    [user setFirstName:[dict objectForKey:@"firstName"]];
+    [user setLastName:[dict objectForKey:@"lastName"]];
+    [user setEmail:[dict objectForKey:@"email"]];
+    [user setApplications:[dict objectForKey:@"accounts"]];
     
     return user;
 }

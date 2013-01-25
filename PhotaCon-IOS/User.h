@@ -10,7 +10,12 @@
 
 @interface User : NSObject
 
-@property (nonatomic, copy) NSString *name;
-+ (id) initWithName:(NSString *)name;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSMutableArray *applications;
+@property (nonatomic, strong) NSMutableDictionary *friendRelation; //Specify if I'm a friend with this user.
+
 +(id) initWithDict:(NSDictionary *)dict;
 @end

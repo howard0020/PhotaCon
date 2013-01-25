@@ -8,6 +8,10 @@
 
 #import "FriendRequestViewController.h"
 
+// the sooner we can remove these the better
+#import "Facebook.h"
+#import "FBLoginDialog.h"
+
 @interface FriendRequestViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
@@ -15,6 +19,13 @@
 @implementation FriendRequestViewController
 @synthesize webView = _webView;
 @synthesize friendRequestURL = _friendRequestURL;
+@synthesize fbDialogParam = _fbDialogParam;
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+}
 
 - (void) viewDidLoad
 {
@@ -22,7 +33,35 @@
 
     NSURLRequest *request = [NSURLRequest requestWithURL:self.friendRequestURL];
     [self.webView loadRequest:request];
+    //Facebook *fb = [[Facebook alloc]init];
+    
+    /*
+    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"1368420155", @"id",
+                                   @"145499585599212", @"app_id",
+                                   @"http://localhost:8080/", @"redirect_uri",
+                                   nil];
+        
+    
+    [fb dialog:@"friends" andParams:params andDelegate:nil];
+     */
     NSLog(@"loading request");
+}
+-(BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSLog(@"%@", request.URL.absoluteString);
+    NSRange rng = [request.URL.absoluteString rangeOfString:@"action"];
+    if(rng.location != NSNotFound)
+    {
+        NSLog(@"found finish");
+        //[self.navigationController setNavigationBarHidden:NO animated:NO];
+        [self.navigationController popViewControllerAnimated:YES];
+
+        return NO;
+    }
+    else{
+        return YES;
+    }
 }
 
 @end

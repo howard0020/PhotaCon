@@ -56,7 +56,7 @@
                                                            delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
-        [alertView show];
+        //[alertView show];
 
     }else if ([passwordTextField.text isEqualToString:@""]) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Password Error"
@@ -81,7 +81,7 @@
                                                                    delegate:weakSelf
                                                           cancelButtonTitle:@"OK"
                                                           otherButtonTitles:nil];
-                [alertView show];
+                //[alertView show];
                 [weakSelf.navigationController popToRootViewControllerAnimated:YES];
             }else{
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"

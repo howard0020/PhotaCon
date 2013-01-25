@@ -11,7 +11,7 @@
 @implementation HomeUserCell
 
 @synthesize userNameLabel = _userNameLabel;
-@synthesize distantLabel = _distantLabel;
+@synthesize emailLabel = _emailLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
 
 

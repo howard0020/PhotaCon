@@ -10,6 +10,7 @@
 #import "HomeUserCell.h"
 #import "PhotaServerProxy.h"
 #import "User.h"
+#import "UserProfileTableViewController.h"
 
 @interface HomeViewController ()
 
@@ -34,7 +35,7 @@
 
 -(void)searchUser:(NSString *) text
 {
-    NSLog(@"search bar click");
+    NSLog(@"Searching text: %@", text);
     [[PhotaServerProxy sharedInstance] searchForUser:text withCallback:^(BOOL status, id Result, NSError *error) {
         
         NSArray * list = (NSArray *)Result;
@@ -43,7 +44,6 @@
             NSDictionary * user = [userDict objectForKey:@"user"];
             User *newUser = [User initWithDict:user];
             [self.userArray addObject:newUser];
-            NSLog(@"User Name: %@", newUser.name);
         }
         [self.searchDisplayController.searchResultsTableView reloadData];
     }];
@@ -118,7 +118,8 @@
         user = [userArray objectAtIndex:[indexPath row]];
     //}
     
-    cell.userNameLabel.text = [user name];
+    cell.userNameLabel.text = [user firstName];
+    cell.emailLabel.text = [user email];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     //UIImage * image = [UIImage imageNamed:[appImageNames objectAtIndex:indexPath.row]];
     //cell.thumbnailImageView.image = image;
@@ -151,8 +152,10 @@
 {
     NSLog(@"clicking cell");
     UITableViewCell *userCell = [tableView cellForRowAtIndexPath:indexPath];
-    if (userCell)
+    if (userCell){
         [self performSegueWithIdentifier:@"userProfile" sender:userCell];
+    }
+        
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -167,7 +170,19 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"userProfile"]) {
+    if ([sender isKindOfClass:[UITableViewCell class]] && [segue.identifier isEqualToString:@"userProfile"]) {
+        //User *user = [userArray objectAtIndex:[sender row]];
+        //[segue.destinationViewController setPersonToView:user];
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:cell];
+        if (indexPath) {
+            // get the current user
+            User *user = [userArray objectAtIndex:[indexPath row]];
+            
+            // pass data to next view controller
+            [segue.destinationViewController setPersonToView:user];
+            
+        }
         NSLog(@"preparing for segue");
     }
 }

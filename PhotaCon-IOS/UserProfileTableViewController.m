@@ -8,6 +8,7 @@
 
 #import "UserProfileTableViewController.h"
 #import "FriendRequestViewController.h"
+#import "User.h"
 
 #define IS_FRIEND @"FRIEND"
 #define IS_NOT_FRIEND @"NOT FRIEND"
@@ -15,11 +16,13 @@
 @interface UserProfileTableViewController ()
 @property (nonatomic, strong) NSMutableArray *userApplications; // application name => boolean indicating whether
 @property (nonatomic, strong) NSMutableDictionary *friendRelation;
+
 @end
 
 @implementation UserProfileTableViewController
 @synthesize userApplications = _userApplications;
 @synthesize friendRelation = _friendRelation;
+@synthesize personToView = _personToView;
 
 - (NSMutableArray *)userApplications
 {
@@ -45,6 +48,9 @@
                              IS_FRIEND, @"wechat", nil];
     }
     return _friendRelation;
+}
+-(void)viewDidLoad{
+    
 }
 
 - (BOOL) isFriendInApplication:(NSString *)applicationName
