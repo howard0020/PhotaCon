@@ -11,6 +11,10 @@ import code.plugin.Plugins
 import code.util.SiteConsts
 import net.liftweb.http.S
 import net.liftweb.common.Full
+import org.scribe.model.OAuthRequest
+import org.scribe.model.Verb
+import code.model.AccountModel
+
 
 class TwitterLoginManager extends LoginManager {
 	val plugin = Plugins.twitter
@@ -43,4 +47,15 @@ class TwitterLoginManager extends LoginManager {
 	    }
 	  }
 	}
+	def verifyToken(token:String):Boolean = {
+    var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
+    service.signRequest(token, request);
+    var response = request.send();
+    Console.println(response.getCode)
+    Console.println(response.getBody)
+    return true;
+  }
+  def isConnected(id: String,account: AccountModel):Boolean = {
+    return false;
+  }
 }

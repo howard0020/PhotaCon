@@ -18,6 +18,7 @@ class AccountModel extends LongKeyedMapper[AccountModel]{
   object plugin extends MappedEnum(this,Plugins)
   object email extends MappedString(this,64)
   object accessToken extends MappedText(this)
+  object pluginId extends MappedText(this)
   object user extends MappedLongForeignKey(this,UserModel)
 
 }

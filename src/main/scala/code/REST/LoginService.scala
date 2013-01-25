@@ -30,8 +30,8 @@ object LoginService extends RestHelper {
         pluginValue <- Plugins.values.find(_.toString == plugin) ?~ "App not supported" ~> 400
         email <- S.param("email") ?~ "Missing email" ~> 400
         accessToken <- S.param("token") ?~ "Missing token" ~> 400
+        if PluginManager.verifyToken(accessToken,plugin)
       } yield {
-        //TODO check if token are real
         postToken(email, pluginValue, accessToken)
       }
     }
@@ -57,7 +57,6 @@ object LoginService extends RestHelper {
   })
   def postToken(email: String, pluginValue: Plugins.Value, accessToken: String): LiftResponse = {
     var account = AccountModel.findAccountByEmailPlugin(email, pluginValue)
-    Console.println("here!!!!")
     account match {
       case Full(act) => {
         act.accessToken(accessToken)

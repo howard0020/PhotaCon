@@ -20,6 +20,12 @@ import RestFormatters._
  */
 object TestService extends RestHelper{
     serve("api" / "test" prefix {
+      case "connected" :: email :: id :: Nil Get _ => {
+        var user = UserModel.findUserByEmail(email) openOrThrowException("user not found")
+        var manager = PluginManager.getLoginManager("facebook")
+        var result = manager.isConnected(id,user.accounts(0))
+        JString(result.toString())
+      }
       case "login" :: "failure" :: Nil Get _ => {
         JsonResponse(("fail to login"),401)
       }

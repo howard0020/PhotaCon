@@ -11,7 +11,8 @@ import code.util.SiteConsts
 import net.liftweb.common.Full
 import net.liftweb.http.S
 import net.liftweb.common.Full
-
+import code.model.AccountModel
+import net.liftweb.json.JsonParser
 
 class FbLoginManager extends LoginManager {
 	val plugin = Plugins.facebook
@@ -51,7 +52,25 @@ class FbLoginManager extends LoginManager {
     Console.println(response.getCode)
     Console.println(response.getBody)
   }
-  implicit def str2Token(str: String):Token = {
-    return new Token(str,secret)
+  
+  def verifyToken(token:String):Boolean = {
+    var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
+    service.signRequest(token, request);
+    var response = request.send
+    Console.println(response.getCode)
+    Console.println(response.getBody)
+    var jsonBox = JsonParser.parse(response.getBody())
+    
+    return true;
+  }
+  def isConnected(id: String,account: AccountModel):Boolean = {
+    var request = new OAuthRequest(Verb.GET, 
+        "https://graph.facebook.com/%s/friends/%s".format(account.pluginId.is,id))
+    Console.println(request.toString())
+    service.signRequest(account.accessToken.is,request)
+    var response = request.send
+    Console.println(response.getCode)
+    Console.println(response.getBody)
+    return true;
   }
 }

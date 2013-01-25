@@ -11,6 +11,9 @@ import code.plugin.Plugins
 import code.util.SiteConsts
 import net.liftweb.common.Full
 import net.liftweb.http.S
+import org.scribe.model.OAuthRequest
+import org.scribe.model.Verb
+import code.model.AccountModel
 
 
 class LinkedinLoginManager extends LoginManager {
@@ -45,4 +48,15 @@ class LinkedinLoginManager extends LoginManager {
 	    }
 	  }
 	}
+def verifyToken(token:String):Boolean = {
+    var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
+    service.signRequest(token, request);
+    var response = request.send();
+    Console.println(response.getCode)
+    Console.println(response.getBody)
+    return true;
+  }
+  def isConnected(id: String,account: AccountModel):Boolean = {
+    return false;
+  }
 }
