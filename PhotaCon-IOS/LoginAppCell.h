@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *cellBtn;
 
+@property (weak, nonatomic) IBOutlet UILabel *appName;
 
 @end

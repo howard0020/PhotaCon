@@ -71,6 +71,7 @@
         [myCell.cellBtn setTag:indexPath.item];
         [myCell.cellBtn addTarget:self action:@selector(doLoginBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
         [myCell.cellBtn  setTitle:[appImageLabel objectAtIndex:indexPath.item] forState:UIControlStateNormal];
+        myCell.appName.text = [appImageLabel objectAtIndex:indexPath.item];
     }
     return myCell;
 }

@@ -11,22 +11,30 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Kah-bM-YTA">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="trH-wv-ByK">
-                            <size key="itemSize" width="70" height="70"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="trH-wv-ByK">
+                            <size key="itemSize" width="80" height="80"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <imageView key="backgroundView" opaque="NO" userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleAspectFill" image="Splash2.jpg" id="dnr-5H-1Ux">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </imageView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellID" id="MsB-eR-O1K" customClass="LoginAppCell">
-                                <rect key="frame" x="5" y="5" width="70" height="70"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.30000000000000016" contentMode="center" reuseIdentifier="CellID" id="MsB-eR-O1K" customClass="LoginAppCell">
+                                <rect key="frame" x="0.0" y="5" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSI-VA-gO6">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="moq-I6-fhJ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal">
                                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,23 +47,34 @@
                                                 <action selector="appButtonClicked:" destination="evf-pA-WiQ" eventType="touchUpInside" id="PvA-Ao-5qW"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="application" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiY-LK-qsM">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="HOc-fJ-6CG"/>
+                                                <constraint firstAttribute="width" constant="75" id="oYO-dr-gES"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="top" secondItem="MsB-eR-O1K" secondAttribute="top" type="default" id="0h9-eH-Lh8"/>
-                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="bottom" secondItem="MsB-eR-O1K" secondAttribute="bottom" type="default" id="d2C-eb-6Ih"/>
-                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="leading" secondItem="MsB-eR-O1K" secondAttribute="leading" type="default" id="mB6-e9-MQB"/>
-                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="trailing" secondItem="MsB-eR-O1K" secondAttribute="trailing" type="default" id="pyw-yw-8f0"/>
+                                    <constraint firstItem="QiY-LK-qsM" firstAttribute="bottom" secondItem="MsB-eR-O1K" secondAttribute="bottom" type="default" id="43V-dg-Wj7"/>
+                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="centerX" secondItem="QiY-LK-qsM" secondAttribute="centerX" type="default" id="8Do-NQ-R3Z"/>
+                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="centerX" secondItem="MsB-eR-O1K" secondAttribute="centerX" type="default" id="9fN-jQ-eoa"/>
+                                    <constraint firstAttribute="bottom" secondItem="iSI-VA-gO6" secondAttribute="bottom" constant="20" type="default" id="fcb-KE-NYp"/>
+                                    <constraint firstItem="iSI-VA-gO6" firstAttribute="top" secondItem="MsB-eR-O1K" secondAttribute="top" type="default" id="x38-2C-Xq8"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="appName" destination="QiY-LK-qsM" id="7j3-B9-9l7"/>
                                     <outlet property="cellBtn" destination="iSI-VA-gO6" id="c24-kL-WiU"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="evf-pA-WiQ" id="QAa-0K-2zp"/>
-                            <outlet property="delegate" destination="evf-pA-WiQ" id="PSX-Do-D2h"/>
+                            <outlet property="dataSource" destination="evf-pA-WiQ" id="cZ7-Oy-IKn"/>
+                            <outlet property="delegate" destination="evf-pA-WiQ" id="f6e-UW-PCU"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Login" id="06w-0B-aEt"/>
@@ -339,26 +358,27 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-nc-aOA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Splash2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-Wi-geb">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="fkb-gd-iyd"/>
+                                    <constraint firstAttribute="height" constant="411" id="kmk-fl-DvT"/>
                                 </constraints>
+                            </imageView>
+                            <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-nc-aOA">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="9DI-N6-pv7" id="Yw0-ib-UzI"/>
                                 </connections>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Splash2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-Wi-geb"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="bottom" secondItem="hpd-ZV-VtA" secondAttribute="bottom" type="default" id="2te-2P-zKC"/>
                             <constraint firstItem="IcX-nc-aOA" firstAttribute="top" secondItem="hpd-ZV-VtA" secondAttribute="top" type="default" id="5Qf-CL-dMK"/>
-                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="bottom" secondItem="hpd-ZV-VtA" secondAttribute="bottom" type="default" id="D3Q-7i-qOJ"/>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="BKw-tp-4uM"/>
                             <constraint firstItem="IcX-nc-aOA" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="MMh-ke-ayD"/>
+                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="SXm-ra-nPb"/>
                             <constraint firstItem="IcX-nc-aOA" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="Xxu-g9-9GP"/>
-                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="top" secondItem="IcX-nc-aOA" secondAttribute="bottom" type="default" id="h1n-Ps-JtV"/>
-                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="leading" secondItem="hpd-ZV-VtA" secondAttribute="leading" type="default" id="l1Q-I1-LN2"/>
-                            <constraint firstItem="MWZ-Wi-geb" firstAttribute="trailing" secondItem="hpd-ZV-VtA" secondAttribute="trailing" type="default" id="mPJ-Sj-h3z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="RJP-zb-zN7"/>
@@ -512,6 +532,77 @@
         <image name="Splash2.jpg" width="640" height="1136"/>
         <image name="photacon.png" width="180" height="180"/>
     </resources>
+    <classes>
+        <class className="FriendRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendRequestViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HomeTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabBarViewController.h"/>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mySearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="LoginAppCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginAppCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="appName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cellBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotaLoginPhotaConViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginPhotaConViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doLogin:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PhotaLoginViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaLoginViewController.h"/>
+        </class>
+        <class className="PhotaSplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotaSplashViewController.h"/>
+        </class>
+        <class className="RegisterPhotaConViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterPhotaConViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doRegister"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="repeatPassword" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doLogout"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UserProfileTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserProfileTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
