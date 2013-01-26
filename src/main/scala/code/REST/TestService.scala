@@ -34,6 +34,14 @@ object TestService extends RestHelper{
           session <- S.session ?~ "sesson not found"
         }yield JString(session.uniqueId)
       }
+      case "inspect" :: "login" :: "status" :: Nil Get _ => {
+        var userBox = UserModel.currentUser
+        userBox match {
+          case Full(user) => RestFormatters.toJSON(user)
+          case Empty => JString("User not login")
+          case Failure(msg,_,_) => JString(msg)
+        }
+      }
       case "insert" :: "users" ::Nil Get _ => {
         createUser("howard0010@yahoo.com","52012345","howard","lin")
         createUser("howard0020@yahoo.com","52012345","Troy","Huang")

@@ -54,9 +54,12 @@ def verifyToken(token:String):Boolean = {
     var response = request.send();
     Console.println(response.getCode)
     Console.println(response.getBody)
-    return true;
-  }
+    return true
+}
   def isConnected(id: String,account: AccountModel):Boolean = {
-    return false;
+    return false
   }
+	def initAcount(account:AccountModel):Boolean = {
+	  return true
+	}
 }

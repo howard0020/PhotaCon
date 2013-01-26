@@ -5,14 +5,18 @@ import org.scribe._
 import oauth._
 import builder._
 import api.FacebookApi
-import model._
+import code.model._
 import code.plugin.Plugins
 import code.util.SiteConsts
 import net.liftweb.common.Full
 import net.liftweb.http.S
-import net.liftweb.common.Full
-import code.model.AccountModel
+import net.liftweb.json._
 import net.liftweb.json.JsonParser
+import net.liftweb.json.Printer._
+import net.liftweb.json.JsonAST._
+import net.liftweb.json.Extraction._
+import model._
+
 
 class FbLoginManager extends LoginManager {
 	val plugin = Plugins.facebook
@@ -57,11 +61,8 @@ class FbLoginManager extends LoginManager {
     var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
     service.signRequest(token, request);
     var response = request.send
-    Console.println(response.getCode)
-    Console.println(response.getBody)
-    var jsonBox = JsonParser.parse(response.getBody())
-    
-    return true;
+    if (response.getCode == 200) return true
+    else return false
   }
   def isConnected(id: String,account: AccountModel):Boolean = {
     var request = new OAuthRequest(Verb.GET, 
@@ -72,5 +73,33 @@ class FbLoginManager extends LoginManager {
     Console.println(response.getCode)
     Console.println(response.getBody)
     return true;
+  }
+  def initAcount(account: AccountModel):Boolean = {
+    try{
+	    var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
+	    service.signRequest(account.accessToken.get, request);
+	    var response = request.send
+	    Console.println(response.getCode)
+	    Console.println(response.getBody)
+	    if (response.getCode == 200){
+	      implicit val formats = net.liftweb.json.DefaultFormats
+	      var json = JsonParser.parse(response.getBody())
+	      var id = (json \ "id").extract[String]
+	      var firstName = (json \ "first_name").extract[String]
+	      var lastName = (json \ "last_name").extract[String]
+	      account.pluginId(id)
+	      val user = account.user.obj.openOrThrowException("missing user for account")
+	      user.firstName(firstName).lastName(lastName)
+	      account.save
+	      user.save
+	    }else{
+	      return false
+	    }
+	    return true
+    }catch{
+      case ex:Exception => {
+        return false
+      }
+    }
   }
 }

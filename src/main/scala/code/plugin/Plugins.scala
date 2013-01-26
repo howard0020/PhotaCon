@@ -6,4 +6,8 @@ object Plugins extends Enumeration{
 	val facebook = Value("facebook")
 	val linkedin = Value("linkedin")
 	val twitter = Value("twitter")
+	
+	implicit def PluginsValue2String(plugin: Plugins.Value):String = {
+	  plugin.toString
+	} 
 }

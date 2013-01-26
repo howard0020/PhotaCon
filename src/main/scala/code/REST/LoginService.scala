@@ -30,7 +30,7 @@ object LoginService extends RestHelper {
         pluginValue <- Plugins.values.find(_.toString == plugin) ?~ "App not supported" ~> 400
         email <- S.param("email") ?~ "Missing email" ~> 400
         accessToken <- S.param("token") ?~ "Missing token" ~> 400
-        if PluginManager.verifyToken(accessToken,plugin)
+        if PluginManager.verifyToken(accessToken,pluginValue)
       } yield {
         postToken(email, pluginValue, accessToken)
       }
@@ -61,14 +61,18 @@ object LoginService extends RestHelper {
       case Full(act) => {
         act.accessToken(accessToken)
         act.save
-        RestFormatters.toJSON(act.user.obj.openOrThrowException("Found account without user"))
+        var user = act.user.obj.openOrThrowException("Found account without user")
+        UserModel.logUserIn(user)
+        RestFormatters.toJSON(user)
       }
       case Empty => {
         var user = UserModel.create.email(email)
         var account = AccountModel.create.user(user).accessToken(accessToken)
           .email(email).plugin(pluginValue)
         account.save
+        PluginManager.initAccount(account,pluginValue)
         user.accounts += account
+        UserModel.logUserIn(user)
         RestFormatters.toJSON(user.saveMe)
       }
       case Failure(msg, _, _) => JsonResponse(("fail to create new account"), 401)

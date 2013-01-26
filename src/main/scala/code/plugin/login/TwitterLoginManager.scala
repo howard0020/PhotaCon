@@ -58,4 +58,7 @@ class TwitterLoginManager extends LoginManager {
   def isConnected(id: String,account: AccountModel):Boolean = {
     return false;
   }
+	def initAcount(account:AccountModel):Boolean = {
+	  return true
+	}
 }

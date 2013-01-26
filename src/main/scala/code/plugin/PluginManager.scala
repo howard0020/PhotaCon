@@ -2,7 +2,7 @@ package code.plugin
 
 import login._
 import Plugins._
-
+import code.model._
 
 object PluginManager {
 	var FBLoginManager = new FbLoginManager
@@ -15,11 +15,13 @@ object PluginManager {
 	    case "linkedin" => LinkedinLoginManager
 	  }
 	}
-	def getLoginManager(name:Plugins.Value):LoginManager = {
-	  getLoginManager(name.toString)
-	}
 	def verifyToken(token: String,name: String) = {
 	  var manager = getLoginManager(name)
 	  manager.verifyToken(token)
+	}
+	
+	def initAccount(account: AccountModel,plugin:Plugins.Value) = {
+	  var manager = getLoginManager(plugin)
+	  manager.initAcount(account)
 	}
 }

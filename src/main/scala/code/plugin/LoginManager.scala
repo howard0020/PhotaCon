@@ -15,7 +15,7 @@ trait LoginManager {
 	def getAccessToken(): String
 	def verifyToken(token:String):Boolean
 	def isConnected(id: String,account: AccountModel):Boolean
-	
+	def initAcount(account:AccountModel):Boolean
 	  implicit def str2Token(str: String):Token = {
     return new Token(str,secret)
   }
