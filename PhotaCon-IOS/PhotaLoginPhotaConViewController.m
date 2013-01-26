@@ -77,7 +77,7 @@
             if (status) {
                 NSLog(@"Logged into photacon!");
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to PhotaCon"
-                                                                    message:@"Emjoy!"
+                                                                    message:@"Enjoy!"
                                                                    delegate:weakSelf
                                                           cancelButtonTitle:@"OK"
                                                           otherButtonTitles:nil];

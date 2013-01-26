@@ -61,8 +61,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"%i", [self.userApplications count]);
-    return [self.userApplications count];
+    NSLog(@"%i", [self.personToView.applications count]);
+    return [self.personToView.applications count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,15 +73,18 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         NSLog(@"cell is nil");
     }
-    NSString *userApp = [self.userApplications objectAtIndex:indexPath.row];
-    cell.textLabel.text = userApp;
+    
+    NSDictionary *userApp = [self.personToView.applications objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [userApp valueForKey:@"plugin"];
+    /*
     cell.detailTextLabel.text = @"add friend";
     if ([self isFriendInApplication:userApp]) {
         cell.detailTextLabel.text = @"already friend";
         cell.accessoryView = nil;
         cell.userInteractionEnabled = NO;
     }
-    
+    */
     NSLog(@"%@", [self.userApplications objectAtIndex:indexPath.row]);
     NSLog(@"%i", indexPath.row);
     

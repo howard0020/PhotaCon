@@ -62,7 +62,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    appImageNames = [[NSArray alloc] initWithObjects:@"photacon.png",@"facebook.png",@"twitter.png",@"foursquare.png",@"googleplus.png",@"linkedin.png",@"myspace.png",@"orkut.png",@"tumblr.png",nil];
     
+    appImageLabel = [[NSArray alloc] initWithObjects:@"photacon",@"facebook",@"twitter",@"foursquare",@"googleplus",@"linkedin",@"myspace",@"orkut",@"tumblr", nil];
     // Don't show the scope bar or cancel button until editing begins
     //[mySearchBar setShowsScopeBar:NO];
     //[mySearchBar sizeToFit];
@@ -106,7 +108,7 @@
     if (cell == nil) {
         cell = [[HomeUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    
+    [cell removeCellContent];
     User *user = nil;
     /*
     if (tableView == self.searchDisplayController.searchResultsTableView)
@@ -119,12 +121,43 @@
     //}
     
     cell.userNameLabel.text = [user firstName];
-    cell.emailLabel.text = [user email];
+    NSLog(@"Name: %@", [user firstName]);
+    NSLog(@"applications count: %i", user.applications.count);
+    
+    for (NSInteger i = 0; user.applications.count > i; i++) {
+        id dict = user.applications[i];
+        NSInteger imageIndex = [appImageLabel indexOfObject:[dict valueForKey:@"plugin"]];
+        UIImage * image = [UIImage imageNamed:[appImageNames objectAtIndex:imageIndex]];
+        if(i == 0)
+            cell.app1.image = image;
+        else if(i == 1)
+            cell.app2.image = image;
+        else if(i == 2)
+            cell.app3.image = image;
+        else if(i == 3)
+            cell.app4.image = image;
+        else
+            cell.app5.image = image;
+    }
+    //Populate sample thumbnail image
+    if([user.firstName isEqualToString:@"Sheng Jun"])
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"sheng.jpg"];
+    else if([user.firstName isEqualToString:@"Xiao Qiang"])
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"william.jpg"];
+    else if([user.firstName isEqualToString:@"howard"])
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"howard.jpg"];
+    else if([user.firstName isEqualToString:@"Troy"])
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"troy.jpg"];
+    else if([user.firstName isEqualToString:@"Bbk"])
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"bbking.jpg"];
+    else
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"ab.jpg"];
+    
+    //cell.emailLabel.text = [user email];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     //UIImage * image = [UIImage imageNamed:[appImageNames objectAtIndex:indexPath.row]];
     //cell.thumbnailImageView.image = image;
     return cell;
-        
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

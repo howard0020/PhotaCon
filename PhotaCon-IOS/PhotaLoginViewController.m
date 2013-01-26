@@ -93,7 +93,7 @@
                                                                    delegate:weakSelf
                                                           cancelButtonTitle:@"OK"
                                                           otherButtonTitles:nil];
-                [alertView show];
+                //[alertView show];
                 [self performSegueWithIdentifier:@"HomeView" sender:self];
             }else{
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
