@@ -12,7 +12,7 @@ import net.liftweb.mapper._
 import net.liftweb.util._
 import net.liftweb.common._
 import net.liftweb.common.Empty
-
+import code.plugin.Plugins
 
 class UserModel extends MegaProtoUser[UserModel] with OneToMany[Long,UserModel]{
   def getSingleton = UserModel
@@ -35,6 +35,10 @@ object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
     var sqlQuery = "select * from users order by least(fn_levenshtein('%s',concat_ws(' ',firstName,lastName)),fn_levenshtein('%s',concat_ws(' ',lastName,firstName)))"
     sqlQuery = sqlQuery format(name,name)
     findAllByInsecureSql(sqlQuery,IHaveValidatedThisSQL("howard","2013-01-19"))
+  }
+  
+  def findAccount(plugin: Plugins.Value) = {
+	 AccountModel.find(By(AccountModel.user,id),By(AccountModel.plugin,plugin))
   }
 }
 

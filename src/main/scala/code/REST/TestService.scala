@@ -57,7 +57,7 @@ object TestService extends RestHelper{
         createUser("howard00120@yahoo.com","52012345","Lincoln","Pahwa")
         createUser("howard00130@yahoo.com","52012345","Xiao Qiang","Wu")
         createUser("howard00140@yahoo.com","52012345","Sheng","Jun")
-        toJSONList()
+        toJSONList(UserModel.findAll())
       }
       case "serve" :: "image" :: Nil Get _ => {
         var resource = LiftRules.getResource("/images/searchNearMe.jpg")

@@ -11,18 +11,19 @@ import code.model._
 import net.liftweb.http.S
 import RestFormatters._
 
-object SearchService extends RestHelper{
-	serve("api" / "search" prefix{
-	  case "users" :: Nil Get _ => {
-      for{
+object SearchService extends RestHelper {
+  serve("api" / "search" prefix {
+    case "users" :: Nil Get _ => {
+      for {
+        user <- UserModel.currentUser ?~ "Please login" ~> 400
         name <- S.param("name") ?~ "Missing name" ~> 400
-      }yield{
+      } yield {
         val users = UserModel.findUserByName(name)
-        toJSONList(users)
+        RestFormatters.toJSONList(users)
       }
-	  }
-	})
-  def toJSONList(users: List[UserModel]): JValue = {
-    users.map(user => toJSON(user))
+    }
+  })
+  def formatUsers(user:UserModel) = {
+    
   }
 }

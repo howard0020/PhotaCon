@@ -11,7 +11,7 @@ object RestFormatters {
   def restId(user: UserModel) =
     "photacon" + user.id
 
-  def toJSON(user: UserModel): JValue = {
+  def toJSON(user: UserModel): JObject = {
     ("user" ->
       ("id" -> restId(user)) ~
       ("email" -> user.email.is) ~
@@ -19,12 +19,16 @@ object RestFormatters {
       ("lastName" -> user.lastName.is) ~
       ("accounts" -> user.accounts.map(account=>toJSON(account))))
   }
-  def toJSON(account: AccountModel): JValue = {
+  def toJSON(account: AccountModel): JObject = {
 	  ("plugin" -> account.plugin.is.toString()) ~
 	  ("email" -> account.email.is) ~
 	  ("pluginId" -> account.pluginId.is)
   }
-  def toJSONList(): JValue = {
-    UserModel.findAll().map(user => toJSON(user))
+  def toJSON(currAccount: AccountModel, otherAccount:AccountModel): JValue = {
+    var currJson = toJSON(currAccount)
+     ("sd" -> "sd") ~ currJson
+  }
+  def toJSONList(users:List[UserModel]): JArray = {
+    JArray(users.map(user => toJSON(user)))
   }
 }
