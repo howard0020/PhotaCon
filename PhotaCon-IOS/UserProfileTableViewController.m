@@ -192,8 +192,9 @@
 {
     if ([segue.identifier isEqualToString:@"addFriends"]) {
         // pass data to next view controller
-        NSURL *friendRequestURL = [NSURL URLWithString:@"http://facebook.com/dialog/friends/?id=1368420155&app_id=145499585599212&redirect_uri=http://localhost:8080/"];
-        [segue.destinationViewController setFriendRequestURL:friendRequestURL];
+        //NSURL *friendRequestURL = [NSURL URLWithString:@"http://facebook.com/dialog/friends/?id=1368420155&app_id=145499585599212&redirect_uri=http://localhost:8080/"];
+        //[segue.destinationViewController setFriendRequestURL:friendRequestURL];
+        [segue.destinationViewController setPersonToAdd:self.personToView];
         NSLog(@"passing data to next view controller");
     }
 }

@@ -18,4 +18,5 @@
 @property (nonatomic, strong) NSMutableDictionary *friendRelation; //Specify if I'm a friend with this user.
 
 +(id) initWithDict:(NSDictionary *)dict;
+-(NSString *) getAppID:(NSString *)appName;
 @end

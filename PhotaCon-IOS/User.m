@@ -40,4 +40,13 @@
     return user;
 }
 
+-(NSString *) getAppID:(NSString *)appName{
+    for (NSDictionary *app in self.applications) {
+        if([[app objectForKey:@"plugin"] isEqual:appName])
+        {
+            return [app objectForKey:@"pluginId"];
+        }
+    }
+    return nil;
+}
 @end

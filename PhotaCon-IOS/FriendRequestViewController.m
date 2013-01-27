@@ -20,6 +20,7 @@
 @synthesize webView = _webView;
 @synthesize friendRequestURL = _friendRequestURL;
 @synthesize fbDialogParam = _fbDialogParam;
+@synthesize personToAdd = _personToAdd;
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -30,8 +31,12 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.friendRequestURL];
+    //NSURL *friendRequestURL = [NSURL URLWithString:@"http://facebook.com/dialog/friends/?id=1368420155&app_id=145499585599212&redirect_uri=http://localhost:8080/"];
+    
+    
+    NSURL *friendRequestURL = [NSURL URLWithString:[self constructFacebookFriendRequestLink:[self.personToAdd getAppID:@"facebook"] appID:@"145499585599212" redirectLink:@"http://localhost:8080/"]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:friendRequestURL];
     [self.webView loadRequest:request];
     //Facebook *fb = [[Facebook alloc]init];
     
@@ -46,6 +51,16 @@
     [fb dialog:@"friends" andParams:params andDelegate:nil];
      */
     NSLog(@"loading request");
+}
+-(NSString *)concatUrlParam:(NSString *)paramKey withParamValue:(NSString *)paramValue{
+    
+    return [NSString stringWithFormat:@"&%@=%@",paramKey, paramValue];
+    
+}
+-(NSString *)constructFacebookFriendRequestLink:(NSString *)userID appID:(NSString *)appID redirectLink:(NSString *)redirect
+{
+    return [NSString stringWithFormat:@"http://facebook.com/dialog/friends/?id=%@&app_id=%@&redirect_uri=%@",userID, appID, redirect];
+
 }
 -(BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
