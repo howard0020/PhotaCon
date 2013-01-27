@@ -32,9 +32,9 @@ object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
   }
   
   def findUserByName(name: String):List[UserModel] = {
-    var sqlQuery = "select * from users order by least(fn_levenshtein('%s',concat_ws(' ',firstName,lastName)),fn_levenshtein('%s',concat_ws(' ',lastName,firstName)))"
+    var sqlQuery = "select * from users order by least(fn_levenshtein('%s',concat_ws(' ',firstName,lastName)),fn_levenshtein('%s',concat_ws(' ',lastName,firstName))) limit 20"
     sqlQuery = sqlQuery format(name,name)
-    findAllByInsecureSql(sqlQuery,IHaveValidatedThisSQL("howard","2013-01-19"))
+    findAllByInsecureSql(sqlQuery,IHaveValidatedThisSQL("howard","2013-01-27"))
   }
 }
 

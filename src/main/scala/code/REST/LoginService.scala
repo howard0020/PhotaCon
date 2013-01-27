@@ -25,6 +25,7 @@ object LoginService extends RestHelper {
         RestFormatters.toJSON(user)
       }
     }
+    // /api/user/login/post/accessToken/facebook?email=howard0020@yahoo.com&&token=AAACEdEose0cBACnbmm8TE6FKv8n7reZCESejPrw4oahoZBl3ZCoBZATlF2TSYv9nkR3EJJRSZAKEPytuNEOPksThRkfc5uFOJaVrrNGVbZAQZDZD
     case "post" :: "accessToken" :: plugin :: Nil Get _ => {
       for {
         pluginValue <- Plugins.values.find(_.toString == plugin) ?~ "App not supported" ~> 400
@@ -75,7 +76,7 @@ object LoginService extends RestHelper {
         UserModel.logUserIn(user)
         RestFormatters.toJSON(user.saveMe)
       }
-      case Failure(msg, _, _) => JsonResponse(("fail to create new account"), 401)
+      case Failure(msg, _, _) => JsonResponse(("fail to post token"), 401)
     }
   }
 }

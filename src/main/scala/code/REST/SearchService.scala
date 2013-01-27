@@ -13,6 +13,7 @@ import RestFormatters._
 
 object SearchService extends RestHelper{
 	serve("api" / "search" prefix{
+    //  /api/search/users?name=howard
 	  case "users" :: Nil Get _ => {
       for{
         name <- S.param("name") ?~ "Missing name" ~> 400
@@ -22,6 +23,7 @@ object SearchService extends RestHelper{
       }
 	  }
 	})
+
   def toJSONList(users: List[UserModel]): JValue = {
     users.map(user => toJSON(user))
   }

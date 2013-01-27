@@ -32,8 +32,9 @@ object TestService extends RestHelper{
       case "inspect" :: "session" :: Nil Get _ => {
         for {
           session <- S.session ?~ "sesson not found"
-        }yield JString(session.uniqueId)
+        }yield JString(session.toString)
       }
+      //  api/test/inspect/login/status
       case "inspect" :: "login" :: "status" :: Nil Get _ => {
         var userBox = UserModel.currentUser
         userBox match {
