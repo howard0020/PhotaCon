@@ -14,15 +14,18 @@
 #define IS_NOT_FRIEND @"NOT FRIEND"
 
 @interface UserProfileTableViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addFriendsBtn;
 @property (nonatomic, strong) NSMutableArray *userApplications; // application name => boolean indicating whether
 @property (nonatomic, strong) NSMutableDictionary *friendRelation;
-
+@property (nonatomic, strong) NSMutableArray *selectedAppsArray;
 @end
 
 @implementation UserProfileTableViewController
 @synthesize userApplications = _userApplications;
 @synthesize friendRelation = _friendRelation;
 @synthesize personToView = _personToView;
+@synthesize selectedAppsArray = _selectedAppsArray;
+@synthesize addFriendsBtn = _addFriendsBtn;
 
 - (NSMutableArray *)userApplications
 {
@@ -37,6 +40,14 @@
     return _userApplications;
 }
 
+- (NSMutableArray *)selectedAppsArray
+{
+    if (_selectedAppsArray== nil) {
+        _selectedAppsArray = [[NSMutableArray alloc]init];
+    }
+    return _selectedAppsArray;
+}
+
 - (NSMutableDictionary *)friendRelation
 {
     if (_friendRelation == nil)
@@ -49,8 +60,10 @@
     }
     return _friendRelation;
 }
--(void)viewDidLoad{
-    
+
+- (void)viewDidLoad
+{
+    self.navigationItem.title = self.personToView.name;
 }
 
 - (BOOL) isFriendInApplication:(NSString *)applicationName
@@ -76,7 +89,21 @@
     
     NSDictionary *userApp = [self.personToView.applications objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [userApp valueForKey:@"plugin"];
+    NSString *appName = [userApp valueForKey:@"plugin"];
+    if ([self.selectedAppsArray containsObject:appName]) {
+        cell.imageView.image = [UIImage imageNamed:@"checked.png"];
+    }
+    else {
+        cell.imageView.image = [UIImage imageNamed:@"unchecked.png"];
+    }
+    
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChecking:)];
+    [cell addGestureRecognizer:tap];
+    cell.imageView.userInteractionEnabled = YES; //added based on @John 's comment
+    
+    cell.textLabel.text = appName;
+    
     /*
     cell.detailTextLabel.text = @"add friend";
     if ([self isFriendInApplication:userApp]) {
@@ -85,10 +112,26 @@
         cell.userInteractionEnabled = NO;
     }
     */
-    NSLog(@"%@", [self.userApplications objectAtIndex:indexPath.row]);
     NSLog(@"%i", indexPath.row);
     
     return cell;
+}
+
+- (void) handleChecking:(UITapGestureRecognizer *)tapRecognizer {
+    CGPoint tapLocation = [tapRecognizer locationInView:self.tableView];
+    NSIndexPath *tappedIndexPath = [self.tableView indexPathForRowAtPoint:tapLocation];
+    NSString *appName = [[self.personToView.applications objectAtIndex:tappedIndexPath.row] objectForKey:@"plugin"];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:tappedIndexPath];
+    if ([self.selectedAppsArray containsObject:appName]) {
+        [self.selectedAppsArray removeObject:appName];
+        cell.imageView.image = [UIImage imageNamed:@"unchecked.png"];
+    }
+    else {
+        [self.selectedAppsArray addObject:appName];
+        cell.imageView.image = [UIImage imageNamed:@"checked.png"];
+    }
+
+    self.addFriendsBtn.enabled = [self.selectedAppsArray count]!= 0;
 }
 
 /*
@@ -144,9 +187,10 @@
     NSLog(@"%@", @"selecting a cell");
 }
 
+/
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"abc"]) {
+    if ([segue.identifier isEqualToString:@"addFriends"]) {
         // pass data to next view controller
         NSURL *friendRequestURL = [NSURL URLWithString:@"http://facebook.com/dialog/friends/?id=1368420155&app_id=145499585599212&redirect_uri=http://localhost:8080/"];
         [segue.destinationViewController setFriendRequestURL:friendRequestURL];

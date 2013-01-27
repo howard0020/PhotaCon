@@ -62,6 +62,8 @@
 		9127031016AB467A00779CCA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127030F16AB467A00779CCA /* User.m */; };
 		912F638116B0CA9E00E32476 /* UserProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F638016B0CA9E00E32476 /* UserProfileTableViewController.m */; };
 		912F638416B0D69500E32476 /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912F638316B0D69400E32476 /* FriendRequestViewController.m */; };
+		912F639216B4991C00E32476 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 912F639016B4991C00E32476 /* unchecked.png */; };
+		912F639416B49BFA00E32476 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 912F639316B49BFA00E32476 /* checked.png */; };
 		91B055E216990EC900DD542A /* photacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E116990EC900DD542A /* photacon.png */; };
 		91B056B21699179C00DD542A /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E81699179C00DD542A /* 01-refresh.png */; };
 		91B056B31699179C00DD542A /* 02-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B055E91699179C00DD542A /* 02-redo.png */; };
@@ -358,6 +360,8 @@
 		912F638016B0CA9E00E32476 /* UserProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableViewController.m; sourceTree = "<group>"; };
 		912F638216B0D69400E32476 /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
 		912F638316B0D69400E32476 /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
+		912F639016B4991C00E32476 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		912F639316B49BFA00E32476 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		91B055E116990EC900DD542A /* photacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photacon.png; sourceTree = "<group>"; };
 		91B055E81699179C00DD542A /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		91B055E91699179C00DD542A /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
@@ -646,14 +650,12 @@
 		541A90D816966C8B0035082E /* PhotaCon-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				912F638C16B4979B00E32476 /* images */,
 				9127030D16AB465400779CCA /* Model */,
-				912702FC16A8E27100779CCA /* ppl */,
 				912702E716A780DE00779CCA /* AppController */,
 				5408D18316A37977007A664F /* Util */,
 				54B7E6EF169E51860040C6D2 /* sharedManagers */,
 				54B7E6ED169E510D0040C6D2 /* ViewControllers */,
-				91B055E71699179C00DD542A /* icon */,
-				541A912D1697AB230035082E /* appicon */,
 				541A90E116966C8B0035082E /* photaAppDelegate.h */,
 				541A90E216966C8B0035082E /* photaAppDelegate.m */,
 				541A90EA16966C8B0035082E /* MainStoryboard_iPhone.storyboard */,
@@ -795,9 +797,21 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		912F638C16B4979B00E32476 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				541A912D1697AB230035082E /* appicon */,
+				91B055E71699179C00DD542A /* icon */,
+				912702FC16A8E27100779CCA /* ppl */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		91B055E71699179C00DD542A /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				912F639316B49BFA00E32476 /* checked.png */,
+				912F639016B4991C00E32476 /* unchecked.png */,
 				91B055E81699179C00DD542A /* 01-refresh.png */,
 				91B055E91699179C00DD542A /* 02-redo.png */,
 				91B055EA1699179C00DD542A /* 03-loopback.png */,
@@ -1306,6 +1320,8 @@
 				9114305516AB9ACD003EDB1F /* icon114.png in Resources */,
 				9114305716AB9B19003EDB1F /* Default-568h@2x.png in Resources */,
 				9114305916AB9B36003EDB1F /* Default@2x.png in Resources */,
+				912F639216B4991C00E32476 /* unchecked.png in Resources */,
+				912F639416B49BFA00E32476 /* checked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

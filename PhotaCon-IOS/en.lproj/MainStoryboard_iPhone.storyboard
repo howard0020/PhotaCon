@@ -410,29 +410,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userApp" textLabel="9Qu-P0-pON" detailTextLabel="vu0-YI-OWk" style="IBUITableViewCellStyleValue1" id="j5w-BD-Xz2">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userApp" textLabel="9Qu-P0-pON" style="IBUITableViewCellStyleDefault" id="j5w-BD-Xz2">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qu-P0-pON">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu0-YI-OWk">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="RLN-Hg-hbV" kind="push" identifier="abc" id="fRV-ks-SAE"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -440,7 +432,16 @@
                             <outlet property="delegate" destination="hqF-O3-Nhc" id="1Rm-Gt-GZe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tlk-0q-8wD"/>
+                    <navigationItem key="navigationItem" id="tlk-0q-8wD">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Add" id="WYW-LJ-AsU">
+                            <connections>
+                                <segue destination="RLN-Hg-hbV" kind="push" identifier="addFriends" id="dT7-K6-SUp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addFriendsBtn" destination="WYW-LJ-AsU" id="ryF-KV-d0r"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5M-4e-o2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -601,6 +602,9 @@
         </class>
         <class className="UserProfileTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserProfileTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addFriendsBtn" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

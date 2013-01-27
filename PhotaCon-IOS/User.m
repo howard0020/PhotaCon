@@ -32,6 +32,8 @@
     
     [user setFirstName:[dict objectForKey:@"firstName"]];
     [user setLastName:[dict objectForKey:@"lastName"]];
+    NSString *fullName = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
+    [user setName: fullName];
     [user setEmail:[dict objectForKey:@"email"]];
     [user setApplications:[dict objectForKey:@"accounts"]];
     
