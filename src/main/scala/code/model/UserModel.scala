@@ -12,11 +12,15 @@ import net.liftweb.mapper._
 import net.liftweb.util._
 import net.liftweb.common._
 import net.liftweb.common.Empty
-
+import code.plugin.Plugins
 
 class UserModel extends MegaProtoUser[UserModel] with OneToMany[Long,UserModel]{
   def getSingleton = UserModel
   object accounts extends MappedOneToMany(AccountModel,AccountModel.user,OrderBy(AccountModel.id,Ascending))
+
+  def findAccount(plugin: Plugins.Value) = {
+    AccountModel.find(By(AccountModel.user,id),By(AccountModel.plugin,plugin))
+  }
 }
 object UserModel extends UserModel with MetaMegaProtoUser[UserModel]{
   override def dbTableName = "users"

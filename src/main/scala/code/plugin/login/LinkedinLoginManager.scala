@@ -14,7 +14,7 @@ import net.liftweb.http.S
 import org.scribe.model.OAuthRequest
 import org.scribe.model.Verb
 import code.model.AccountModel
-
+import net.liftweb.common._
 
 class LinkedinLoginManager extends LoginManager {
 	val plugin = Plugins.linkedin
@@ -56,10 +56,10 @@ def verifyToken(token:String):Boolean = {
     Console.println(response.getBody)
     return true
 }
-  def isConnected(id: String,account: AccountModel):Boolean = {
-    return false
+  def isConnected(currAccount:AccountModel,account: AccountModel):Box[Boolean] = {
+    Full(false)
   }
-	def initAcount(account:AccountModel):Boolean = {
+	def initAccount(account:AccountModel):Boolean = {
 	  return true
 	}
 }

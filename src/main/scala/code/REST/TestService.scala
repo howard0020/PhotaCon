@@ -20,12 +20,12 @@ import RestFormatters._
  */
 object TestService extends RestHelper{
     serve("api" / "test" prefix {
-      case "connected" :: email :: id :: Nil Get _ => {
-        var user = UserModel.findUserByEmail(email) openOrThrowException("user not found")
-        var manager = PluginManager.getLoginManager("facebook")
-        var result = manager.isConnected(id,user.accounts(0))
-        JString(result.toString())
-      }
+//      case "connected" :: email :: id :: Nil Get _ => {
+//        var user = UserModel.findUserByEmail(email) openOrThrowException("user not found")
+//        var manager = PluginManager.getLoginManager("facebook")
+//        var result = manager.isConnected(id,user.accounts(0))
+//        JString(result.toString())
+//      }
       case "login" :: "failure" :: Nil Get _ => {
         JsonResponse(("fail to login"),401)
       }
@@ -58,7 +58,7 @@ object TestService extends RestHelper{
         createUser("howard00120@yahoo.com","52012345","Lincoln","Pahwa")
         createUser("howard00130@yahoo.com","52012345","Xiao Qiang","Wu")
         createUser("howard00140@yahoo.com","52012345","Sheng","Jun")
-        toJSONList()
+        toJSONList(UserModel.findAll())
       }
       case "serve" :: "image" :: Nil Get _ => {
         var resource = LiftRules.getResource("/images/searchNearMe.jpg")

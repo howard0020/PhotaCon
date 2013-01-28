@@ -8,7 +8,6 @@ import api.FacebookApi
 import code.model._
 import code.plugin.Plugins
 import code.util.SiteConsts
-import net.liftweb.common.Full
 import net.liftweb.http.S
 import net.liftweb.json._
 import net.liftweb.json.JsonParser
@@ -16,7 +15,7 @@ import net.liftweb.json.Printer._
 import net.liftweb.json.JsonAST._
 import net.liftweb.json.Extraction._
 import model._
-
+import net.liftweb.common._
 
 class FbLoginManager extends LoginManager {
 	val plugin = Plugins.facebook
@@ -64,17 +63,25 @@ class FbLoginManager extends LoginManager {
     if (response.getCode == 200) return true
     else return false
   }
-  def isConnected(id: String,account: AccountModel):Boolean = {
+  def isConnected(currAccount:AccountModel,account: AccountModel):Box[Boolean] = {
     var request = new OAuthRequest(Verb.GET, 
-        "https://graph.facebook.com/%s/friends/%s".format(account.pluginId.is,id))
+        "https://graph.facebook.com/%s/friends/%s".format(currAccount.pluginId.get,account.pluginId.get))
     Console.println(request.toString())
-    service.signRequest(account.accessToken.is,request)
+    service.signRequest(currAccount.accessToken.get,request)
     var response = request.send
-    Console.println(response.getCode)
-    Console.println(response.getBody)
-    return true;
+    if (response.getCode == 200){
+      val json = JsonParser.parse(response.getBody)
+      val id = json \ "data" \ "id"
+      if (id == JsonAST.JNothing){
+        Full(false)
+      }else{
+        Full(true)
+      }
+    }else{
+      Empty
+    }
   }
-  def initAcount(account: AccountModel):Boolean = {
+  def initAccount(account: AccountModel):Boolean = {
     try{
 	    var request = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
 	    service.signRequest(account.accessToken.get, request);
@@ -82,8 +89,8 @@ class FbLoginManager extends LoginManager {
 	    Console.println(response.getCode)
 	    Console.println(response.getBody)
 	    if (response.getCode == 200){
-	      implicit val formats = net.liftweb.json.DefaultFormats
-	      var json = JsonParser.parse(response.getBody())
+
+	      var json = JsonParser.parse(response.getBody)
 	      var id = (json \ "id").extract[String]
 	      var firstName = (json \ "first_name").extract[String]
 	      var lastName = (json \ "last_name").extract[String]
