@@ -43,6 +43,7 @@ object TestService extends RestHelper{
           case Failure(msg,_,_) => JString(msg)
         }
       }
+      //  /api/test/insert/users
       case "insert" :: "users" ::Nil Get _ => {
         createUser("howard0010@yahoo.com","52012345","howard","lin")
         createUser("howard0020@yahoo.com","52012345","Troy","Huang")
