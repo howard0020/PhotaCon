@@ -1,0 +1,5 @@
+platform :ios, '6.0'
+pod 'AFNetworking', '1.1.0'
+pod 'Facebook-iOS-SDK', '~> 3.1.1'
+pod 'MBProgressHUD', '~> 0.5'
+pod 'Three20Lite', '~> 2.2.0'
