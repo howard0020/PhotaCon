@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<title>Home</title>
+</head>
+<body class="lift:content_id=main">
+	<div id="main" class="lift:surround?with=default;at=content">
+		<div data-role="page">
+            <div data-role="header" data-position="fixed">
+                <a href="home.html" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+                <h1>PhotaCon</h1>
+            </div><!-- /header -->
+            <div data-role="content" >
+				<form action="/friend" data-transition="slide">
+                	<input type="search" name="search" id="search-basic" placeholder="name"/>
+                </form>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed">
+	        	<div data-role="navbar">
+					<ul>
+						<li><a href="friend.html" data-role="button" data-icon="grid" data-iconpos="notext" data-iconpos="left">Friends</a></li>
+						<li><a href="search.html" data-role="button" data-icon="search" data-iconpos="notext" data-iconpos="left">Search</a></li>
+						<li><a href="setting.html" data-role="button" data-icon="gear" data-iconpos="notext" data-iconpos="left">Settings</a></li>
+					</ul>
+				</div><!-- /navbar -->
+	        </div>
+        </div><!-- /page -->
+    </div>
+  </body>
+</html>
+
